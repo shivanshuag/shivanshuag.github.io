@@ -1,27 +1,27 @@
-title:            Site Title
+title:            Silly Me
 description:      Describe your website here.
-logo:             site-logo.png
+logo:             
 disqus_shortname: 
 search:           true
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              http://localhost:4000
+url:              http://shivanshuag.github.io
 
 # Owner/author information
 owner:
-  name:           Your Name
-  avatar:         bio-photo.jpg
-  email:          you@email.com
+  name:           Shivanshu Agrawal
+  avatar:         bio-photo.png
+  email:          shivanshuag@gmail.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        
-  facebook:       
-  github:         
+  facebook:       https://www.facebook.com/shivanshuag
+  github:         https://github.com/shivanshuag
   stackexchange:  
   linkedin:       
   instagram:      
   flickr:         
   tumblr:         
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    
+  google_plus:  https://plus.google.com/+ShivanshuAgrawal  
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   
@@ -38,12 +38,9 @@ links:
     url: /articles/
   - title: Theme Setup
     url: /theme-setup/
-  - title: Made Mistakes
-    url: http://mademistakes.com
-    external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    Asia/Kolkata
 future:      true
 pygments:    true
 markdown:    kramdown
