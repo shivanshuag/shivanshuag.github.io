@@ -1,10 +1,10 @@
-title:            Silly Me
-description:      Describe your website here.
-logo:             
-disqus_shortname: 
+title:            NinjaDucks
+description:      
+logo:             ninjaducks.png
+disqus_shortname: shivanshuag
 search:           true
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              http://shivanshuag.github.io
+url:              http://ninjaducks.in
 
 # Owner/author information
 owner:
@@ -13,8 +13,8 @@ owner:
   email:          shivanshuag@gmail.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        
-  facebook:       https://www.facebook.com/shivanshuag
-  github:         https://github.com/shivanshuag
+  facebook:       shivanshuag
+  github:         shivanshuag
   stackexchange:  
   linkedin:       
   instagram:      
