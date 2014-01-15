@@ -1,5 +1,5 @@
-title:            NinjaDucks
-description:      
+title:            Ninja Ducks
+description:      Code|'Read'|Sleep|Eat
 logo:             ninjaducks.png
 disqus_shortname: shivanshuag
 search:           true
@@ -16,7 +16,7 @@ owner:
   facebook:       shivanshuag
   github:         shivanshuag
   stackexchange:  
-  linkedin:       
+  linkedin:       shivanshu-agrawal
   instagram:      
   flickr:         
   tumblr:         
@@ -32,12 +32,16 @@ bing_verify:
 # Links to include in top navigation
 # For external links add external: true
 links:
-  - title: About
-    url: /about/
-  - title: Articles
+  - title: All Articles
     url: /articles/
-  - title: Theme Setup
-    url: /theme-setup/
+  - title: Movies
+    url: /movies/
+  - title: Books
+    url: /books/
+  - title: Hacking
+    url: /hacking/
+  - title: About Me
+    url: /about/
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Asia/Kolkata

@@ -1,33 +1,27 @@
 ---
 layout: page
 permalink: /about/
-title: About the Jekyll Theme
-tags: [Jekyll, theme, simple, minimal, minimalism, responsive]
+title: About Me
+tags: []
 modified: 2013-09-13
-image:
-  feature: so-simple-sample-image-4.jpg
-  credit: Michael Rose
-  creditlink: http://mademistakes.com
 ---
 
-Looking for a simple, responsive, theme for your Jekyll powered blog? Well look no further. Here be **So Simple Theme**, the followup to [**Minimal Mistakes**](http://mmistakes.github.io/minimal-mistakes) --- by designer slash illustrator [Michael Rose](http://mademistakes).
+I am Shivanshu, a third year UG student at IIT Kanpur studying Computer Science and Engineering. I have the super awesome hobby of reading novels. I am best friends with my kindle. Other things that interest me (not equally but enough)are movies and programming/hacking. You may also know me as coordinator of Programming Club IIT Kanpur or coordinator  of VANI, IIT Kanpur or the person whose site has a weird name.
 
-## So Simple Theme is all about:
+Contact Details - 
 
-* Responsive templates. Looking good on mobile, tablet, and desktop.
-* Gracefully degrading in older browsers. Compatible with Internet Explorer 9+ and all modern browsers.
-* Minimal embellishments and subtle animations. 
-* Readable typography to make your words shine.
-* Support for large images to call out your favorite posts.
-* Disqus comments if you choose to enable.
-* Simple and clear permalink structure[^1].
-* Tags for [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards) for a better social sharing experience.
-* Vanilla [custom 404 page]({{ site.url }}/404.html) to get you started.
-* Stylesheets for Pygments and Coderay [syntax highlighting](http://mmistakes.github.io/articles/so-simple-theme/code-highlighting-post/) to make your code examples look snazzy.
-* Simple search that overlays results based on post title.
-* [Grunt build script]({{ site.url }}/theme-setup/index.html#theme-development) for easier theme development.
-* [Sitemap](https://github.com/mmistakes/so-simple-theme/blob/master/sitemap.xml) for search engines
+* name - Shivanshu Agrawal
+* facebook - shivanshuag
+* gmail - shivanshuag
+* github - shivanshuag
+* twitter - shivanshuagw
+* linkedin - [shivanshu-agrawal](http://in.linkedin.com/pub/shivanshu-agrawal/65/309/74)
+* freenode nick - shivanshu
+* goodreads - [shivanshu-agrawal](https://www.goodreads.com/user/show/25479921-shivanshu-agrawal)
 
-<a markdown="0" href="{{ site.url }}/theme-setup" class="btn">Install Minimal Mistakes Theme</a>
+Other Stuff - 
 
-[^1]: Example: *domain.com/category-name/post-title*
+* Currenlty Reading - Bartimaeus Trilogy 2 - Ptolmey's Gate
+* Current OS - Ubuntu 13.10 and Windows 8.1
+* Favorite Movie - [Hugo](http://www.imdb.com/title/tt0970179/)
+* Favorite Novel - The Book Thief
