@@ -24,10 +24,10 @@ owner:
   google_plus:  https://plus.google.com/+ShivanshuAgrawal  
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
+google_analytics:   UA-47255777-1
+google_verify:    FV996yWjd0ILqMizbov4VpVILRybMcFoybNdoZZh2H4  
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+bing_verify:  EAEFB4951BF381DF6473C27298FF192B         
 
 # Links to include in top navigation
 # For external links add external: true
