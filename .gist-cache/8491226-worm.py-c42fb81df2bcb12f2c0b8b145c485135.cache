@@ -1,0 +1,42 @@
+import urllib
+import urllib2
+from bs4 import BeautifulSoup
+
+
+def openURL(urlToOpen):
+	try:
+		response = urllib2.urlopen(urlToOpen)
+	except (URLError, urllib2.HTTPError) as e:
+		print e.reason
+		return 0,response
+	return 1,response
+
+
+startUrl = 'http://parahumans.wordpress.com/category/stories-arcs-1-10/arc-1-gestation/1-01/'
+endUrl = 'http://wildbow.wordpress.com/2013/11/19/the-end/'
+nextUrl = startUrl
+fil = open('worm.html', 'a')
+while nextUrl != endUrl :
+	code = 0
+	while code!=1:
+		print 'fetching '+nextUrl
+		code,response = openURL(urllib.quote(nextUrl,safe=":/"))
+	html = response.read()
+	soup = BeautifulSoup(html)
+	title = '<h1>' + soup.find_all('h1',{'class':'entry-title'})[0].text.encode('ascii','ignore') + '</h1>'
+	i=0
+	fil.write(title.encode('utf_8'))
+	fil.write('\n\n')
+	paragraphs = soup.find_all('div',{'class':'entry-content'})[0].find_all('p')
+	for paragraph in paragraphs:
+		if i==0:
+			links = paragraph.find_all('a')
+			if len(links) == 1:
+				nextUrl = links[0]['href'].encode('utf_8')
+			else:
+				nextUrl = links[0]['href'].encode('utf_8')
+		elif i!= len(paragraphs) - 1:
+			fil.write(paragraph.encode('utf_8'))
+		fil.write('\n\n')
+		i = i+1
+fil.close()
