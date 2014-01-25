@@ -4,6 +4,7 @@ title: Programming Club gets a Nexus 5!
 description: ""
 modified: 2014-01-18
 category: hacking
+
 tags: [nexus 5, rooting, firefox os]
 comments: true
 share: true
