@@ -8,7 +8,7 @@ modified: 2014-01-22
 
 I am Shivanshu, a third year UG student at IIT Kanpur studying Computer Science and Engineering. I have the super awesome hobby of reading novels. I am best friends with my kindle. Other things that interest me (not equally but enough)are movies and programming/hacking. You may also know me as coordinator of Programming Club IIT Kanpur or coordinator  of VANI, IIT Kanpur or the person whose site has a weird name.
 
-Contact Details - 
+Contact Details -
 
 * name - Shivanshu Agrawal
 * facebook - [shivanshuag][1]
@@ -22,8 +22,8 @@ Contact Details -
 
 Other Stuff - 
 
-* Currenlty Reading - Bartimaeus Trilogy 2 - Ptolmey's Gate
-* Current OS - Ubuntu 13.10 and Windows 8.1
+* Currenlty Reading - [The Help](http://www.goodreads.com/book/show/4667024-the-help) by Kathryn Stockett
+* Current OS - Arch Linux
 * Favorite Movie - [Hugo](http://www.imdb.com/title/tt0970179/)
 * Favorite Novel - The Book Thief
 
