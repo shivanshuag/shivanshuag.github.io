@@ -1,4 +1,4 @@
-First of all don;t understand the directory structure and namespaced classes. Therefore read - 
+First of all didn't understand the directory structure and namespaced classes. Therefore read - 
 http://effulgentsia.drupalgardens.com/content/drupal-8-hello-oop-hello-world
 
 Points to be notes above are 
