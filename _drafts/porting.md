@@ -1,8 +1,25 @@
-First of all didn't understand the directory structure and namespaced classes. Therefore read - 
-http://effulgentsia.drupalgardens.com/content/drupal-8-hello-oop-hello-world
+---
+layout: post
+title: Porting a module to Durpal 8 step by step
+description: ""
+category: articles
+tags: [drupal8, module, gsoc]
+comments: true
+share: true
+---
 
-Points to be notes above are 
-- .info file changed to .info.yml file. More about it on https://drupal.org/node/2000204
+When
+
+On a first look at a drupal 8 module, it all looks so scary and so different. So many questions like - why are there so many files and directories in this module? Why the hell are namespaces used in so many places? Where are all the familiar hooks and what are these .yml files for? come to mind. Adding to this is the constant metion of the big time changes in the drupal architecture with the inclusion of Symfiny and Twig everywhere on the web. With this series of posts, I aim to simplify this process of porting a module to drupal 8 for everyone - new to drupal of already experienced in drupal 7. I will also clarify some of the less documented things about drupal 8 which perplexed me while porting.
+
+First step is to set up the development environment for the project. My preferred IDE is phpstorm which has excellent Drupal support. The following link explains how to set up phpstorm for drupal module development -https://drupal.org/node/1962108. Currently, drupal 8 support is avaliable in phpstorm-eap.
+
+The concepts of PHP namespaces and PSR-0 standards are very lucidly explained by [effulgentsia](https://drupal.org/user/78040) in
+http://effulgentsia.drupalgardens.com/content/drupal-8-hello-oop-hello-world.
+Reading above removes a lot of confusion about so many directories and files in the module and use of namespaces.
+
+Some more points to be noted from the above blog post are
+- .info file has changed to .info.yml file. You can find more about it on https://drupal.org/node/2000204
 - use of Controllers and routes which was earlier implemented by hook_menu. More on routing at https://drupal.org/developing/api/8/routing
 - use of PSR0 file structure, classes inside lib directory. 
 

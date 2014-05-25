@@ -3,7 +3,7 @@ layout: post
 title: A summer for Drupal
 description: "I got accepted into GSoC'14 under drupal"
 category: hacking
-tags: [gsoc drupal]
+tags: [gsoc, drupal]
 comments: true
 share: true
 ---
