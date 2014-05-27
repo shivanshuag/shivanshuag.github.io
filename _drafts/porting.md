@@ -8,12 +8,15 @@ comments: true
 share: true
 ---
 
-When
+I am porting a drupal 7 module named [securesite](https://drupal.org/project/securesite) to drupal 8 as a part of Google Summer Of Code. This is my first port in a series of posts that I plan to write during this period.
 
-On a first look at a drupal 8 module, it all looks so scary and so different. So many questions like - why are there so many files and directories in this module? Why the hell are namespaces used in so many places? Where are all the familiar hooks and what are these .yml files for? come to mind. Adding to this is the constant metion of the big time changes in the drupal architecture with the inclusion of Symfiny and Twig everywhere on the web. With this series of posts, I aim to simplify this process of porting a module to drupal 8 for everyone - new to drupal of already experienced in drupal 7. I will also clarify some of the less documented things about drupal 8 which perplexed me while porting.
+One look at a drupal 8 module is enough to make you realize that there have been some major changes in its architecture. If you observe closely, you will find ample use of OOP constructs, .yml files, and a directory structure totally different form its drupal 7 counterpart. There is enough mention about the big changes in drupal 8 on the web to scare anyone. With this series of posts, I aim to simplify this process of porting a module to drupal 8 for everyone - new to drupal of already experienced in drupal 7. I will also clarify some of the less documented things about drupal 8 which perplexed me while porting.
 
-First step is to set up the development environment for the project. My preferred IDE is phpstorm which has excellent Drupal support. The following link explains how to set up phpstorm for drupal module development -https://drupal.org/node/1962108. Currently, drupal 8 support is avaliable in phpstorm-eap.
+**Development Environment**
 
+First step is to set up the development environment for the project. I prefer [phpstorm](www.jetbrains.com/phpstorm/) IDE, even though it is not free, due to its excellent drupal support. The following link explains how to set up phpstorm for drupal module development -https://drupal.org/node/1962108. Currently, drupal 8 support is avaliable in [phpstorm-eap](http://confluence.jetbrains.com/display/PhpStorm/PhpStorm+Early+Access+Program).
+
+**Namespaces and autoloading**
 The concepts of PHP namespaces and PSR-0 standards are very lucidly explained by [effulgentsia](https://drupal.org/user/78040) in
 http://effulgentsia.drupalgardens.com/content/drupal-8-hello-oop-hello-world.
 Reading above removes a lot of confusion about so many directories and files in the module and use of namespaces.
