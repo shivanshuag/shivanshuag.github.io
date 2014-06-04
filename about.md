@@ -22,10 +22,10 @@ Contact Details -
 
 Other Stuff - 
 
-* Currenlty Reading - [The Help](http://www.goodreads.com/book/show/4667024-the-help) by Kathryn Stockett
+* Currenlty Reading - Oultiers by Malcolm Gladwell
 * Current OS - Arch Linux
 * Favorite Movie - [Hugo](http://www.imdb.com/title/tt0970179/)
-* Favorite Novel - The Book Thief
+* Favorite Novel - A Tree Grows In Brooklyn by Betty Smith
 
 [1]: https://facebook.com/shivanshuag
 [2]: https://google.com/+ShivanshuAgrawal
