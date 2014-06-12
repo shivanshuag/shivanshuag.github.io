@@ -3,7 +3,7 @@ layout: post
 title: Why I read Fiction
 description: "Reading fiction is not a waste of time"
 category: books
-tags: [books]
+tags: []
 comments: true
 share: true
 ---
