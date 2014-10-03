@@ -2,7 +2,7 @@
 layout: post
 title: Sunglasses
 description: ""
-category: articles
+category: shorts
 tags: [short]
 comments: true
 share: true
