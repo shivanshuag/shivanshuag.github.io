@@ -22,7 +22,7 @@ Contact Details -
 
 Other Stuff - 
 
-* Currenlty Reading - The Diary of a Young Girl by Anne Frank
+* Currenlty Reading - Steppenwolf by Hermann Hesse
 * Current OS - Arch Linux
 * Favorite Movie - [Hugo](http://www.imdb.com/title/tt0970179/)
 * Favorite Novel - A Tree Grows In Brooklyn by Betty Smith
