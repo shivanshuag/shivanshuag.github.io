@@ -6,7 +6,9 @@ tags: []
 modified: 2014-01-22
 ---
 
-I am Shivanshu, a third year UG student at IIT Kanpur studying Computer Science and Engineering. I have the super awesome hobby of reading novels. I am best friends with my kindle. Other things that interest me (not equally but enough)are movies and programming/hacking. You may also know me as coordinator of Programming Club IIT Kanpur or coordinator  of VANI, IIT Kanpur or the person whose site has a weird name.
+I am Shivanshu, a senior UG student at IIT Kanpur studying Computer Science and Engineering. I have the super awesome hobby of reading novels. Other things that interest me are movies and programming/hacking and Computer Science in general. I have recently taken to contributing to open-source and was selected in GSoC 2014 under Drupal. Recently, I started working on some stuff to contribute to OpenVPN. You may also know me as the ex-coordinator of Programming Club IIT Kanpur or the person whose site has a weird name or the guy with offbeat blue glasses.
+
+
 
 Contact Details -
 
@@ -20,9 +22,9 @@ Contact Details -
 * freenode nick - shivanshu
 * goodreads - [shivanshu-agrawal][6]
 
-Other Stuff - 
+Other Stuff -
 
-* Currenlty Reading - Steppenwolf by Hermann Hesse
+* Currenlty Reading - Soul Mountain by Gao Xingjian
 * Current OS - Arch Linux
 * Favorite Movie - [Hugo](http://www.imdb.com/title/tt0970179/)
 * Favorite Novel - A Tree Grows In Brooklyn by Betty Smith
