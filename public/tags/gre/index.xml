@@ -21,24 +21,24 @@
 
 &lt;p&gt;First problem was to get a list of words. Someone has uploaded all the words from Magoosh GRE flashcard and Barron&amp;rsquo;s GRE on quizlet.com &lt;a href=&#34;http://quizlet.com/45492734/magoosh-gre-flashcards-basic-common-advanced-all-1000-flash-cards/&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://quizlet.com/8997815/barrons-800-essential-words-for-the-gre-flash-cards/&#34;&gt;here&lt;/a&gt;. Now it was just a matter of scraping them and a simple python script was apt for the task. I scraped all the words and their meanings in a text file named &lt;code&gt;words&lt;/code&gt;, each word separated by a &amp;lsquo;%&amp;rsquo;. This &amp;lsquo;%&amp;rsquo; has a special significance. It is useful in creating a random access file for strings which is used by the fortune program.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;strfile words
-&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+strfile words
 &lt;/p&gt;
 
 &lt;p&gt;This generates a &lt;code&gt;words.dat&lt;/code&gt; file. I moved both - the &lt;code&gt;words.dat&lt;/code&gt; file and the &lt;code&gt;words&lt;/code&gt; file to the folder that contains the fortune database which in my case is &lt;code&gt;/usr/share/fortune&lt;/code&gt;. Now fortune also uses this file for selecting cookies. But I just want the words and not any other cookie. In &lt;code&gt;fortune&lt;/code&gt;, you can specify the name of the database from which you want it to randomly select a string. So, &lt;code&gt;fortune words&lt;/code&gt; did the task.&lt;/p&gt;
 
 &lt;p&gt;While exploring fortune, I also found that you can specify the probabilities with which it selects string from each database. This is helpful beacuse I want to to select words from Magoosh Basic and Magoosh Common list more frequently than Magoosh Advanced. For this, I need the words in separate files according to category. No probelm because I found the different lists on quizlet.com &lt;a href=&#34;http://quizlet.com/45473963/magoosh-gre-flashcards-basic-all-i-vii-flash-cards/&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;http://quizlet.com/45473977/magoosh-gre-flashcards-common-all-i-vi-flash-cards/&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://quizlet.com/45473953/magoosh-gre-flashcards-advanced-all-i-vii-flash-cards/&#34;&gt;here&lt;/a&gt;, scraped them into different files and followed the same procedure. The script used for scraping and the list of words is available in a github repository &lt;a href=&#34;https://github.com/shivanshuag/cowsay-gre&#34;&gt;here&lt;/a&gt;. So now my command is&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;fortune fortune 40% magoosh_basic 40% magoosh_common magoosh_adv
-&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+fortune fortune 40% magoosh_basic 40% magoosh_common magoosh_adv
 &lt;/p&gt;
 
 &lt;p&gt;This gives a word from Basic and Common list with a probability of 0.4 and from Advanced list with a probability of 0.2.&lt;/p&gt;
 
 &lt;p&gt;To make it more interesting, I piped the output to cowsay. In cowsay, you can specify different ASCII images as argument. There is a default set of images in the &lt;code&gt;/usr/share/cows&lt;/code&gt; folder.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;fortune -c 40% magoosh_basic 40% magoosh_common magoosh_adv | cowthink -f &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;$(&lt;/span&gt;find /usr/share/cows -type f | shuf -n 1&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+fortune -c 40% magoosh_basic 40% magoosh_common magoosh_adv | cowthink -f $(find /usr/share/cows -type f | shuf -n 1)
 &lt;/p&gt;
 
 &lt;p&gt;This command selects a random ASCII image from the set of images in &lt;code&gt;usr/share/cows&lt;/code&gt; folder for the cowsay application. I added this to my &lt;code&gt;.zshrc&lt;/code&gt; file. And the results were interesting!&lt;/p&gt;

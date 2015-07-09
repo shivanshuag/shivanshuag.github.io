@@ -1,13 +1,14 @@
 {{ partial "header.html" . }}
 
 <main id="content">
-		<span class="taglist">
+		<span class="categorylist">
 	        Categories &middot;
 	          <a href="/">All</a>
 			  {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
 			    <a href="/categories/{{ $name | urlize }}">{{ $name }}</a>
 			  {{ end }}
           </span>
+          <img src="/images/line2-1.png" style="height:3.5em;width:90%"/>
 
 {{ $paginator := .Paginator }}
 	<h1 class="post-title">{{ .Title }}</h1> 
