@@ -1,0 +1,5 @@
+baseurl = "http://shivanshuag.me/"
+languageCode = "en-us"
+title = "Shivanshu Agrawal"
+theme = "hugo-crisp"
+pygmentsStyle = "colorful"

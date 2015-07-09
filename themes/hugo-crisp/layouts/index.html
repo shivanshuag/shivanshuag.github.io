@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+		<main id="content">
+		<span class="taglist">
+	        Categories &middot; 
+	        	<a href="/">All</a>
+			  {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+			    <a href="/categories/{{ $name | urlize }}">{{ $name }}</a>
+			  {{ end }}
+          </span>
+
+{{ $paginator := .Paginator }}
+
+    {{ range $index, $page := .Paginator.Pages }}
+        {{ .Render "li" }}
+    {{ end }}
+
+    	{{ partial "pagination.html" $paginator }}
+		</main>
+{{ partial "footer.html" . }}

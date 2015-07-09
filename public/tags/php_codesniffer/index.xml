@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php_codesniffer on Shivanshu Agrawal</title>
+    <link>http://localhost:1313/tags/php_codesniffer/</link>
+    <description>Recent content in Php_codesniffer on Shivanshu Agrawal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Jun 2015 13:35:54 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/php_codesniffer/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Setting Up PHP_CodeSniffer for Drupal 7 and 8</title>
+      <link>http://localhost:1313/setting-up-php-codesniffer/</link>
+      <pubDate>Thu, 25 Jun 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://localhost:1313/setting-up-php-codesniffer/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/squizlabs/PHP_CodeSniffer&#34;&gt;PHP CodeSniffer&lt;/a&gt; is a library which tokenises PHP, Javascript and CSS. &lt;a href=&#34;https://www.drupal.org/project/coder&#34;&gt;Coder&lt;/a&gt; is a Drupal project that provides sniffs for PHP CodeSniffer which tell whether a piece of code follows &lt;a href=&#34;https://www.drupal.org/coding-standards&#34;&gt;Drupal coding standards&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;My GSoC project requires me to work on both - Drupal 7 and 8 version of &lt;a href=&#34;https://drupal.org/project/site_audit&#34;&gt;site_audit&lt;/a&gt;. So, I had to set up PHP_CodeSniffer such that it can work with both the versions of Drupal. The Coder standards are different for Drupal 7 and Drupal 8. This post deals with how to set up CodeSniffer in such a suituation. This will require installing coder module twice, once for Drupal 7 standards and other for Drupal 8 standards.&lt;/p&gt;
+
+&lt;h2 id=&#34;installing-codesniffer:050cc04f629b6df59628e0ab0907bdd2&#34;&gt;Installing CodeSniffer&lt;/h2&gt;
+
+&lt;p&gt;CodeSniffer can be installed using composer by the following command
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;composer global require squizlabs/PHP_CodeSniffer:&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;2
+
+&lt;span style=&#34;color: #888888&#34;&gt;#make phpcs command globally availabe&lt;/span&gt;
+sudo ln -s ~/.composer/vendor/bin/phpcs /usr/local/bin
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;installing-coder-for-drupal-8:050cc04f629b6df59628e0ab0907bdd2&#34;&gt;Installing Coder for Drupal 8&lt;/h2&gt;
+
+&lt;p&gt;Coder provides the set of sniffs for CodeSniffer. We need two copies of this, one for Drupal 7 and other for Drupal 8.
+Install the first copy using Composer
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;composer global require drupal/coder
+&lt;/pre&gt;&lt;/div&gt;
+
+This will install 8.x-2.x version of coder which provides standards for Drupal 8. Composer puts the code module inside &lt;code&gt;$HOME/.composer/vendor/drupal/&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;h2 id=&#34;installing-coder-for-drupal-7:050cc04f629b6df59628e0ab0907bdd2&#34;&gt;Installing Coder for Drupal 7&lt;/h2&gt;
+
+&lt;p&gt;Install the second copy using drush
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;drush dl coder-7.x --destination&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;$HOME&lt;/span&gt;/.drush
+&lt;/pre&gt;&lt;/div&gt;
+
+This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; directory inside your home folder.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-aliases-for-usage:050cc04f629b6df59628e0ab0907bdd2&#34;&gt;Creating Aliases for usage&lt;/h2&gt;
+
+&lt;p&gt;Different aliases can be created for CodeSniffer with Drupal 7 standards and CodeSniffer with Drupal 8 standards. To create aliases, add the following into your &lt;code&gt;.bashrc&lt;/code&gt; or &lt;code&gt;.zshrc&lt;/code&gt; file
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #888888&#34;&gt;#drupalcs8 alias for testing Drupal 8 coding standards&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;alias &lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;drupalcs8&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;$HOME&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;/.composer/vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=~/.composer/vendor/drupal/coder/coder_sniffer/Drupal --extensions=&amp;#39;php,module,inc,install,test,profile,theme,js,css,info,txt&amp;#39;&amp;quot;&lt;/span&gt;
+
+&lt;span style=&#34;color: #888888&#34;&gt;#drupalcs7 for testing Drupal 7 coding standards&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;alias &lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;drupalcs7&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;phpcs --standard=~/.drush/coder/coder_sniffer/Drupal --extensions=&amp;#39;php,module,inc,install,test,profile,theme,js,css,info,txt&amp;#39;&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;To test some code for Drupal 8 coding standards, run &lt;code&gt;drupalcs8 [path to file/folder to check]&lt;/code&gt;. Similarly, &lt;code&gt;drupalcs7&lt;/code&gt; can be used to test for Drupal 7 coding standards.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

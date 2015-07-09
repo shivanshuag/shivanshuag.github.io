@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Phpunit on Shivanshu Agrawal</title>
+    <link>http://localhost:1313/tags/phpunit/</link>
+    <description>Recent content in Phpunit on Shivanshu Agrawal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Jul 2015 13:35:54 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/phpunit/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Writing Tests for Drush Commands</title>
+      <link>http://localhost:1313/writing-tests-for-drush-commands/</link>
+      <pubDate>Tue, 07 Jul 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://localhost:1313/writing-tests-for-drush-commands/</guid>
+      <description>
+
+&lt;p&gt;As a part of my GSoC project, I have been recently writing functional tests for &lt;a href=&#34;https://drupal.org/site_audit&#34;&gt;site_audit&lt;/a&gt; &amp;ndash; a Drush extension that provides drush commands for static analysis of a Drupal site. The process seemed painful at first due to lack of good documentation and gaps in my knowledge of Drush and PHPUnit. But, after a few hiccups intially, I was successfully able to write tests for Site Audit.&lt;/p&gt;
+
+&lt;h2 id=&#34;background:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;Drush uses &lt;a href=&#34;https://phpunit.de/&#34;&gt;PHPUnit&lt;/a&gt; testing framework for testing its core commands. All the tests are namespaced under the name &lt;code&gt;Unish&lt;/code&gt;. Drush test suites provides some base classes which, amongst other functionality, have primitves for setting up a drupal sandbox to provide an environment for testing drush commands.&lt;/p&gt;
+
+&lt;p&gt;All the Drush tests are inside the &lt;a href=&#34;https://github.com/drush-ops/drush/tree/master/tests&#34;&gt;tests&lt;/a&gt; directory inside the drush root folder which also contains a readme file providing some instructions to run the tests. The directory also has configuration settings for  PHPUnit
+in the &lt;a href=&#34;https://github.com/drush-ops/drush/blob/master/tests/phpunit.xml.dist&#34;&gt;phpunit.xml.dist&lt;/a&gt; directory. If you look inside this file, there are some commented lines that contain environment requried for the tests to run. You can either uncomment these and provide appropriate values or set these variables as bash environment variables where you run the test.&lt;/p&gt;
+
+&lt;p&gt;To run the tests on your local machine, first go the the drush root directory (directory where drush is installed) and run
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;composer install
+&lt;/pre&gt;&lt;/div&gt;
+
+This command will install all the dependencies (including PHPUnit) required for running the tests inside a directory named &lt;code&gt;vendor&lt;/code&gt;. Then run the &lt;code&gt;unish.sh&lt;/code&gt; script from the drush root directory.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-your-own-test:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;Creating your own Test&lt;/h2&gt;
+
+&lt;p&gt;You can create a directory named &lt;code&gt;tests&lt;/code&gt; inside you drush extension to contain all the tests. PHPUnit looks inside *Test.php files inside a directory for tests. Drush follows Lower Camel Case for the naming of both the file and the class name. So all you file names should be in Lower Camel Case with a &lt;code&gt;Test&lt;/code&gt; suffix.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #DD4422&#34;&gt; * @file&lt;/span&gt;
+&lt;span style=&#34;color: #DD4422&#34;&gt; * Contains /site_audit/tests/BestPracticesFast404Case.&lt;/span&gt;
+&lt;span style=&#34;color: #DD4422&#34;&gt; */&lt;/span&gt;
+
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;namespace&lt;/span&gt; Unish;
+
+&lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #DD4422&#34;&gt; * Class BestPracticesFast404Case.&lt;/span&gt;
+&lt;span style=&#34;color: #DD4422&#34;&gt; *&lt;/span&gt;
+&lt;span style=&#34;color: #DD4422&#34;&gt; * @group commands&lt;/span&gt;
+&lt;span style=&#34;color: #DD4422&#34;&gt; */&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;BestPracticesFast404Case&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;extends&lt;/span&gt; CommandUnishTestCase {
+
+  &lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #DD4422&#34;&gt;   * Sets up the environment for this test.&lt;/span&gt;
+&lt;span style=&#34;color: #DD4422&#34;&gt;   */&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;setUp&lt;/span&gt;() {
+  }
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;First, we specify the namespace &lt;code&gt;Unish&lt;/code&gt; for the test. The &lt;code&gt;@group&lt;/code&gt; annotation in the doc comment is optional. You can read about its use &lt;a href=&#34;https://phpunit.de/manual/current/en/appendixes.annotations.html#appendixes.annotations.group&#34;&gt;here&lt;/a&gt;. Our class extends &lt;code&gt;CommandUnishTestCase&lt;/code&gt; which provides all the common functionality like setting up a drupal sandbox and running drush commands used in functional tests. Finally we have a &lt;code&gt;setUp()&lt;/code&gt; function which is invoked before a test method is run. In We set up the object we will test against in this method.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-setup-function:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;The SetUp Function&lt;/h2&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;setUp&lt;/span&gt;() {
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (UNISH_DRUPAL_MAJOR_VERSION &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;8&lt;/span&gt;) {
+      &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;markTestSkipped&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;This version of Site Audit is for D8&amp;#39;&lt;/span&gt;);
+    }
+    &lt;span style=&#34;color: #996633&#34;&gt;$site&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;setUpDrupal&lt;/span&gt;(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;TRUE&lt;/span&gt;, UNISH_DRUPAL_MAJOR_VERSION, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;standard&amp;#39;&lt;/span&gt;);
+    &lt;span style=&#34;color: #996633&#34;&gt;$root&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;webroot&lt;/span&gt;();
+    &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;options&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;array&lt;/span&gt;(
+      &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;yes&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;NULL&lt;/span&gt;,
+      &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;$root&lt;/span&gt;,
+      &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;uri&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;key&lt;/span&gt;(&lt;span style=&#34;color: #996633&#34;&gt;$site&lt;/span&gt;),
+    );
+    &lt;span style=&#34;color: #888888&#34;&gt;// Symlink site_audit inside the site being tested, so that it is available&lt;/span&gt;
+    &lt;span style=&#34;color: #888888&#34;&gt;// as a drush command.&lt;/span&gt;
+    &lt;span style=&#34;color: #996633&#34;&gt;$target&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;dirname&lt;/span&gt;(__DIR__);
+    \mkdir(&lt;span style=&#34;color: #996633&#34;&gt;$root&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;/drush&amp;#39;&lt;/span&gt;);
+    \symlink(&lt;span style=&#34;color: #996633&#34;&gt;$target&lt;/span&gt;, &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;webroot&lt;/span&gt;() &lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;/drush/site_audit&amp;#39;&lt;/span&gt;);
+  }
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;In this function, we have used &lt;code&gt;UNISH_DRUPAL_MAJOR_VERSION&lt;/code&gt; which is provided by the PHPUnit settings variables we had set in phpunit.xml.dist . Since the version of site_audit where this test is written is for Drupal 8, we will skip the test if it is being run for Drupal 7.  The &lt;code&gt;setUpDrupal()&lt;/code&gt; is a function provided by &lt;code&gt;CommandUnishTestCase&lt;/code&gt; class and is used to create any number of drupal sanboxes which will be used for testing. Here, we are installing a single drupal 8 site with the standard profile.
+&lt;code&gt;$root&lt;/code&gt; variable has the path to the root directory of the website.&lt;/p&gt;
+
+&lt;p&gt;Since the drush commands will be run in the context of the sandbox we have just installed, it will not be able to discover the commands defined by the extensions. So, we will have to symlink our extension inside the drush directory inside the webroot using the &lt;code&gt;symlink()&lt;/code&gt; function. Since the drush directory does not exist by default, it has to be created first using the &lt;code&gt;mkdir()&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-test-function:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;The Test Function&lt;/h2&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
+
+  &lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #DD4422&#34;&gt;   * If fast_404 is enabled and fast_404 paths are empty, check should warn.&lt;/span&gt;
+&lt;span style=&#34;color: #DD4422&#34;&gt;   */&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;testFast404&lt;/span&gt;() {
+    &lt;span style=&#34;color: #888888&#34;&gt;// Enable fast_404 and make fast_404 paths empty.&lt;/span&gt;
+    &lt;span style=&#34;color: #996633&#34;&gt;$eval1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;config = &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;Drupal::configFactory()-&amp;gt;getEditable(&amp;#39;system.performance&amp;#39;); &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;config-&amp;gt;set(&amp;#39;fast_404.enabled&amp;#39;, TRUE); &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;config-&amp;gt;save();&amp;quot;&lt;/span&gt;;
+    &lt;span style=&#34;color: #996633&#34;&gt;$eval2&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;config = &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;Drupal::configFactory()-&amp;gt;getEditable(&amp;#39;system.performance&amp;#39;); &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;config-&amp;gt;set(&amp;#39;fast_404.paths&amp;#39;, &amp;#39;&amp;#39;); &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;config-&amp;gt;save();&amp;quot;&lt;/span&gt;;
+    &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;drush&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;php-eval&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color: #996633&#34;&gt;$eval1&lt;/span&gt;), &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;options&lt;/span&gt;);
+    &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;drush&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;php-eval&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color: #996633&#34;&gt;$eval2&lt;/span&gt;), &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;options&lt;/span&gt;);
+
+    &lt;span style=&#34;color: #888888&#34;&gt;// Execute the best-practices command and get output.&lt;/span&gt;
+    &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;drush&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;audit-best-practices&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;array&lt;/span&gt;(), &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;options&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;detail&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;NULL&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;json&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;NULL&lt;/span&gt;));
+    &lt;span style=&#34;color: #996633&#34;&gt;$output&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;json_decode&lt;/span&gt;(&lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;getOutput&lt;/span&gt;());
+    &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;assertEquals&lt;/span&gt;(\SiteAuditCheckAbstract&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;AUDIT_CHECK_SCORE_WARN&lt;/span&gt;, &lt;span style=&#34;color: #996633&#34;&gt;$output&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;checks&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;SiteAuditCheckBestPracticesFast404&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;score&lt;/span&gt;);
+  }
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The test has to edit some config variables of the drupal site. This is accomplished by the &lt;code&gt;php-eval&lt;/code&gt; command provided by drush. The &lt;code&gt;php-eval&lt;/code&gt; command evaluate arbitrary php code after bootstrapping Drupal. &lt;code&gt;CommandUnishTestCase&lt;/code&gt; provides the &lt;code&gt;drush()&lt;/code&gt; function which can be used to execute drush commands. The second argument of the function takes in the arguments to the drush command and the third argument takes the options. Note that it is necessary to provide the options we had defined in the &lt;code&gt;setUp()&lt;/code&gt; function so that it executes the drush command on the proper test site (the one which we created in the setUp function).&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$eval1&lt;/code&gt; and &lt;code&gt;$eval2&lt;/code&gt; contain the php code to be executed in strings and then we pass these as arguments to the &lt;code&gt;php-eval&lt;/code&gt; command. The output of the drush command can be obtained by the &lt;code&gt;getOutput()&lt;/code&gt; function. PHPUnit provides several functions for different types of &lt;a href=&#34;https://phpunit.de/manual/current/en/appendixes.assertions.html&#34;&gt;assetions&lt;/a&gt; which determine whether the test passed or failed.&lt;/p&gt;
+
+&lt;p&gt;After all the tests in a class are finished, the drupal sandbox created for tests is automatically removed. All the tests in a class share the same sandbox. Any test in the middle of the class can remove the existing sandbox and create a new one using the &lt;code&gt;setUpFreshSandBox()&lt;/code&gt; function. The &lt;code&gt;setUpDrupal()&lt;/code&gt; will have to be called again to install drupal for testing after this.&lt;/p&gt;
+
+&lt;h2 id=&#34;running-the-tests:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;Running the tests&lt;/h2&gt;
+
+&lt;p&gt;To run the tests, you have to run PHPUnit pointing to the phpunit.xml.dist inside the drush tests directory. So running the following command from &lt;strong&gt;inside the root of you drush extension&lt;/strong&gt; should run the tests.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;phpunit --configuration &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;path to drush tests directiory&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;path to your tests directory&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;In our case, the path to our tests directory is tests. If you install drush using composer, it will be inside .composer/vendor/drush directory . In this case, following command will work.
+ &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; phpunit --configuration .composer/vendor/drush/drush/tests tests
+ 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;There are other functions provided by the test classes in Unish. You can look them up inside the drush codebase. The best resource to learn about testing drush commands is to look at the existing tests written for the drush core commands. The tests I am writing can be found in the Site Audit github repository &lt;a href=&#34;https://github.com/shivanshuag/site_audit/tree/unit-tests/tests&#34;&gt;here&lt;/a&gt; and these will eventually be merged to the main github repository of Site Audit &lt;a href=&#34;https://github.com/fluxsauce/site_audit&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I would be happy to here feedback and suggestions for improvements on the article.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
