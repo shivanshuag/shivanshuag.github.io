@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mozilla on ninjaduck</title>
+    <link>http://localhost:1313/tags/mozilla/</link>
+    <description>Recent content in Mozilla on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Jul 2015 13:35:54 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/mozilla/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Multi-Factor Authentication In OpenVPN</title>
+      <link>http://localhost:1313/openvpn-mfa/</link>
+      <pubDate>Fri, 10 Jul 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://localhost:1313/openvpn-mfa/</guid>
+      <description>
+
+&lt;p&gt;
+&lt;figure class=&#34;pull-right&#34;&gt;
+    
+        &lt;img src=&#34;http://localhost:1313/images/MWoS1.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;This project was done as a part of &lt;a href=&#34;https://blog.mozilla.org/security/2014/05/15/introducing-mozilla-winter-of-security-2014/&#34;&gt;Mozilla Winter of Security 2014&lt;/a&gt; programme.
+The objective of this project is to implement native Multifactor Authentication Support for OpenVPN. The existing support for Multifactor Authentication in OpenVPN is through deferred C plugins and pythons scripts which has lots of limitations due to the nature they are implemented.&lt;/p&gt;
+
+&lt;h2 id=&#34;need-to-native-mfa-support:16718e779c1309bc2efd475949b70d90&#34;&gt;Need to Native MFA support&lt;/h2&gt;
+
+&lt;p&gt;The plugins are present on the server side where they are called at appropriate places in the authentication process of OpenVPN with credentials. But on the client side, openVPN provides the users options for authenticating through static keys, username/Password or certificates. There is no support for entering OTP or any other credential here. This user ahs to resort to using hacky ways to circumvent this limitation like entering the OTP cancatenated with password which can lead to even more limitations on the length of password and so on. An example plugin, used by mozilla, can be found at &lt;a href=&#34;https://github.com/mozilla-it/duo_openvpn&#34;&gt;https://github.com/mozilla-it/duo_openvpn&lt;/a&gt; .&lt;/p&gt;
+
+&lt;p&gt;This method can also limits the type of credentials that can be taken from the user. Typical Multifactor Authentication solutions also provide Push notifications on smartphones as a way for authentication along with the regular OTP method. Native Support for Multifactor Authentication in OpenVPN will help in supporting these modes of authentication.&lt;/p&gt;
+
+&lt;p&gt;Another use of native MFA support can be maintaining user sessions so that the user does not have to enter the second factor of authentication every time he/she logs in but say only once in a month. These reasons demand for native MFA suport in OpenVPN.&lt;/p&gt;
+
+&lt;h2 id=&#34;mfa-implementation:16718e779c1309bc2efd475949b70d90&#34;&gt;MFA Implementation&lt;/h2&gt;
+
+&lt;p&gt;Our scheme of implementation provides support for three different types of authentication: OTP, Push and User-pass (as of yet) in addition to the certificate check that happens as a part of the normal TLS handshake.&lt;/p&gt;
+
+&lt;p&gt;We have modified the &lt;a href=&#34;https://openvpn.net/index.php/open-source/documentation/security-overview.html&#34;&gt;key-method 2&lt;/a&gt; packet structure used for authentication to include MFA credentials. MFA username and password are sent to the script/plugin in a manner similar to the existing auth-user-pass soution . In case of OTP when there is no username, CN of the user is sent as username. In case of PUSH, CN is sent as username and an empty string as password. Three types of plugins are supported for MFA, one for each of push, otp and user-pass.&lt;/p&gt;
+
+&lt;p&gt;The type for push is - &lt;code&gt;OPENVPN_PLUGIN_AUTH_MFA_PUSH_VERIFY&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;for otp - &lt;code&gt;OPENVPN_PLUGIN_AUTH_MFA_OTP_VERIFY&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;for user-pass - &lt;code&gt;OPENVPN_PLUGIN_AUTH_MFA_USER_PASS_VERIFY&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;mfa-usage-and-config:16718e779c1309bc2efd475949b70d90&#34;&gt;MFA Usage and Config&lt;/h2&gt;
+
+&lt;p&gt;In the server config, put the supported authentication methods as follows&lt;/p&gt;
+
+&lt;p&gt;
+mfa-method method-type [script_file via-env|via-file]
+
+Here method type can be &amp;lsquo;otp&amp;rsquo;, &amp;lsquo;push&amp;rsquo;, &amp;lsquo;user-pass&amp;rsquo;. For example&lt;/p&gt;
+
+&lt;p&gt;
+mfa-method otp auth.pl via-file
+&lt;/p&gt;
+
+&lt;p&gt;The three methods differ in what credentials are asked from the user for authentication. In otp, only password is asked. In push, nothing is asked. This is meant for authentication by Push notification on mobile phones which can be handled by a deferred auth plugin on the server side. In user-pass, both username and password are asked from the user. If you want to use a plugin for authentication on the server, include the following lines in the config&lt;/p&gt;
+
+&lt;p&gt;
+mfa-method method-type
+plugin plugin_shared_object_file
+&lt;/p&gt;
+
+&lt;p&gt;In the client config, put the following line&lt;/p&gt;
+
+&lt;p&gt;
+mfa-method mfa-type
+&lt;/p&gt;
+
+&lt;p&gt;User can authenticate using one method only. Multiple mfa-method lines will give an error.&lt;/p&gt;
+
+&lt;h2 id=&#34;session-support-implementation:16718e779c1309bc2efd475949b70d90&#34;&gt;Session Support Implementation&lt;/h2&gt;
+
+&lt;p&gt;On startup the OpenVPN server generates a random key (48 bytes). When a client successfully authenticates with MFA enabled, the server generates a session token using the tls1_PRF function with the key as the secret and (Client CN + Expiry timestamp) as the data. The expiry timestamp and the token are sent to the client. When the client wants to connect later, it must send the token and the expiry timestamp. If verification succeeds, MFA auth is bypassed. If not, auth fails and the client is prompted for MFA authentication if the auth-retry directive is set to &amp;ldquo;interact&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;session-support-usage-and-config:16718e779c1309bc2efd475949b70d90&#34;&gt;Session Support Usage and Config&lt;/h2&gt;
+
+&lt;p&gt;The server needs to provide the following configuration option:&lt;/p&gt;
+
+&lt;p&gt;
+mfa-session-expiration session-validity
+&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;session-validity&lt;/code&gt; is the duration (in hours) for which the session cookie is valid.&lt;/p&gt;
+
+&lt;p&gt;The client needs to provide the following configuration option:&lt;/p&gt;
+
+&lt;p&gt;
+mfa-session-file filename
+&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;filename&lt;/code&gt; is the path to the file in which session tokens will be stored. If the filename is not provided, then we warn the user and disable session-support.&lt;/p&gt;
+
+&lt;h2 id=&#34;code-demo-and-presentations:16718e779c1309bc2efd475949b70d90&#34;&gt;Code, Demo and Presentations&lt;/h2&gt;
+
+&lt;p&gt;The code for this project can be found at &lt;a href=&#34;https://github.com/mozilla/openvpn&#34;&gt;https://github.com/mozilla/openvpn&lt;/a&gt;. The project wiki can be found &lt;a href=&#34;https://wiki.mozilla.org/Security/Mentorships/MWoS/2014/OpenVPN_MFA&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A video where we have explained the project and given a demo is present &lt;a href=&#34;https://air.mozilla.org/mwos-2014-openvpn-mfa/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
