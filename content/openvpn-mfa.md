@@ -6,7 +6,7 @@ menu = "main"
 title = "Multi-Factor Authentication In OpenVPN"
 +++
 
-{{< figure src="/images/MWoS1.png" class="pull-right" >}}
+{{< figure src="/images/MWoS.png" class="pull-right" >}}
 
 This project was done as a part of [Mozilla Winter of Security 2014](https://blog.mozilla.org/security/2014/05/15/introducing-mozilla-winter-of-security-2014/) programme.
 The objective of this project is to implement native Multifactor Authentication Support for OpenVPN. The existing support for Multifactor Authentication in OpenVPN is through deferred C plugins and pythons scripts which has lots of limitations due to the nature they are implemented.

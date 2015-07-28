@@ -5,7 +5,6 @@ Tags = ["Short"]
 date = "2014-10-03T13:35:54+05:30"
 menu = "main"
 title = "Sunglasses"
-ReadingTime = 5
 +++
 
 "Ghantagahr, Ghantagahr, Ghantagahr .... " cried an auto-rickshaw driver amidst the usual din of a busy crossroad at GT Road in Kanpur. I had been standing there in scorching may afternoon heat for about half an hour. A diverse group of people stood at the side of the road with me waiting anxiously. The unusual scarcity of autos going towards Ghantaghar at the time had made the crowd restive. I ran towards the auto with my bag dangling from one hand and the other signaling for it to stop. A dozen other people ran along with me. But the auto had only one empty seat and the people ahead of me were in a group of twos or threes. I silently praised my luck and got inside.

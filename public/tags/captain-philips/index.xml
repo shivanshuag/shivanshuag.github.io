@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Captain Philips on ninjaduck</title>
-    <link>http://localhost:1313/tags/captain-philips/</link>
+    <link>http://ninjaducks.in/tags/captain-philips/</link>
     <description>Recent content in Captain Philips on ninjaduck</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 11 Jan 2014 13:35:54 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/captain-philips/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://ninjaducks.in/tags/captain-philips/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Movie Review - Captain Phillips</title>
-      <link>http://localhost:1313/movie-review-captain-philips/</link>
+      <link>http://ninjaducks.in/movie-review-captain-philips/</link>
       <pubDate>Sat, 11 Jan 2014 13:35:54 +0530</pubDate>
       
-      <guid>http://localhost:1313/movie-review-captain-philips/</guid>
+      <guid>http://ninjaducks.in/movie-review-captain-philips/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;If you are gonna shoot somebody, you shoot me. I&amp;rsquo;m the captain, not them.&lt;/p&gt;
 &lt;/blockquote&gt;

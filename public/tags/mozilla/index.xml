@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mozilla on ninjaduck</title>
-    <link>http://localhost:1313/tags/mozilla/</link>
+    <link>http://ninjaducks.in/tags/mozilla/</link>
     <description>Recent content in Mozilla on ninjaduck</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Jul 2015 13:35:54 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/mozilla/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://ninjaducks.in/tags/mozilla/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Multi-Factor Authentication In OpenVPN</title>
-      <link>http://localhost:1313/openvpn-mfa/</link>
+      <link>http://ninjaducks.in/openvpn-mfa/</link>
       <pubDate>Fri, 10 Jul 2015 13:35:54 +0530</pubDate>
       
-      <guid>http://localhost:1313/openvpn-mfa/</guid>
+      <guid>http://ninjaducks.in/openvpn-mfa/</guid>
       <description>
 
 &lt;p&gt;
 &lt;figure class=&#34;pull-right&#34;&gt;
     
-        &lt;img src=&#34;http://localhost:1313/images/MWoS1.png&#34; /&gt;
+        &lt;img src=&#34;http://ninjaducks.in/images/MWoS.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -53,26 +53,26 @@ The objective of this project is to implement native Multifactor Authentication 
 
 &lt;p&gt;In the server config, put the supported authentication methods as follows&lt;/p&gt;
 
-&lt;p&gt;
-mfa-method method-type [script_file via-env|via-file]
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method method-type &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;script_file via-env|via-file&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 Here method type can be &amp;lsquo;otp&amp;rsquo;, &amp;lsquo;push&amp;rsquo;, &amp;lsquo;user-pass&amp;rsquo;. For example&lt;/p&gt;
 
-&lt;p&gt;
-mfa-method otp auth.pl via-file
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method otp auth.pl via-file
+&lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
 &lt;p&gt;The three methods differ in what credentials are asked from the user for authentication. In otp, only password is asked. In push, nothing is asked. This is meant for authentication by Push notification on mobile phones which can be handled by a deferred auth plugin on the server side. In user-pass, both username and password are asked from the user. If you want to use a plugin for authentication on the server, include the following lines in the config&lt;/p&gt;
 
-&lt;p&gt;
-mfa-method method-type
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method method-type
 plugin plugin_shared_object_file
+&lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
 &lt;p&gt;In the client config, put the following line&lt;/p&gt;
 
-&lt;p&gt;
-mfa-method mfa-type
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method mfa-type
+&lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
 &lt;p&gt;User can authenticate using one method only. Multiple mfa-method lines will give an error.&lt;/p&gt;
@@ -85,16 +85,16 @@ mfa-method mfa-type
 
 &lt;p&gt;The server needs to provide the following configuration option:&lt;/p&gt;
 
-&lt;p&gt;
-mfa-session-expiration session-validity
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-session-expiration session-validity
+&lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;session-validity&lt;/code&gt; is the duration (in hours) for which the session cookie is valid.&lt;/p&gt;
 
 &lt;p&gt;The client needs to provide the following configuration option:&lt;/p&gt;
 
-&lt;p&gt;
-mfa-session-file filename
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-session-file filename
+&lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;filename&lt;/code&gt; is the path to the file in which session tokens will be stored. If the filename is not provided, then we warn the user and disable session-support.&lt;/p&gt;

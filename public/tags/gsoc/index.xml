@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gsoc on ninjaduck</title>
-    <link>http://localhost:1313/tags/gsoc/</link>
+    <link>http://ninjaducks.in/tags/gsoc/</link>
     <description>Recent content in Gsoc on ninjaduck</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Jun 2014 13:35:54 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/gsoc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://ninjaducks.in/tags/gsoc/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Porting a module to Drupal 8</title>
-      <link>http://localhost:1313/porting-a-module-to-drupal8/</link>
+      <link>http://ninjaducks.in/hacking/porting-a-module-to-drupal8/</link>
       <pubDate>Mon, 02 Jun 2014 13:35:54 +0530</pubDate>
       
-      <guid>http://localhost:1313/porting-a-module-to-drupal8/</guid>
+      <guid>http://ninjaducks.in/hacking/porting-a-module-to-drupal8/</guid>
       <description>
 
 &lt;p&gt;I am porting a drupal 7 module named &lt;a href=&#34;https://drupal.org/project/securesite&#34;&gt;securesite&lt;/a&gt; to drupal 8 under of Google Summer Of Code&amp;rsquo;14. It has  been two weeks into the coding period and I am thoroughly enjoying it. This is my first port in a series of posts that I plan to write during this period.&lt;/p&gt;
@@ -76,10 +76,10 @@ If you have not developed a drupal 7 module before, the difference between disab
     
     <item>
       <title>A summer for Drupal</title>
-      <link>http://localhost:1313/a-summer-for-drupal/</link>
+      <link>http://ninjaducks.in/hacking/a-summer-for-drupal/</link>
       <pubDate>Tue, 22 Apr 2014 13:35:54 +0530</pubDate>
       
-      <guid>http://localhost:1313/a-summer-for-drupal/</guid>
+      <guid>http://ninjaducks.in/hacking/a-summer-for-drupal/</guid>
       <description>&lt;p&gt;Today has been great for me in many ways. I reached the 1000 friends mark on fb, scored good in an exam. But the best thing that happened to me today is getting accepted into Google Summer Of Code&amp;rsquo;14.&lt;/p&gt;
 
 &lt;p&gt;This is the first time I applied in this program and getting selected has been nothing less than pure bliss. I am exaggerating a little here but there is that feeling that lasts just for a few seconds. After that, it is goes away in &lt;a href=&#34;http://www.urbandictionary.com/define.php?term=GPL&amp;amp;defid=1069443&#34;&gt;GPL&lt;/a&gt; :P, contemplating about the summers and gloating over the results.&lt;/p&gt;

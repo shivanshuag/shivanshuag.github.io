@@ -1,5 +1,9 @@
-baseurl = "http://shivanshuag.me/"
+baseurl = "http://ninjaducks.in/"
 languageCode = "en-us"
 title = "ninjaduck"
 theme = "hugo-crisp"
 pygmentsStyle = "colorful"
+
+[permalinks]
+	top = "/:filename/"
+	hacking = "/hacking/:filename/"

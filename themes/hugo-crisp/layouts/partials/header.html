@@ -70,14 +70,14 @@
     }
     </script>
     {{ end }}
-    
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
     {{ partial "criticalpath.html" . }}
     </head>
     <body>
         <header id="header">
-            <a id="logo" href="{{ .Site.BaseURL }}"><img src="http://ninjaducks.in/images/ninjaducks.png" alt="{{ .Site.Title }}" /></a>
-            <h1><a href="{{.Site.BaseURL}}">{{.Site.Title}}</a></h1>
-            <p>Something Cool!</p>
+            <a id="logo" href="{{ .Site.BaseURL }}"><img src="/images/duck.png" alt="{{ .Site.Title }}" /></a>
+            <h1><a href="{{.Site.BaseURL}}" style="font-family: 'Vollkorn', serif;font-size:1.3em;">{{.Site.Title}}</a></h1>
+            <!--<p style="margin-top:0 !important; text-align: center;">mad World...</p>-->
 
             {{ partial "follow.html" . }}
             {{ partial "navigation.html" . }}
