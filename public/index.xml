@@ -6,8 +6,181 @@
     <description>Recent content on ninjaduck</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2015 13:35:54 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2015 13:35:54 +0530</lastBuildDate>
     <atom:link href="http://ninjaducks.in/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Site Audit - WebPageTest and Google PageSpeed Insights integration</title>
+      <link>http://ninjaducks.in/hacking/site-audit-pagespeed-webpagetest/</link>
+      <pubDate>Wed, 12 Aug 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://ninjaducks.in/hacking/site-audit-pagespeed-webpagetest/</guid>
+      <description>&lt;p&gt;In last week, I have been working on integrating GooglePageSpeed Insights v2 api and &lt;a href=&#34;http://www.webpagetest.org/&#34;&gt;webpagetest.org&lt;/a&gt; with site_audit.&lt;/p&gt;
+
+&lt;p&gt;Google PageSpeed Ingihts measures how the page can improve its performance on:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;time to above-the-fold load: Elapsed time from the moment a user requests a new page and to the moment the above-the-fold content is rendered by the browser.&lt;/li&gt;
+&lt;li&gt;time to full page load: Elapsed time from the moment a user requests a new page to the moment the page is fully rendered by the browser.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I then generates actionable reports based on the above tests on how to make the webaite load faster. PageSpeed Insights gives recommanedation for both - for mobile and desktop devices. An API key is needed to run the PageSpeed Insights test. Follow the instructions given &lt;a href=&#34;https://developers.google.com/+/web/api/rest/oauth&#34;&gt;here&lt;/a&gt; to obtain an API key.&lt;/p&gt;
+
+&lt;p&gt;Here is a sample report I generated for &lt;a href=&#34;https://drupal.org&#34;&gt;https://drupal.org&lt;/a&gt; using site_audit&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; ❯ drush @d8 afe --detail https://drupal.org &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;API-Key&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;                                                                             &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;19:34:16&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+Front End: 72%
+  Google PageSpeed Insights: Analysis by the Google PageSpeed Insights service
+    Desktop:
+      Page stats
+        - Number Resources: 54
+        - Number Hosts: 20
+        - Total Request Bytes: 9.74kB
+        - Number Static Resources: 23
+        - Html Response Bytes: 27.27kB
+        - Css Response Bytes: 132.35kB
+        - Image Response Bytes: 377.99kB
+        - Javascript Response Bytes: 323.1kB
+        - Other Response Bytes: 10.97kB
+        - Number Js Resources: 12
+        - Number Css Resources: 2
+        Detailed results:
+          Avoid landing page redirects: 
+            Your page has no redirects. Learn more about avoiding landing page redirects.
+          Enable compression: &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;low impact: 0.5096&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+            Compressing resources with gzip or deflate can reduce the number of bytes sent over the network.
+            Enable compression &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; the following resources to reduce their transfer size by https://developers.google.com/speed/docs/insights/EnableCompression &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;4.6KiB reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Compressing https://www.drupal.org/sites/all/modules/drupalorg/drupalorg/images/d8.svg could save 2.8KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;60% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Compressing https://www.drupal.org/sites/all/themes/bluecheese/images/community-users.svg could save 1.1KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;51% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Compressing https://www.drupal.org/sites/all/themes/bluecheese/images/community-commits.svg could save 683B &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;48% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+          Leverage browser caching: &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;low impact: 2.483630952381&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+            Setting an expiry date or a maximum age in the HTTP headers &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; static resources instructs the browser to load previously downloaded resources from &lt;span style=&#34;color: #007020&#34;&gt;local &lt;/span&gt;disk rather than over the network.
+            Leverage browser caching &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; the following cacheable resources:
+              https://tag.perfectaudience.com/serve/54419274f6c96ed073000003.js &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;30&lt;/span&gt; minutes&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+              https://pagead2.googlesyndication.com/pagead/osd.js &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;60&lt;/span&gt; minutes&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+              https://partner.googleadservices.com/gampad/google_service.js &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;60&lt;/span&gt; minutes&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+              https://securepubads.g.doubleclick.net/gampad/google_ads.js &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;60&lt;/span&gt; minutes&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+              https://www.google-analytics.com/analytics.js &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;2&lt;/span&gt; hours&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+          Reduce server response &lt;span style=&#34;color: #007020&#34;&gt;time&lt;/span&gt;: &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;low impact: 0.67&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+
+            In our &lt;span style=&#34;color: #007020&#34;&gt;test&lt;/span&gt;, your server responded in 0.27 seconds. There are many factors that can slow down your server response time. Please &lt;span style=&#34;color: #007020&#34;&gt;read &lt;/span&gt;our recommendations to learn how you can monitor and measure where your server is spending the most time.
+          Minify CSS: 
+            Your CSS is minified. Learn more about minifying CSS.
+          Minify HTML: 
+            Your HTML is minified. Learn more about minifying HTML.
+          Minify JavaScript: &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;low impact: 0.9004&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+            Compacting JavaScript code can save many bytes of data and speed up downloading, parsing, and execution time.
+            Minify JavaScript &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; the following resources to reduce their size by https://developers.google.com/speed/docs/insights/MinifyResources &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;8.3KiB reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Minifying https://www.drupal.org/files/advagg_js/js__UiO29A8qiU-liB_96gCC8E9JKDzRn317nHrd6s0stps__AwigsEBkeDuYYEcio1o-kRLmSuICds4-G7yNidtd27A__GKPXQ36vHDFbrOKQtK_IEMxZ1RUffPGNLuaADE9Tq48.js could save 4.3KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;14% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; after compression.
+              Minifying https://www.drupal.org/files/advagg_js/js__5OZAYFxGTZOYdP8S9RW-QXHGBJVbXz4b02eO_gjMy78__HWGhrFIv37TjqCCJrDkkX6L1WUDisR3SpJLbn2PZpps__GKPXQ36vHDFbrOKQtK_IEMxZ1RUffPGNLuaADE9Tq48.js could save 1.6KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;35% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; after compression.
+              Minifying https://www.drupal.org/files/advagg_js/js__F-D1Wr4s7lvQ_5eZ1uikRth42rCUHezP7S--qIwe4BE__BENqbZRxUBWhW4xtQpgAaYXNTGo08uOCQ9RnS4xs6mE__GKPXQ36vHDFbrOKQtK_IEMxZ1RUffPGNLuaADE9Tq48.js could save 1.6KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;39% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; after compression.
+              Minifying https://www.drupal.org/files/advagg_js/js__EMCfKGudr6YbSRPLPtEJCm6hBbDPYG9OmcnCkXac-lw___4lW3RAogR_Dg7YQ0GivoywrPe3IWr3Aivpj4b4lFKQ__GKPXQ36vHDFbrOKQtK_IEMxZ1RUffPGNLuaADE9Tq48.js could save 772B &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;11% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; after compression.
+          Eliminate render-blocking JavaScript and CSS in above-the-fold content: &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;HIGH impact: 18&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+            Your page has &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;2&lt;/span&gt; blocking script resources and &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;2&lt;/span&gt; blocking CSS resources. This causes a delay in rendering your page.
+            None of the above-the-fold content on your page could be rendered without waiting &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; the following resources to load. Try to defer or asynchronously load blocking resources, or inline the critical portions of those resources directly in the HTML.
+            Remove render-blocking JavaScript:
+              https://partner.googleadservices.com/gampad/google_service.js
+              https://securepubads.g.doubleclick.net/gampad/google_ads.js
+            Optimize CSS Delivery of the following:
+              https://www.drupal.org/files/advagg_css/css__sOq59WKNiWOgbu4pGFLqc02-UxptzM-43WLTi07EISQ___n4Hsqnm5n4Q3o61O6Nwbi2uyaDvjIjy3P1ub9akHgM__GKPXQ36vHDFbrOKQtK_IEMxZ1RUffPGNLuaADE9Tq48.css
+              https://www.drupal.org/files/advagg_css/css__FGk3wEy-4xUHLoLxx47psMf0CNXbYM7sWoYboFOgmrQ__3nTsvNkh65TIbU2ER0cjRnslRv1W9gKUmayT_E04YcY__GKPXQ36vHDFbrOKQtK_IEMxZ1RUffPGNLuaADE9Tq48.css
+          Optimize images: &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;HIGH impact: 21.849&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+            Properly formatting and compressing images can save many bytes of data.
+            Optimize the following images to reduce their size by https://developers.google.com/speed/docs/insights/OptimizeImages &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;213.4KiB reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Compressing and resizing https://www.drupal.org/files/styles/case-4-2x/public/Drupal-case-study-1.png?itok&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;QeT_-GJq could save 144.5KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;70% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Compressing and resizing https://www.drupal.org/files/styles/case-4-2x/public/first4numbers-by-website-express.jpg?itok&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;hllwuASQ could save 30.6KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;70% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Compressing and resizing https://www.drupal.org/files/styles/case-4-2x/public/ABOUT.jpg?itok&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;SqZStV_H could save 29.3KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;71% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Losslessly compressing https://tpc.googlesyndication.com/simgad/13661195180415780042 could save 7.6KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;17% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Losslessly compressing https://www.drupal.org/sites/all/themes/bluecheese/images/sprites.png could save 1.3KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;12% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+          Prioritize visible content: 
+            You have the above-the-fold content properly prioritized. Learn more about prioritizing visible content.
+    Mobile
+      Page stats
+        - Number Resources: 55
+        - Number Hosts: 21
+        - Total Request Bytes: 9.84kB
+        - Number Static Resources: 23
+        - Html Response Bytes: 28.25kB
+        - Css Response Bytes: 132.35kB
+        - Image Response Bytes: 377.28kB
+        - Javascript Response Bytes: 319.4kB
+        - Other Response Bytes: 10.96kB
+        - Number Js Resources: 12
+        - Number Css Resources: 2
+        Detailed results:
+          Avoid landing page redirects: 
+            Your page has no redirects. Learn more about avoiding landing page redirects.
+          Avoid plugins: 
+            Your page does not appear to use plugins, which would prevent content from being usable on many platforms. Learn more about the importance of avoiding plugins.
+          Configure the viewport: 
+            Your page specifies a viewport matching the device&lt;span style=&#34;color: #FF0000; background-color: #FFAAAA&#34;&gt;&amp;#39;&lt;/span&gt;s size, which allows it to render properly on all devices. Learn more about configuring viewports.
+          Enable compression: &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;low impact: 0.5096&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+            Compressing resources with gzip or deflate can reduce the number of bytes sent over the network.
+            Enable compression &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; the following resources to reduce their transfer size by https://developers.google.com/speed/docs/insights/EnableCompression &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;4.6KiB reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Compressing https://www.drupal.org/sites/all/modules/drupalorg/drupalorg/images/d8.svg could save 2.8KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;60% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Compressing https://www.drupal.org/sites/all/themes/bluecheese/images/community-users.svg could save 1.1KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;51% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Compressing https://www.drupal.org/sites/all/themes/bluecheese/images/community-commits.svg could save 683B &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;48% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+          Leverage browser caching: &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;HIGH impact: 3.7254464285714&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+            Setting an expiry date or a maximum age in the HTTP headers &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; static resources instructs the browser to load previously downloaded resources from &lt;span style=&#34;color: #007020&#34;&gt;local &lt;/span&gt;disk rather than over the network.
+            Leverage browser caching &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; the following cacheable resources:
+              https://tag.perfectaudience.com/serve/54419274f6c96ed073000003.js &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;30&lt;/span&gt; minutes&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+              https://pagead2.googlesyndication.com/pagead/osd.js &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;60&lt;/span&gt; minutes&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+              https://partner.googleadservices.com/gampad/google_service.js &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;60&lt;/span&gt; minutes&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+              https://securepubads.g.doubleclick.net/gampad/google_ads.js &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;60&lt;/span&gt; minutes&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+              https://www.google-analytics.com/analytics.js &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;2&lt;/span&gt; hours&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+          Reduce server response &lt;span style=&#34;color: #007020&#34;&gt;time&lt;/span&gt;: 
+            Your server responded quickly. Learn more about server response &lt;span style=&#34;color: #007020&#34;&gt;time &lt;/span&gt;optimization.
+          Minify CSS: 
+            Your CSS is minified. Learn more about minifying CSS.
+          Minify HTML: 
+            Your HTML is minified. Learn more about minifying HTML.
+          Minify JavaScript: &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;low impact: 0.9004&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+            Compacting JavaScript code can save many bytes of data and speed up downloading, parsing, and execution time.
+            Minify JavaScript &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; the following resources to reduce their size by https://developers.google.com/speed/docs/insights/MinifyResources &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;8.3KiB reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Minifying https://www.drupal.org/files/advagg_js/js__UiO29A8qiU-liB_96gCC8E9JKDzRn317nHrd6s0stps__AwigsEBkeDuYYEcio1o-kRLmSuICds4-G7yNidtd27A__GKPXQ36vHDFbrOKQtK_IEMxZ1RUffPGNLuaADE9Tq48.js could save 4.3KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;14% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; after compression.
+              Minifying https://www.drupal.org/files/advagg_js/js__5OZAYFxGTZOYdP8S9RW-QXHGBJVbXz4b02eO_gjMy78__HWGhrFIv37TjqCCJrDkkX6L1WUDisR3SpJLbn2PZpps__GKPXQ36vHDFbrOKQtK_IEMxZ1RUffPGNLuaADE9Tq48.js could save 1.6KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;35% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; after compression.
+              Minifying https://www.drupal.org/files/advagg_js/js__F-D1Wr4s7lvQ_5eZ1uikRth42rCUHezP7S--qIwe4BE__BENqbZRxUBWhW4xtQpgAaYXNTGo08uOCQ9RnS4xs6mE__GKPXQ36vHDFbrOKQtK_IEMxZ1RUffPGNLuaADE9Tq48.js could save 1.6KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;39% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; after compression.
+              Minifying https://www.drupal.org/files/advagg_js/js__EMCfKGudr6YbSRPLPtEJCm6hBbDPYG9OmcnCkXac-lw___4lW3RAogR_Dg7YQ0GivoywrPe3IWr3Aivpj4b4lFKQ__GKPXQ36vHDFbrOKQtK_IEMxZ1RUffPGNLuaADE9Tq48.js could save 772B &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;11% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; after compression.
+          Eliminate render-blocking JavaScript and CSS in above-the-fold content: &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;HIGH impact: 72&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+            Your page has &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;2&lt;/span&gt; blocking script resources and &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;2&lt;/span&gt; blocking CSS resources. This causes a delay in rendering your page.
+            None of the above-the-fold content on your page could be rendered without waiting &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; the following resources to load. Try to defer or asynchronously load blocking resources, or inline the critical portions of those resources directly in the HTML.
+            Remove render-blocking JavaScript:
+              https://partner.googleadservices.com/gampad/google_service.js
+              https://securepubads.g.doubleclick.net/gampad/google_ads.js
+            Optimize CSS Delivery of the following:
+              https://www.drupal.org/files/advagg_css/css__sOq59WKNiWOgbu4pGFLqc02-UxptzM-43WLTi07EISQ___n4Hsqnm5n4Q3o61O6Nwbi2uyaDvjIjy3P1ub9akHgM__GKPXQ36vHDFbrOKQtK_IEMxZ1RUffPGNLuaADE9Tq48.css
+              https://www.drupal.org/files/advagg_css/css__FGk3wEy-4xUHLoLxx47psMf0CNXbYM7sWoYboFOgmrQ__3nTsvNkh65TIbU2ER0cjRnslRv1W9gKUmayT_E04YcY__GKPXQ36vHDFbrOKQtK_IEMxZ1RUffPGNLuaADE9Tq48.css
+          Optimize images: &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;low impact: 1.2324&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+            Properly formatting and compressing images can save many bytes of data.
+            Optimize the following images to reduce their size by https://developers.google.com/speed/docs/insights/OptimizeImages &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;12KiB reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Losslessly compressing https://tpc.googlesyndication.com/simgad/13661195180415780042 could save 7.6KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;17% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Losslessly compressing https://www.drupal.org/files/styles/case-4-2x/public/first4numbers-by-website-express.jpg?itok&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;hllwuASQ could save 2.4KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;6% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Losslessly compressing https://www.drupal.org/sites/all/themes/bluecheese/images/sprites.png could save 1.3KiB &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;12% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+              Losslessly compressing https://www.drupal.org/files/styles/case-4-2x/public/ABOUT.jpg?itok&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;SqZStV_H could save 661B &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;2% reduction&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;.
+          Prioritize visible content: 
+            You have the above-the-fold content properly prioritized. Learn more about prioritizing visible content.
+          Size content to viewport: 
+            The contents of your page fit within the viewport. Learn more about sizing content to the viewport.
+          Size tap targets appropriately: &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;HIGH impact: 10.320821005917&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+            Some of the links/buttons on your webpage may be too small &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; a user to easily tap on a touchscreen. Consider making these tap targets larger to provide a better user experience.
+            The following tap targets are close to other nearby tap targets and may need additional spacing around them.
+              The tap target &amp;lt;a &lt;span style=&#34;color: #996633&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;#content&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;element-invisi…ment-focusable&amp;quot;&lt;/span&gt;&amp;gt;Skip to main content&amp;lt;/a&amp;gt; and &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1&lt;/span&gt; others are close to other tap targets final.
+              The tap target &amp;lt;a &lt;span style=&#34;color: #996633&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;/start&amp;quot;&lt;/span&gt;&amp;gt;Get Started&amp;lt;/a&amp;gt; and &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;3&lt;/span&gt; others are close to other tap targets final.
+              The tap target &amp;lt;input &lt;span style=&#34;color: #996633&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;edit-meta-type-&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;radio&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;meta_type&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;form-radio&amp;quot;&lt;/span&gt;&amp;gt; and &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;5&lt;/span&gt; others are close to other tap targets final.
+              The tap target &amp;lt;label &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;edit-meta-type-&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;option&amp;quot;&lt;/span&gt;&amp;gt;All&amp;lt;/label&amp;gt; and &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;5&lt;/span&gt; others are close to other tap targets final.
+              The tap target &amp;lt;a &lt;span style=&#34;color: #996633&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;tab-news-link&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;#tab-news&amp;quot;&lt;/span&gt;&amp;gt;News&amp;lt;/a&amp;gt; is close to &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1&lt;/span&gt; other tap targets.
+              The tap target &amp;lt;a &lt;span style=&#34;color: #996633&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;tab-commits-link&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;#tab-commits&amp;quot;&lt;/span&gt;&amp;gt;Commits&amp;lt;/a&amp;gt; is close to &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1&lt;/span&gt; other tap targets.
+              The tap target &amp;lt;a &lt;span style=&#34;color: #996633&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;/drupal-8.0&amp;quot;&lt;/span&gt;&amp;gt;Drupal &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;8&lt;/span&gt; is in beta&amp;lt;/a&amp;gt; is close to &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1&lt;/span&gt; other tap targets.
+              The tap target &amp;lt;a &lt;span style=&#34;color: #996633&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;https://groups…g/core/updates&amp;quot;&lt;/span&gt;&amp;gt;regular updates&amp;lt;/a&amp;gt; and &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;7&lt;/span&gt; others are close to other tap targets.
+              The tap target &amp;lt;a &lt;span style=&#34;color: #996633&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;https://www.drupal.org/news&amp;quot;&lt;/span&gt;&amp;gt;Drupal News&amp;lt;/a&amp;gt; and &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;4&lt;/span&gt; others are close to other tap targets.
+              The tap target &amp;lt;a &lt;span style=&#34;color: #996633&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;https://www.drupal.org/planet&amp;quot;&lt;/span&gt;&amp;gt;Planet Drupal&amp;lt;/a&amp;gt; and &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;26&lt;/span&gt; others are close to other tap targets.
+          Use legible font sizes: 
+            The text on your page is legible. Learn more about using legible font sizes.
+      Full report at https://developers.google.com/speed/pagespeed/insights
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Multi-Factor Authentication In OpenVPN</title>
@@ -606,10 +779,10 @@ _______________________________________
     
     <item>
       <title>Sunglasses</title>
-      <link>http://ninjaducks.in/Sunglasses/</link>
+      <link>http://ninjaducks.in/shorts/sunglasses</link>
       <pubDate>Fri, 03 Oct 2014 13:35:54 +0530</pubDate>
       
-      <guid>http://ninjaducks.in/Sunglasses/</guid>
+      <guid>http://ninjaducks.in/shorts/sunglasses</guid>
       <description>&lt;p&gt;&amp;ldquo;Ghantagahr, Ghantagahr, Ghantagahr &amp;hellip;. &amp;rdquo; cried an auto-rickshaw driver amidst the usual din of a busy crossroad at GT Road in Kanpur. I had been standing there in scorching may afternoon heat for about half an hour. A diverse group of people stood at the side of the road with me waiting anxiously. The unusual scarcity of autos going towards Ghantaghar at the time had made the crowd restive. I ran towards the auto with my bag dangling from one hand and the other signaling for it to stop. A dozen other people ran along with me. But the auto had only one empty seat and the people ahead of me were in a group of twos or threes. I silently praised my luck and got inside.&lt;/p&gt;
 
 &lt;p&gt;As I entered the auto, the first thing that my eyes fell on were the sunglasses. Sitting nicely upon her dimpled cheeks, the sunglasses perfectly complemented her impeccable milky skin. I have never liked sunglasses. They simply take the color out of everything, make everything around you look so dreary. But there was something enticing about that girl and her sunglasses.&lt;/p&gt;
@@ -629,39 +802,6 @@ _______________________________________
 &lt;p&gt;Then something strange happened. As I was looking at her, she extended her hand and tapped me gently on my shoulder. This gesture perplexed me a little. But she was still looking at the man sitting next to me. She again asked the man to let her pass. Her hand was still on my shoulder. She shook my shoulder and again told the man to remove the bag out of her way. But the man had no bag. I had a bag. Too late I realised that she had a &lt;a href=&#34;http://en.wikipedia.org/wiki/Strabismus&#34;&gt;squint&lt;/a&gt; in her eyes and she was talking to me this whole time. She bent down, lifted my bag to let herself past me and got out.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Disclaimer: This is a work of fiction. Names, characters, places, events and incidents are either a products of author&amp;rsquo;s imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental&lt;/em&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>http://ninjaducks.in/about/</link>
-      <pubDate>Fri, 03 Oct 2014 13:35:54 +0530</pubDate>
-      
-      <guid>http://ninjaducks.in/about/</guid>
-      <description>
-
-&lt;p&gt;I am Shivanshu, a 5th year B.Tech M.Tech Dual Degree student at IIT Kanpur studying Computer Science and Engineering. I will graduate in summer 2016. I feel a little uncomfortable talking about myself but since you have visited this page, I feel obliged to write more.&lt;/p&gt;
-
-&lt;p&gt;I am the type of being that conforms to &lt;a href=&#34;http://www.catb.org/esr/faqs/hacker-howto.html#attitude&#34;&gt;The Hacker Attitude&lt;/a&gt; and try to utilize my time in solving some fascinating problem through technology but I am yet to complete my &lt;a href=&#34;http://www.wisdomgroup.com/blog/10000-hours-of-practice/&#34;&gt;1000 hours&lt;/a&gt; to master the craft. I am particularly interested in web technologies and I also contribute a little to open-source.&lt;/p&gt;
-
-&lt;p&gt;I try to read as much as I can but despite my efforts, I realize that I am not able to read more than about 15 books in an year. I read all kinds of books but of all the genre, I like the classics the most. I also like to watch lots of movies/tv-series/anime in my free time. Sometimes I binge-watch an entire tv-series or anime.&lt;/p&gt;
-
-&lt;h3 id=&#34;blog-name:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Blog Name?&lt;/h3&gt;
-
-&lt;p&gt;Why &lt;code&gt;ninjaduck&lt;/code&gt;?&lt;br /&gt;
- It is an offbeat unconventional name and sounds cool.&lt;/p&gt;
-
-&lt;h3 id=&#34;favorites:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Favorites&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;OS - Arch Linux&lt;/li&gt;
-&lt;li&gt;Movie - &lt;a href=&#34;http://www.imdb.com/title/tt0970179/&#34;&gt;Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Book - &lt;a href=&#34;https://www.goodreads.com/book/show/14743.The_God_Delusion&#34;&gt;The God Delusion&lt;/a&gt; by Richard Dawkins&lt;/li&gt;
-&lt;li&gt;Music - Coldplay&lt;/li&gt;
-&lt;li&gt;Anime - &lt;a href=&#34;http://www.imdb.com/title/tt0434665/&#34;&gt;Bleach&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;TV Series - &lt;a href=&#34;http://www.imdb.com/title/tt2802850/&#34;&gt;Fargo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Poetry - The Charge of the Light Brigade by Lord Alfred Tenyson and Where The Mind Is Without Fear by Rabindranath Tagore&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
@@ -837,15 +977,15 @@ If you have not developed a drupal 7 module before, the difference between disab
     
     <item>
       <title>Gnome 3 to i3</title>
-      <link>http://ninjaducks.in/hacking/gnome3-to-i3/</link>
+      <link>http://ninjaducks.in/hacking/gnome-3-to-i-3/</link>
       <pubDate>Mon, 27 Jan 2014 13:35:54 +0530</pubDate>
       
-      <guid>http://ninjaducks.in/hacking/gnome3-to-i3/</guid>
+      <guid>http://ninjaducks.in/hacking/gnome-3-to-i-3/</guid>
       <description>
 
 &lt;p&gt;I have been a linux user for more than two years now and the search for a perfect desktop environment is still on. I have tried many of the popular ones - Unity, Gnome 2 and 3, KDE, Cinnamon and MATE. Each of them have a different philosophy which is suitable for some type of users but all of them are either very heavy-weight or have a some very frustrating bugs. So, I decided to try a new window manager instead of a Desktop Environment and switched to &lt;a href=&#34;http://i3wm.org/&#34;&gt;i3&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;why-i-switched-to-i3:82f3f3b8d9a675e4e7d10c8db18af926&#34;&gt;Why I switched to i3&lt;/h2&gt;
+&lt;h2 id=&#34;why-i-switched-to-i3:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Why I switched to i3&lt;/h2&gt;
 
 &lt;p&gt;i3 is a very light-weight tiling window manager. Since quite some time I had started feeling all the  panels, the system menus, the starters, the status applets, desktop background, drag-drop functionality, border decoration and animations which Desktop environments provide to be useless. These functionalities consumed a lot of resources and slowed down my system. Moreover, more the functionalities, more are the bugs. I could do away with all those functionalities. I just needed a Window Manager. &lt;a href=&#34;http://adereth.github.io/blog/2013/10/02/why-you-should-try-a-tiling-window-manager/&#34;&gt;This&lt;/a&gt; blog post on using a tiling wm also motivated me.&lt;/p&gt;
 
@@ -857,7 +997,7 @@ If you have not developed a drupal 7 module before, the difference between disab
 
 &lt;p&gt;Following is a breif tutorial on things I found necessary to learn being a newbie to tiling wm.&lt;/p&gt;
 
-&lt;h2 id=&#34;installing-i3:82f3f3b8d9a675e4e7d10c8db18af926&#34;&gt;Installing i3&lt;/h2&gt;
+&lt;h2 id=&#34;installing-i3:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Installing i3&lt;/h2&gt;
 
 &lt;p&gt;For ubuntu,&lt;/p&gt;
 
@@ -869,13 +1009,13 @@ apt-get install i3
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
-&lt;h2 id=&#34;getting-used-to-i3:82f3f3b8d9a675e4e7d10c8db18af926&#34;&gt;Getting Used to i3&lt;/h2&gt;
+&lt;h2 id=&#34;getting-used-to-i3:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Getting Used to i3&lt;/h2&gt;
 
 &lt;p&gt;A good place to start is &lt;a href=&#34;http://build.i3wm.org/docs/userguide.html&#34;&gt;i3 User&amp;rsquo;s Guide&lt;/a&gt;. But it contains a lot of information which can be overwhelming at times.&lt;/p&gt;
 
 &lt;p&gt;When you first start i3, it asks if you want to use the default config(default config file is located in &lt;code&gt;/etc/i3&lt;/code&gt;) or create a new config in &lt;code&gt;~/.i3&lt;/code&gt;. I chose new config and it created a new config file. To edit the default config, this file needs to be updated. Then it asks for a mod key giving Alt key and Window key options. I preferred Alt Key.&lt;/p&gt;
 
-&lt;h3 id=&#34;some-indispensable-shortcuts:82f3f3b8d9a675e4e7d10c8db18af926&#34;&gt;Some Indispensable Shortcuts&lt;/h3&gt;
+&lt;h3 id=&#34;some-indispensable-shortcuts:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Some Indispensable Shortcuts&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Alt + Enter - open Terminal&lt;/li&gt;
@@ -890,11 +1030,11 @@ apt-get install i3
 
 &lt;p&gt;These are default shortcuts and can be changed by updating the config file.&lt;/p&gt;
 
-&lt;h3 id=&#34;tabbed-layout:82f3f3b8d9a675e4e7d10c8db18af926&#34;&gt;Tabbed Layout&lt;/h3&gt;
+&lt;h3 id=&#34;tabbed-layout:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Tabbed Layout&lt;/h3&gt;
 
 &lt;p&gt;By default when you open a new window, the current window splits either horizontally or vertically to accommodate the new one. I prefer tabbed layout to horizontal/vertical or stacked layout. Use &lt;code&gt;Alt + W&lt;/code&gt; to switch to tabbed layout.&lt;/p&gt;
 
-&lt;h3 id=&#34;volume-control:82f3f3b8d9a675e4e7d10c8db18af926&#34;&gt;Volume Control&lt;/h3&gt;
+&lt;h3 id=&#34;volume-control:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Volume Control&lt;/h3&gt;
 
 &lt;p&gt;There is no volume control panel by default in i3. You can bind your own shortcuts to volume control. Modify your config to include the following&lt;/p&gt;
 
@@ -907,7 +1047,7 @@ bindsym XF86AudioRaiseVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;
 
 &lt;p&gt;&lt;em&gt;To reload the config file after making changes, use Alt + Shift + C&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;screen-lock:82f3f3b8d9a675e4e7d10c8db18af926&#34;&gt;Screen Lock&lt;/h3&gt;
+&lt;h3 id=&#34;screen-lock:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Screen Lock&lt;/h3&gt;
 
 &lt;p&gt;For screen lock, I use &lt;code&gt;gnome-screensaver&lt;/code&gt;. Gnome Screensaver locks the screen on  &lt;code&gt;gnome-screensaver-command -l&lt;/code&gt; command. I want my screen to lock automatically after 1 minute of inactivity. For this, I use &lt;code&gt;xautolock&lt;/code&gt;.&lt;/p&gt;
 
@@ -922,7 +1062,7 @@ bindsym XF86AudioRaiseVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
-&lt;h3 id=&#34;reboot-suspend-and-shutdown:82f3f3b8d9a675e4e7d10c8db18af926&#34;&gt;Reboot, Suspend and Shutdown&lt;/h3&gt;
+&lt;h3 id=&#34;reboot-suspend-and-shutdown:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Reboot, Suspend and Shutdown&lt;/h3&gt;
 
 &lt;p&gt;The commands for shutdown is &lt;code&gt;sudo shutdown -Ph now&lt;/code&gt;, for reboot is &lt;code&gt;sudo reboot&lt;/code&gt; and for suspend is &lt;code&gt;sudo pm-suspend&lt;/code&gt;.
 Since all these commands require root access and hence password, it will not be possible for i3 to bind them to keys normally. We need to create a script for each of these commands and add a no-password entry for them in sudoers file. Run &lt;code&gt;sudo visudo&lt;/code&gt; and add the following lines at the end of the file. Adding them at the end is important.&lt;/p&gt;
@@ -943,7 +1083,7 @@ bindsym Control+Mod1+r &lt;span style=&#34;color: #007020&#34;&gt;exec &lt;/span
 
 &lt;p&gt;Notice that I have also locked the screen before suspending the system so that it requires password on wakeup.&lt;/p&gt;
 
-&lt;h3 id=&#34;battery-low-warning:82f3f3b8d9a675e4e7d10c8db18af926&#34;&gt;Battery Low Warning&lt;/h3&gt;
+&lt;h3 id=&#34;battery-low-warning:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Battery Low Warning&lt;/h3&gt;
 
 &lt;p&gt;I want a warning when my battery is low. For this, I have used a script I found on archlinux forum&amp;rsquo;s i3 thread. This script uses i3-nagbar to give warnings and needs acpi installed. It also need root permissions to run, so add a no-password entry for it in the sudoers file. Then add it in the config file.&lt;/p&gt;
 

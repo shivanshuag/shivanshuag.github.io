@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://ninjaducks.in/</loc>
-    <lastmod>2015-07-10T13:35:54+05:30</lastmod>
+    <lastmod>2015-08-12T13:35:54+05:30</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ninjaducks.in/hacking/site-audit-pagespeed-webpagetest/</loc>
+    <lastmod>2015-08-12T13:35:54+05:30</lastmod>
   </url>
   
   <url>
@@ -38,12 +43,7 @@
   </url>
   
   <url>
-    <loc>http://ninjaducks.in/Sunglasses/</loc>
-    <lastmod>2014-10-03T13:35:54+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ninjaducks.in/about/</loc>
+    <loc>http://ninjaducks.in/shorts/sunglasses</loc>
     <lastmod>2014-10-03T13:35:54+05:30</lastmod>
   </url>
   
@@ -73,13 +73,17 @@
   </url>
   
   <url>
-    <loc>http://ninjaducks.in/hacking/gnome3-to-i3/</loc>
+    <loc>http://ninjaducks.in/hacking/gnome-3-to-i-3/</loc>
     <lastmod>2014-01-27T13:35:54+05:30</lastmod>
   </url>
   
   <url>
     <loc>http://ninjaducks.in/movie-review-captain-philips/</loc>
     <lastmod>2014-01-11T13:35:54+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ninjaducks.in/about/</loc>
   </url>
   
 </urlset>

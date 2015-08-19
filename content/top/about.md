@@ -1,7 +1,7 @@
 +++
-date = "2014-10-03T13:35:54+05:30"
 menu = "main"
 title = "About Me"
+Section = "top"
 +++
 
 I am Shivanshu, a 5th year B.Tech M.Tech Dual Degree student at IIT Kanpur studying Computer Science and Engineering. I will graduate in summer 2016. I feel a little uncomfortable talking about myself but since you have visited this page, I feel obliged to write more.

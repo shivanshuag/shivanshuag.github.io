@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Short on ninjaduck</title>
-    <link>http://ninjaducks.in/tags/short/</link>
-    <description>Recent content in Short on ninjaduck</description>
+    <title>Shorts on ninjaduck</title>
+    <link>http://ninjaducks.in/shorts/</link>
+    <description>Recent content in Shorts on ninjaduck</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 03 Oct 2014 13:35:54 +0530</lastBuildDate>
-    <atom:link href="http://ninjaducks.in/tags/short/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://ninjaducks.in/shorts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Sunglasses</title>
