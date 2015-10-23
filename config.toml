@@ -1,14 +1,15 @@
-baseurl = "http://ninjaducks.in/"
+baseurl = "http://www.ninjaducks.in/"
 languageCode = "en-us"
 title = "ninjaduck"
 theme = "hugo-crisp"
 pygmentsStyle = "colorful"
-
+canonifyurls = true
 [permalinks]
 	top = "/:filename/"
 	hacking = "/hacking/:filename/"
 	shorts = "shorts/:filename"
-
+        movies = "movies/:filename"
+        books = "books/:filename"
 [params]
 	ga = "UA-47255777-1"
 	disqus = "shivanshuag"
