@@ -3,7 +3,7 @@ jobs:
   build:
     branches:
       ignore:
-        - gh-pages
+        - master
     docker:
       - image: cibuilds/hugo:latest
     working_directory: ~/hugo
@@ -22,7 +22,7 @@ jobs:
 
       # Link the public dir to the gh-pages branch
 
-      - run: rm -fr $HUGO_BUILD_DIR && git worktree add -B gh-pages $HUGO_BUILD_DIR origin/gh-pages
+      - run: rm -fr $HUGO_BUILD_DIR && git worktree add -B gh-pages $HUGO_BUILD_DIR origin/master
 
       # build with Hugo
       - run: HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
