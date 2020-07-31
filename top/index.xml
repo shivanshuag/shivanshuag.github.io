@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tops on ninjaduck</title>
+    <link>http://www.ninjaducks.in/top/</link>
+    <description>Recent content in Tops on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Jul 2015 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/top/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multi-Factor Authentication In OpenVPN</title>
+      <link>http://www.ninjaducks.in/openvpn-mfa/</link>
+      <pubDate>Fri, 10 Jul 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/openvpn-mfa/</guid>
+      <description>This project was done as a part of Mozilla Winter of Security 2014 programme. The objective of this project is to implement native Multifactor Authentication Support for OpenVPN. The existing support for Multifactor Authentication in OpenVPN is through deferred C plugins and pythons scripts which has lots of limitations due to the nature they are implemented.
+Need to Native MFA support The plugins are present on the server side where they are called at appropriate places in the authentication process of OpenVPN with credentials.</description>
+    </item>
+    
+    <item>
+      <title>My way of Celebrating Holi</title>
+      <link>http://www.ninjaducks.in/my-way-of-celebrating-holi/</link>
+      <pubDate>Sun, 16 Mar 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/my-way-of-celebrating-holi/</guid>
+      <description>Conversing to a friend about how he celebrated holi, I realized how different our ways are to celebrate this auspicious festival. Here is my way of celebrating Holi.
+Holi is among the few times of the year when most of my family comes together(all my brothers/cousins come home). It starts on the evening of &amp;lsquo;Holika Dehan&amp;rsquo; with the smell of delicious &amp;lsquo;Poori Halwa&amp;rsquo; cooking in the kitchen. Then after the traditional pooja and dinner, we wait for Holika to be lit up which is announced by fire crackers and drums.</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>http://www.ninjaducks.in/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/about/</guid>
+      <description>I am Shivanshu, a 5th year B.Tech M.Tech Dual Degree student at IIT Kanpur studying Computer Science and Engineering. I will graduate in summer 2016 and will be joining Goldman Sachs, Banglore office later this year.
+I am the type of being that conforms to The Hacker Attitude and try to utilize my time in solving some fascinating problem through technology but I am yet to complete my 10000 hours to master the craft.</description>
+    </item>
+    
+  </channel>
+</rss>

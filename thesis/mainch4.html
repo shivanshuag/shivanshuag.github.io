@@ -1,0 +1,2915 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" Implementation of Monitoring and Auto-Ballooning &middot;  ninjaduck" />
+        <meta property="og:site_name" content="ninjaduck" />
+        <meta property="og:url" content="http://www.ninjaducks.in/thesis/mainch4.html" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="0001-01-01T00:00:00Z" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Implementation of Monitoring and Auto-Ballooning" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="http://www.ninjaducks.in/thesis/mainch4.html" />
+    
+
+        <title> Implementation of Monitoring and Auto-Ballooning &middot;  ninjaduck</title>
+
+    
+        <meta name="description" content="" />
+    
+        
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+          
+
+    
+        <link href="http://www.ninjaducks.in/index.xml" rel="alternate" type="application/rss+xml" title="ninjaduck" />
+    
+
+    
+        <link rel="canonical" href="http://www.ninjaducks.in/thesis/mainch4.html" />
+
+    
+    <script type="application/ld+json">
+    { 
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Implementation of Monitoring and Auto-Ballooning",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "0001-01-01",
+        "description": "",
+        "wordCount":  3578 
+    }
+    </script>
+    
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+    <style>
+*{padding:0;margin:0}body,html{font-size:1em;line-height:1.65em;font-family:"Open Sans",sans-serif;font-weight:300;color:#444}html{height:100%}body{padding:2em 2.5em 1em 20em}header{background-color:#5CC265;border-right:1px #eee solid;padding:2em;position:fixed;top:0;left:0;height:100%;width:13.5em}#content{display:block;width:100%}footer{padding:1em 0 2.5em;font-size:.8em;line-height:1.5em;color:#888}article{border-bottom:.1em #eee solid;padding-bottom:1.7em;max-width:56em}h4,h5,h6,hr,p{margin-top:.9em;margin-bottom:.9em}h1,h2,h3,h4,h5,h6{font-family:"Bree Serif",serif;font-weight:400!important}h1{font-size:2.5em;line-height:1.1em;margin-top:.6em;margin-bottom:.6em}h2{font-size:1.9em;line-height:1.2em;margin-top:.7em;margin-bottom:.7em}h3{font-size:1.4em;line-height:1.3em;margin-top:.8em;margin-bottom:.8em}h4{font-size:1.3em}h5{font-size:1.2em}h6{font-size:1.1em}iframe,img{max-width:100%}a{color:#79B97F;text-decoration:none;}a:hover{text-decoration:underline}h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{font-weight:400!important; color:#444;}strong{font-weight:700}blockquote{border-left:.4em solid #eee;padding-left:1.2em;font-size:1.3em}hr{border:0;height:1px;background:#eee}ol,ul{margin-left:3em}code{font-size:1.4em;background:#eee}pre{font-size:.8em;line-height:2em;background:#eee;padding:1em;word-break:break-all;word-wrap:break-word;white-space:pre;white-space:-moz-pre-wrap;white-space:pre-wrap}input{font-size:1em;padding:.3em}header h1{font-size:1.9em;margin-top:.8em;margin-bottom:0 !important}header h1 a{color:white}header h1 a:hover{text-decoration:none}header #follow-icons{font-size:.7em;margin-top:0.7em;margin-bottom:1.5em}#follow-icons a{color:#ccc}#follow-icons span{vertical-align:top;margin-left:-.15em;margin-right:-.15em}#follow-icons span .fa-stack-1x{font-size:1.05em;line-height:1.9em}header h6{margin-top:.5em}article span.post-stamp{color:#888}h1.post-title{margin-top:-0.35em;margin-bottom:.6em}h3.post-title{margin-top:.4em;padding-bottom:.9em;border-bottom:1px solid #eee;font-size:1.2em;color:#CCC}.post-title .feature-star{font-size:.9em}.feature-star,.separator,.taglist{color:#ccc}.taglist a{color:#79B97F;display:inline-block;line-height:1.5em;padding:.3em .6em;vertical-align:20%;font-size:.5em;font-family:"Open Sans",sans-serif;font-weight:700!important;text-transform:uppercase;letter-spacing:.05em;text-decoration:underline;}.categorylist a{background-color:rgb(135, 186, 140);color:white;display:inline-block;line-height:1.5em;padding:.3em .6em;vertical-align:20%;font-size:.8em;font-family:"Open Sans",sans-serif;font-weight:700!important;text-transform:uppercase;letter-spacing:.05em;border-radius:0.25em;-moz-border-radius: 0.25em;-webkit-border-radius: 0.25em;}.line-separator{height:3.5em;width:90%;margin-bottom:-1em;margin-top:-0.4em;}#social-bar{margin-top:1.5em;background-color:#eee;padding:.5em}#comments{margin-top:.15em;padding-bottom:.2em;border-bottom:1px solid #eee}.pagination{margin-bottom:1em}footer a{font-weight:300;color:#888;text-decoration:underline}footer a:hover{color:#444;text-decoration:none}@media only screen and (min-width:1281px){body,html{font-size:1.1em}}@media only screen and (max-width:800px){body{padding:0}header{border-right:none;border-bottom:1px #eee solid;position:relative;height:auto;width:auto;text-align:center;padding-bottom:1em}#content{margin-left:0;padding:2em 2em 1em;width:auto}footer{padding:0 2.5em 2em}}@media only screen and (max-width:320px){#content,header{padding:1.2em 1.2em .6em}footer{padding:0 1.5em 1.2em}ol,ul{margin-left:2em}}
+</style>
+    </head>
+    <body>
+        <header id="header">
+            <a id="logo" href="http://www.ninjaducks.in/"><img src="http://www.ninjaducks.in/images/duck.png" alt="ninjaduck" /></a>
+            <h1><a href="http://www.ninjaducks.in/" style="font-family: 'Vollkorn', serif;font-size:1.3em;">ninjaduck</a></h1>
+            
+
+            <div id="follow-icons">
+	<a href="http://facebook.com/shivanshuag" rel="me"><i class="fa fa-facebook-square fa-2x"></i></a>
+	<a href="http://twitter.com/shivanshuagw" rel="me"><i class="fa fa-twitter-square fa-2x"></i></a>
+	<a href="https://www.linkedin.com/pub/shivanshu-agrawal/65/309/74" rel="me"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	<a href="http://github.com/shivanshuag" rel="me"><i class="fa fa-github-square fa-2x"></i></a>
+	<a href="http://plus.google.com/+ShivanshuAgrawal" rel="author"><i class="fa fa-google-plus-square fa-2x"></i></a>
+	<a href="http://www.ninjaducks.in/index.xml" rel="me"><i class="fa fa-rss-square fa-2x"></i></a> 
+</div>  
+            <h6><a href="http://www.ninjaducks.in/">All Posts</a></h6>
+<h6><a href="http://www.ninjaducks.in/thesis/main.html">M.Tech Thesis</a></h6>
+<h6><a href="http://www.ninjaducks.in/about">About</a></h6>
+
+        </header>
+<style>
+
+ 
+.cmbx-12{ font-weight: bold;}
+.cmbx-12{ font-weight: bold;}
+.cmbx-12{ font-weight: bold;}
+.cmbsy-10x-x-120{font-weight: bold;}
+.cmbsy-10x-x-120{font-weight: bold;}
+.cmbsy-10x-x-120{font-weight: bold;}
+.cmbsy-8{font-size:66%;font-weight: bold;}
+.cmbsy-8{font-weight: bold;}
+.cmbsy-8{font-weight: bold;}
+.cmbsy-6{font-size:50%;font-weight: bold;}
+.cmbsy-6{font-weight: bold;}
+.cmbsy-6{font-weight: bold;}
+.cmex-8{font-size:66%;}
+.cmex-7x-x-85{font-size:49%;}
+.cmr-8{font-size:66%;}
+.cmr-6{font-size:50%;}
+.cmmi-12{font-style: italic;}
+.cmmi-8{font-size:66%;font-style: italic;}
+.cmmi-6{font-size:50%;font-style: italic;}
+.cmsy-8{font-size:66%;}
+.cmsy-6{font-size:50%;}
+.cmbx-12x-x-144{font-size:144%; font-weight: bold;}
+.cmbx-12x-x-144{ font-weight: bold;}
+.cmbx-12x-x-144{ font-weight: bold;}
+.cmr-12x-x-120{font-size:120%;}
+.cmti-12x-x-120{font-size:120%; font-style: italic;}
+.cmbx-12x-x-120{font-size:120%; font-weight: bold;}
+.cmbx-12x-x-120{ font-weight: bold;}
+.cmbx-12x-x-120{ font-weight: bold;}
+.cmtt-12{font-family: monospace;}
+.cmti-12{ font-style: italic;}
+.small-caps{font-variant: small-caps; }
+p.noindent { text-indent: 0em }
+td p.noindent { text-indent: 0em; margin-top:0em; }
+p.nopar { text-indent: 0em; }
+p.indent{ text-indent: 1.5em }
+@media print {div.crosslinks {visibility:hidden;}}
+a img { border-top: 0; border-left: 0; border-right: 0; }
+center { margin-top:1em; margin-bottom:1em; }
+td center { margin-top:0em; margin-bottom:0em; }
+.Canvas { position:relative; }
+math { text-indent: 0em; }
+li p.indent { text-indent: 0em }
+li p:first-child{ margin-top:0em; }
+li p:last-child, li div:last-child { margin-bottom:0.5em; }
+li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; }
+.enumerate1 {list-style-type:decimal;}
+.enumerate2 {list-style-type:lower-alpha;}
+.enumerate3 {list-style-type:lower-roman;}
+.enumerate4 {list-style-type:upper-alpha;}
+div.newtheorem { margin-bottom: 2em; margin-top: 2em;}
+.obeylines-h,.obeylines-v {white-space: nowrap; }
+div.obeylines-v p { margin-top:0; margin-bottom:0; }
+.overline{ text-decoration:overline; }
+.overline img{ border-top: 1px solid black; }
+td.displaylines {text-align:center; white-space:nowrap;}
+.centerline {text-align:center;}
+.rightline {text-align:right;}
+div.verbatim {font-family: monospace; white-space: nowrap; text-align:left; clear:both; }
+.fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+div.fbox {display:table}
+div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+div.minipage{width:100%;}
+div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;}
+div.center div {text-align: left;}
+div.flushright, div.flushright div.flushright {text-align: right;}
+div.flushright div {text-align: left;}
+div.flushleft {text-align: left;}
+.underline{ text-decoration:underline; }
+.underline img{ border-bottom: 1px solid black; margin-bottom:1pt; }
+.framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+.framebox-c {text-align:center;}
+.framebox-l {text-align:left;}
+.framebox-r {text-align:right;}
+span.thank-mark{ vertical-align: super }
+span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+table.tabular td p{margin-top:0em;}
+table.tabular {margin-left: auto; margin-right: auto;}
+td p:first-child{ margin-top:0em; }
+td p:last-child{ margin-bottom:0em; }
+div.td00{ margin-left:0pt; margin-right:0pt; }
+div.td01{ margin-left:0pt; margin-right:5pt; }
+div.td10{ margin-left:5pt; margin-right:0pt; }
+div.td11{ margin-left:5pt; margin-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+td.td00{ padding-left:0pt; padding-right:0pt; }
+td.td01{ padding-left:0pt; padding-right:5pt; }
+td.td10{ padding-left:5pt; padding-right:0pt; }
+td.td11{ padding-left:5pt; padding-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+.hline hr, .cline hr{ height : 1px; margin:0px; }
+.tabbing-right {text-align:right;}
+span.TEX {letter-spacing: -0.125em; }
+span.TEX span.E{ position:relative;top:0.5ex;left:-0.0417em;}
+a span.TEX span.E {text-decoration: none; }
+span.LATEX span.A{ position:relative; top:-0.5ex; left:-0.4em; font-size:85%;}
+span.LATEX span.TEX{ position:relative; left: -0.4em; }
+div.float, div.figure {margin-left: auto; margin-right: auto;}
+div.float img {text-align:center;}
+div.figure img {text-align:center;}
+.marginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;}
+.marginpar p{margin-top:0.4em; margin-bottom:0.4em;}
+.equation td{text-align:center; vertical-align:middle; }
+td.eq-no{ width:5%; }
+table.equation { width:100%; }
+div.math-display, div.par-math-display{text-align:center;}
+mtr.hline mtd{ border-bottom:black solid 1px; padding-top:2px; padding-bottom:0em; }
+mtr.hline mtd mo{ display:none }
+math .texttt { font-family: monospace; }
+math .textit { font-style: italic; }
+math .textsl { font-style: oblique; }
+math .textsf { font-family: sans-serif; }
+math .textbf { font-weight: bold; }
+mo.MathClass-op + mi{margin-left:0.3em}
+mi + mo.MathClass-op{margin-left:0.3em}
+math mi[mathvariant="bold"] { font-weight: bold; font-style: normal; }
+math mi[mathvariant="normal"] { font-weight: normal; font-style: normal; }
+.partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
+.chapterToc a, .chapterToc, .likechapterToc a, .likechapterToc, .appendixToc a, .appendixToc {line-height: 200%; font-weight:bold;}
+.index-item, .index-subitem, .index-subsubitem {display:block}
+div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}
+div.caption span.id{font-weight: bold; white-space: nowrap; }
+h1.partHead{text-align: center}
+p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+.paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;}
+.subparagraphHead, .likesubparagraphHead { font-weight: bold;}
+.quote {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; margin-right:1em; text-align:justify;}
+.verse{white-space:nowrap; margin-left:2em}
+div.maketitle {text-align:center;}
+h2.titleHead{text-align:center;}
+div.maketitle{ margin-bottom: 2em; }
+div.author, div.date {text-align:center;}
+div.thanks{text-align:left; margin-left:10%; font-size:85%; font-style:italic; }
+div.author{white-space: nowrap;}
+.quotation {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; }
+h1.partHead{text-align: center}
+.abstract p {margin-left:5%; margin-right:5%;}
+div.abstract {width:100%;}
+.figure img.graphics {margin-left:10%;}
+dt.printshorthands{float:left; clear:left; margin-right:1em;}
+dd.thebibliography {margin-left: 2.5em;}
+dt.thebibliography {float:left; clear:left; margin-right:1em;}
+.equation-star td{text-align:center; vertical-align:middle; }
+table.equation-star { width:100%; }
+mtd.align-odd{margin-left:2em; text-align:right;}
+mtd.align-even{margin-right:2em; text-align:left;}
+.boxed{border: 1px solid black; padding-left:2px; padding-right:2px;}
+mo.qopname + mi{margin-left:0.3em}
+mi + mo.qopname{margin-left:0.3em}
+span.textso{letter-spacing: 0.3em; word-spacing: 0.3em}
+span.textul{text-decoration:underline}
+span.textst{text-decoration:line-through}
+span.textcaps{font-variant:small-caps}
+dd.enumerate {margin-left: 2em;}
+dt.enumerate {float:left; clear:left; margin-right:0.5em; margin-left:0.5em; text-align:right; }
+div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+table.tabular td p{margin-top:0em;}
+table.tabular {margin-left: auto; margin-right: auto;}
+td p:first-child{ margin-top:0em; }
+td p:last-child{ margin-bottom:0em; }
+div.td00{ margin-left:0pt; margin-right:0pt; }
+div.td01{ margin-left:0pt; margin-right:5pt; }
+div.td10{ margin-left:5pt; margin-right:0pt; }
+div.td11{ margin-left:5pt; margin-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+td.td00{ padding-left:0pt; padding-right:0pt; }
+td.td01{ padding-left:0pt; padding-right:5pt; }
+td.td10{ padding-left:5pt; padding-right:0pt; }
+td.td11{ padding-left:5pt; padding-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+.hline hr, .cline hr{ height : 1px; margin:0px; }
+.MathJax_MathML {text-indent: 0;}
+.texttt, .verb, .pre { font-family: Inconsolata, Consolas, Courier, monospace; }
+.titleHead { font-size: 32px; }
+.sectionHead { font-size: 28px; }
+.subsectionHead { font-size: 24px; }
+.titlemark { display: inline-block; width: 2em; }
+.figure img { display: block; margin: auto; }
+ 
+
+
+</style>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts: ["TeX"] } }); </script> <script type="text/javascript"
+src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+></script>
+<main id="content">
+
+<article id="" class="thesis">
+    
+ <div class="crosslinks"><p class="noindent">[<a
+ href="mainch5.html" >next</a>] [<a
+ href="mainch3.html" >prev</a>] [<a
+ href="mainch3.html#tailmainch3.html" >prev-tail</a>] [<a
+ href="#tailmainch4.html">tail</a>] [<a
+ href="main.html#mainch4.html" >up</a>] </p></div>
+ <h2 class="chapterHead"><span class="titlemark">Chapter 4</span><br /><a
+ href="main.html#QQ2-9-44" id="x9-390004">Implementation of Monitoring and Auto-Ballooning</a></h2>
+ <p>For the purpose of this thesis, we describe the implementation and experimentally
+ evaluate only the monitoring and autoballooning parts of the DRS. The following sections
+ describe the implementation details of these two components.
+ <a
+ id="x9-39001r38"></a>
+ </p>
+
+ <h3 class="sectionHead"><span class="titlemark">4.1   </span> <a
+ href="main.html#QQ2-9-45" id="x9-400001">Monitoring</a></h3>
+ <p>As we discussed in Chapter <a
+ href="mainch3.html#x8-310003">3<!--tex4ht:ref: chap:design --></a>, the monitoring component runs on each host and monitors
+ the host and the guests running on that host to detect hotspots. The next few sections
+ discuss which metrics are monitored, why they are monitored, and how they are
+ monitored. Our implementation is done in the <em><span
+ class="cmti-12">Python programming language</span></em>. The
+ monitoring service runs periodically in every ﬁxed time interval which is conﬁgurable. The
+ default interval is set to then seconds. We will refer to this time interval as the <em><span
+ class="cmti-12">monitor</span>
+ <span
+ class="cmti-12">interval</span></em> in the rest of this document.
+ <a
+ id="x9-40001r41"></a>
+ </p>
+
+ <h4 class="subsectionHead"><span class="titlemark">4.1.1   </span> <a
+ href="mainli2.html#QQ2-9-46" id="x9-410001">Host Monitoring</a></h4>
+ <p>Monitoring the host is simple because the Linux kernel exposes much of the needed
+ information stored in its internal data structure through procfs [<a id="page.41"></a><a
+ href="mainli5.html#X0-procfs" >22</a>]. Procfs is a ﬁlesystem
+ in the Linux kernel, and hence can be accessed using the standard ﬁlesystem syscalls or
+ through higher level API&#x2019;s that exist in almost all programming languages for this
+ purpose. Since the DRS is running on the host, it has unhindered access to all the
+ information in procfs.
+ </p>
+
+ <h5 class="subsubsectionHead"><a
+ href="#x9-420001" id="x9-420001">CPU Monitoring</a></h5>
+ <p>For monitoring the CPU usage, we use the information in the <em><span
+ class="cmti-12">/proc/stat</span></em> ﬁle. The
+
+
+ <em><span
+ class="cmti-12">/proc/stat</span></em> ﬁle has the following ﬁelds capturing how much time CPU spent doing what
+ task [<a
+ href="mainli5.html#X0-procfs" >22</a>].
+ </p>
+
+    <ul class="itemize1">
+    <li class="itemize"><strong><span
+ class="cmbx-12">user:</span></strong> time spent in executing normal processes in the user mode
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">nice:</span></strong> time spent in executing processes with positive nice value in the user
+    mode
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">system:</span></strong> time spent in executing processes in kernel mode
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">idle:</span></strong> time for which the cpu was idle
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">iowait:</span></strong> time spent in waiting for I/O to complete
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">irq:</span></strong> time spent in servicing interrupts
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">softirq:</span></strong> time spent in servicing software interrupts
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">steal:</span></strong> time spent waiting involuntarily. This metric is relevant when the kernel
+    running under virtualization, and its vCPU thread has to wait in the ready
+    queue because the host CPU is overloaded.
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">guest:</span></strong> time spent running a normal guest (VM)
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">guest</span><span
+ class="cmbx-12">_nice:</span></strong> time spent running a guest (VM) with positive nice value.</li></ul>
+
+
+ <p>The time is measured in kernel jiﬃes. Jiﬀy is a counter that ticks on every timer interrupt.
+ The interrupt frequency is 100Hz in majority of the systems. From the above
+ values, we can get the total time that has passed, and time for which the cpu was
+ busy.
+ <!--tex4ht:inline--></p>
+ <!--l. 29--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+ <mtable
+ class="multline-star">
+ <mtr><mtd
+ class="multline-star"><mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >u</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >r</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >n</mi><mi
+ >i</mi><mi
+ >c</mi><mi
+ >e</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >s</mi><mi
+ >y</mi><mi
+ >s</mi><mi
+ >t</mi><mi
+ >e</mi><mi
+ >m</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >i</mi><mi
+ >d</mi><mi
+ >l</mi><mi
+ >e</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >i</mi><mi
+ >o</mi><mi
+ >w</mi><mi
+ >a</mi><mi
+ >i</mi><mi
+ >t</mi>
+ </mtd></mtr><mtr><mtd
+ class="multline-star"> <mo
+ class="MathClass-bin">+</mo> <mi
+ >i</mi><mi
+ >r</mi><mi
+ >q</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >i</mi><mi
+ >o</mi><mi
+ >w</mi><mi
+ >a</mi><mi
+ >i</mi><mi
+ >t</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >i</mi><mi
+ >r</mi><mi
+ >q</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >s</mi><mi
+ >o</mi><mi
+ >f</mi><mi
+ >t</mi><mi
+ >i</mi><mi
+ >r</mi><mi
+ >q</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >s</mi><mi
+ >t</mi><mi
+ >e</mi><mi
+ >a</mi><mi
+ >l</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >g</mi><mi
+ >u</mi><mi
+ >e</mi><mi
+ >s</mi><mi
+ >t</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >g</mi><mi
+ >u</mi><mi
+ >e</mi><mi
+ >s</mi><mi
+ >t</mi><mstyle
+ class="text"><mtext  >_</mtext></mstyle><mi
+ >n</mi><mi
+ >i</mi><mi
+ >c</mi><mi
+ >e</mi>                      </mtd></mtr></mtable>
+ </math>
+ <p>
+ <!--tex4ht:inline--></p>
+ <!--l. 32--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+   <mi
+ >B</mi><mi
+ >u</mi><mi
+ >s</mi><mi
+ >y</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >u</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >r</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >n</mi><mi
+ >i</mi><mi
+ >c</mi><mi
+ >e</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >s</mi><mi
+ >y</mi><mi
+ >s</mi><mi
+ >t</mi><mi
+ >e</mi><mi
+ >m</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >i</mi><mi
+ >r</mi><mi
+ >q</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >s</mi><mi
+ >o</mi><mi
+ >f</mi><mi
+ >t</mi><mi
+ >i</mi><mi
+ >r</mi><mi
+ >q</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >g</mi><mi
+ >u</mi><mi
+ >e</mi><mi
+ >s</mi><mi
+ >t</mi> <mo
+ class="MathClass-bin">+</mo> <mi
+ >g</mi><mi
+ >u</mi><mi
+ >e</mi><mi
+ >s</mi><mi
+ >t</mi><mstyle
+ class="text"><mtext  >_</mtext></mstyle><mi
+ >n</mi><mi
+ >i</mi><mi
+ >c</mi><mi
+ >e</mi>
+ </math>
+ <p>
+ </p>
+ <p>   The <!--l. 34--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi></math>
+ calculated here is the total time since the start of the system. Hence this will give the average
+
+
+ cpu usage since the start of the system, which is not a useful metric for us. The average
+ cpu usage in the previous monitor interval is more useful. To calculate that, we keep the
+ <!--l. 34--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi></math> and
+ <!--l. 34--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >B</mi><mi
+ >u</mi><mi
+ >s</mi><mi
+ >y</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi></math> at the
+ previous monitor interval and subtract those values from the current values.
+ So,
+ <!--tex4ht:inline--></p>
+ <!--l. 35--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+       <mi
+ >P</mi><mi
+ >r</mi><mi
+ >e</mi><mi
+ >c</mi><mi
+ >e</mi><mi
+ >n</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >g</mi><mi
+ >e</mi><mi
+ >C</mi><mi
+ >p</mi><mi
+ >u</mi><mi
+ >U</mi><mi
+ >s</mi><mi
+ >a</mi><mi
+ >g</mi><mi
+ >e</mi> <mo
+ class="MathClass-rel">=</mo> <mfrac><mrow
+ ><mi
+ >B</mi><mi
+ >u</mi><mi
+ >s</mi><mi
+ >y</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >P</mi><mi
+ >r</mi><mi
+ >e</mi><mi
+ >v</mi><mi
+ >i</mi><mi
+ >o</mi><mi
+ >u</mi><mi
+ >s</mi><mi
+ >B</mi><mi
+ >u</mi><mi
+ >s</mi><mi
+ >y</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi></mrow>
+ <mrow
+ ><mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >P</mi><mi
+ >r</mi><mi
+ >e</mi><mi
+ >v</mi><mi
+ >i</mi><mi
+ >o</mi><mi
+ >u</mi><mi
+ >s</mi><mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi></mrow></mfrac> <mo
+ class="MathClass-bin">∗</mo> <mn>1</mn><mn>0</mn><mn>0</mn>
+ </math>
+ <p>
+ </p>
+
+ <h5 class="subsubsectionHead"><a
+ href="#x9-430001" id="x9-430001">Memory Monitoring</a></h5>
+ <p>Memory usage information is present in the <em><span
+ class="cmti-12">/proc/meminfo</span></em> ﬁle [<a id="page.44"></a><a
+ href="mainli5.html#X0-procfs" >22</a>]. For monitoring, we
+ need several memory metrics which are described below. </p>
+
+    <ul class="itemize1">
+    <li class="itemize"><strong><span
+ class="cmbx-12">Total memory:</span></strong> The total usable memory present on the host. Present in the
+    ﬁrst line of the <em><span
+ class="cmti-12">/proc/meminfo</span></em>.
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">Used memory:</span></strong> Total memory used by the host. This includes the memory
+    used by the VMs, host&#x2019;s own processes and the page caches. This can be
+    calculated by subtracting free memory, which is present in the second line of
+    <em><span
+ class="cmti-12">/proc/meminfo</span></em> ﬁle, from total memory.
+    </li>
+
+
+    <li class="itemize"><strong><span
+ class="cmbx-12">Available  memory:</span></strong> This  provides  an  estimate  of  how  much  memory  is
+    available to any new application that will be started on the system. This is
+    diﬀerent from free memory because used memory also contains page caches,
+    which can be reclaimed in case no free memory is left and an application
+    requires more memory. Some of the slab memory used by the kernel is also
+    reclaimable. The estimate also accounts for the fact that the system needs
+    some page cache to function well, and that not all reclaimable slab can be
+    reclaimed. It is present in the third line of <em><span
+ class="cmti-12">/proc/meminfo</span></em> ﬁle.
+    <p>Available memory is an important metric for us, because it basically tells us
+    how much memory is available for the new VMs. It is better than free memory,
+    because free memory does not take into account page caches which can be
+    reclaimed.
+    </p>
+ </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">Hypervisor Load:</span></strong> This is an important metric because we want to have a
+    lower bound on how much memory is available for the hypervisor to function.
+    We  call  this  memory  <em><span
+ class="cmti-12">hypervisor  reserved  memory</span></em>.  While  calculating  the
+    amount of memory that is free for VMs to use, we do not want to use the
+    memory that is reserved for the hypervisor.
+    <p>For calculating the hypervisor load, we ﬁrst calculate the VM load i.e. the
+    amount of memory used by the virtual machines on the system. The VM load is
+    calculated by looking at the RSS (resident set size) of all the virtual machines
+    running on the host. Since QEMU-KVM treats each VM as a separate process,
+    we  need  to  get  the  RSS  of  all  the  processes  which  are  running  a  virtual
+    machine. The <em><span
+ class="cmti-12">/proc/[pid]/statm</span></em> ﬁle has this information for each process. After
+    calculating the VMlLoad, the hypervisor load is calculated as
+
+
+    <!--tex4ht:inline--></p>
+ <!--l. 50--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+ <mi
+ >H</mi><mi
+ >y</mi><mi
+ >p</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >v</mi><mi
+ >i</mi><mi
+ >s</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >L</mi><mi
+ >o</mi><mi
+ >a</mi><mi
+ >d</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >m</mi><mi
+ >a</mi><mi
+ >x</mi><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >H</mi><mi
+ >y</mi><mi
+ >p</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >v</mi><mi
+ >i</mi><mi
+ >s</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >R</mi><mi
+ >e</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >v</mi><mi
+ >e</mi><mi
+ >d</mi><mo
+ class="MathClass-punc">,</mo><mi
+ >U</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi><mo
+ class="MathClass-bin">−</mo><mi
+ >P</mi><mi
+ >a</mi><mi
+ >g</mi><mi
+ >e</mi><mi
+ >C</mi><mi
+ >a</mi><mi
+ >c</mi><mi
+ >h</mi><mi
+ >e</mi><mi
+ >s</mi><mo
+ class="MathClass-bin">−</mo><mi
+ >V</mi> <mi
+ >M</mi><mi
+ >L</mi><mi
+ >o</mi><mi
+ >a</mi><mi
+ >d</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow>
+ </math>
+    <p>
+    </p>
+ </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">Load Memory: </span></strong> This metric represents the total memory that is loaded and
+    hence, not available for use by any new VM or for existing VMs. It is calculated
+    as
+    <!--tex4ht:inline--><!--l. 53--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+      <mi
+ >H</mi><mi
+ >y</mi><mi
+ >p</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >v</mi><mi
+ >i</mi><mi
+ >s</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >E</mi><mi
+ >x</mi><mi
+ >t</mi><mi
+ >r</mi><mi
+ >a</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >m</mi><mi
+ >a</mi><mi
+ >x</mi><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >H</mi><mi
+ >y</mi><mi
+ >p</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >v</mi><mi
+ >i</mi><mi
+ >s</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >R</mi><mi
+ >e</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >v</mi><mi
+ >e</mi><mi
+ >d</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >H</mi><mi
+ >y</mi><mi
+ >p</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >v</mi><mi
+ >i</mi><mi
+ >s</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >L</mi><mi
+ >o</mi><mi
+ >a</mi><mi
+ >d</mi><mo
+ class="MathClass-punc">,</mo> <mn>0</mn></mrow><mo
+ class="MathClass-close">)</mo></mrow>
+ </math>
+    <p>
+    <!--tex4ht:inline--></p>
+ <!--l. 55--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+ <mi
+ >L</mi><mi
+ >o</mi><mi
+ >a</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-rel">=</mo> <mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi><mo
+ class="MathClass-bin">−</mo><mi
+ >A</mi><mi
+ >v</mi><mi
+ >a</mi><mi
+ >i</mi><mi
+ >l</mi><mi
+ >a</mi><mi
+ >b</mi><mi
+ >l</mi><mi
+ >e</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi><mo
+ class="MathClass-bin">−</mo><mi
+ >I</mi><mi
+ >d</mi><mi
+ >l</mi><mi
+ >e</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow><mo
+ class="MathClass-bin">+</mo><mi
+ >H</mi><mi
+ >y</mi><mi
+ >p</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >v</mi><mi
+ >i</mi><mi
+ >s</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >E</mi><mi
+ >x</mi><mi
+ >t</mi><mi
+ >r</mi><mi
+ >a</mi>
+ </math>
+    <p>
+
+
+    </p>
+ </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">Idle Memory: </span></strong> Idle Memory is the memory which has been consumed by the
+    VMs but is sitting idle inside the VM and can be ballooned out. Thus, it can
+    be used by the existing VMs or any new VM that is migrated to the host. Its
+    calculation is described later in the Section <a
+ href="#x9-440002">4.1.2<!--tex4ht:ref: sec:guestmon --></a>.</li></ul>
+ <a
+ id="x9-43001r46"></a>
+ <h4 class="subsectionHead"><span class="titlemark">4.1.2   </span> <a
+ href="mainli2.html#QQ2-9-49" id="x9-440002">Guest Monitoring</a></h4>
+ <p>Monitoring a VM is more complex than monitoring the host because some of the metrics
+ needed are not exposed by the VM to the host in any conventional way. Host operating
+ system just gets to see the process abstraction of each virtual machine. So, the host has
+ only as much information about each guest as it has about the rest of the processes
+ running on it. In the next two sections, along with which metrics have been monitored, we
+ have discuss some new techniques which we use to get some of the information from the
+ guest VMs.
+ </p>
+
+ <h5 class="subsubsectionHead"><a
+ href="#x9-450002" id="x9-450002">CPU Monitoring</a></h5>
+ <p>CPU monitoring for a guest VM is straightforward because the host OS has the
+ scheduling information for each process it is running. This information is exposed by the
+ procfs. The metrics related to CPU utilization measured are discussed below.
+ </p>
+
+    <ul class="itemize1">
+    <li class="itemize"><strong><span
+ class="cmbx-12">Busy  Time:</span></strong>  This  is  the  time  for  which  any  of  the  vCPUs  of  the
+    VM  was  scheduled  onto  any  of  the  physical  CPUs  of  the  host.  The
+    scheduling  information  for  each  thread  of  a  process  is  present  inside  the
+    <em><span
+ class="cmti-12">/proc/[pid]/task/[tid]/schedstat</span></em> ﬁle [<a id="page.47"></a><a
+ href="mainli5.html#X0-procfs" >22</a>]. We can get the busy time for each
+    thread in nanoseconds from here. Adding the busy time for all the vCPU
+    threads gives us the total busy time. The total time elasped has already been
+    calculated in Section <a
+ href="#x9-420001">4.1.1<!--tex4ht:ref: sec:cpumon --></a>. We do calculation similar to Section <a
+ href="#x9-420001">4.1.1<!--tex4ht:ref: sec:cpumon --></a> to get
+
+
+    the busy time percentage in previous monitor interval for all the guests.
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">Steal Time:</span></strong> Steal time [<a id="page.48"></a><a
+ href="mainli5.html#X0-ehrhardt2013cpu" >23</a>] is the time for which a vCPU thread waits in the
+    ready queue while the CPU is busy executing some other process. Steal time
+    has direct correlation to the amount of load on CPU and is useful in predicting
+    whether the CPU is overloaded. Steal times for each thread is present inside
+    the <em><span
+ class="cmti-12">/proc/[pid]/task/[tid]/schedstat</span></em> [<a
+ href="mainli5.html#X0-procfs" >22</a>]. For each VM, we add the steal times
+    of all its vCPU threads and calculate the average steal time percentage in the
+    previous monitor interval.
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">Estimated CPU Demand:</span></strong> Estimated CPU demand is useful for predicting
+    the amount of CPU a VM can consume if the host is not overloaded i.e. the
+    steal time is 0. This value will be helpful during migration to check whether the
+    CPU demands of the VM can be satisﬁed by the destination. It is calculated
+    by adding a scaled value of steal percentage to the current busy percentage.
+    <!--tex4ht:inline--><!--l. 69--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+     <mi
+ >E</mi><mi
+ >s</mi><mi
+ >t</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >a</mi><mi
+ >t</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >C</mi><mi
+ >P</mi><mi
+ >U</mi><mi
+ >D</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >a</mi><mi
+ >n</mi><mi
+ >d</mi><mi
+ >P</mi><mi
+ >r</mi><mi
+ >e</mi><mi
+ >c</mi><mi
+ >e</mi><mi
+ >n</mi><mi
+ >t</mi> <mo
+ class="MathClass-rel">=</mo> <mfrac><mrow
+ ><mi
+ >B</mi><mi
+ >u</mi><mi
+ >s</mi><mi
+ >y</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi></mrow>
+ <mrow
+ ><mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi></mrow></mfrac> <mo
+ class="MathClass-bin">∗</mo> <mrow ><mo
+ class="MathClass-open">(</mo><mrow><mn>1</mn> <mo
+ class="MathClass-bin">+</mo> <mfrac><mrow
+ ><mi
+ >S</mi><mi
+ >t</mi><mi
+ >e</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi></mrow>
+ <mrow
+ ><mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi></mrow></mfrac></mrow><mo
+ class="MathClass-close">)</mo></mrow> <mo
+ class="MathClass-bin">∗</mo> <mn>1</mn><mn>0</mn><mn>0</mn>
+ </math>
+    <p></p>
+ </li></ul>
+ <h5 class="subsubsectionHead"><a
+ href="#x9-460002" id="x9-460002">Memory Monitoring</a></h5>
+ <p>Getting the memory usage statistics is diﬃcult because the host has no information about
+ the memory management of the guest. The host only knows the amount of memory
+ allocated by each guest. For calculating the idle memory of each guest, we need the
+
+
+ amount of <em><span
+ class="cmti-12">available memory</span></em> inside the VM.
+ </p>
+ <p>   One way for a guest VM to expose some information to the host is through a device
+ driver. In a virtualized environment, all the devices available to a VM are virtual devices
+ which are emulated by the hypervisor. So, a device driver running inside the VM can send
+ some information to the device which is emulated by the hypervisor. The virtio balloon
+ driver in the Linux kernel has a way of exposing the memory statistics to the host. It
+ gives the total memory, free memory, swap in, major page faults, minor page fault
+ metrics. We have modiﬁed the balloon driver to expose the available memory metric to
+ the host too. We have also modiﬁed the backend virtio balloon hardware in
+ QEMU to take the Available Memory metric from the balloon driver inside
+ the guest. The following metrics related to the memory usage of the VMs are
+ monitored. Figure <a
+ href="#x9-46001r1">4.1<!--tex4ht:ref: fig:mem1 --></a> shows the relative sizes of diﬀerent memory metrics calculated.
+ </p>
+ <hr class="figure" /><div class="figure"
+ >
+
+
+ <a
+ id="x9-46001r1"></a>
+
+
+
+ <p><img
+ src="http://www.ninjaducks.in/images/thesis/mem1.png" alt="PIC"  
+ />
+ <a
+ id="x9-46002"></a>
+ <br /> </p>
+ <div class="caption"
+ ><span class="id">Figure 4.1: </span><span  
+ class="content">Relative sizes of diﬀerent types of memory metrics</span></div><!--tex4ht:label?: x9-46001r4 -->
+
+
+ </div><hr class="endfigure" />
+    <ul class="itemize1">
+    <li class="itemize"><strong><span
+ class="cmbx-12">Maximum Memory:</span></strong> This is the maximum memory that the guest can have.
+    The guest cannot be ballooned up after this point. We obtain this metric by
+    using the API QEMU provides for this purpose.
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">Current Memory:</span></strong> This the amount of memory the guest has after taking
+    the ballooned memory into account. From the point of view of the guest, this
+    is its total memory, which can be increased or decreased by ballooning. The
+    maximum limit for the current memory is the maximum memory. The <em><span
+ class="cmti-12">total</span>
+    <span
+ class="cmti-12">memory</span></em> statistic obtained through the virtio balloon driver represents this
+    metric.
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">Used Memory:</span></strong> This is the memory which is being used by the guest. It
+    includes all the page caches along with the memory being used by the processes
+    inside the guest.
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">Available Memory:</span></strong> This is the amount of available memory inside the guest.
+    The concept of available memory has been discussed in Section <a
+ href="#x9-430001">4.1.1<!--tex4ht:ref: impl:hostmemmon --></a>. We have
+    modiﬁed the virtio balloon driver to obtain this metric.
+    </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">Allocated Memory:</span></strong> This is the amount of memory of the guest that is
+    backed by physical memory on the host. Allocated memory is diﬀerent from
+    current memory because the memory is allocated to the vritual machines on
+    demand. This also may not equal to the used memory of the guest. Without
+    ballooning, the memory, once allocated to a guest, is not reclaimed from it.
+    So, the usage of a guest may keep on changing, but the allocated memory
+
+
+    will always be equal to the maximum used memory in the guest&#x2019;s lifetime.
+    Allocated memory is helpful in calculating the idle memory.
+    <p>The allocated memory is calculated by looking at the virtual memory maps
+    of the QEMU-KVM process corresponding to each VM. This information is
+    present inside the <em><span
+ class="cmti-12">/proc/[pid]/smaps</span></em> ﬁle [<a id="page.53"></a><a
+ href="mainli5.html#X0-procfs" >22</a>] for each process. The RAM of
+    the guest VM is allocated by the QEMU process by doing a malloc of the size
+    of maximum memory. Thus, it is one big contiguous chunk of memory in the
+    heap memory of the process. From the information about diﬀerent memory
+    sections of the process present in this ﬁle, we look for the heap memory chunk
+    of the size of VM&#x2019;s maximum memory. The RSS (resident set size) of this
+    chunk of memory gives us the amount of memory in the VM that is backed
+    by physical storage.
+    </p>
+ <p>In this chunk of allocated memory, there is some amount of memory that
+    QEMU uses to store some metadata about the pages of the guest VM. Hence,
+    this entire memory is not available to the guest. This part of memory cannot
+    be reclaimed by ballooning. This overhead is constant and depends on the
+    maximum memory size of the guest. We call this overhead as QEMU overhead.
+    QEMU overhead needs to be deducted from the RSS. We use a piecewise
+    continuous function to model the QEMU overhead. The values for the QEMU
+    overhead in diﬀerent scenarios were determined experimentally.
+ </p>
+ <div class="math-display"><!--l. 92--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" ><mrow
+ >
+ <mi
+ >Q</mi><mi
+ >E</mi><mi
+ >M</mi><mi
+ >U</mi><mi
+ >O</mi><mi
+ >v</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >h</mi><mi
+ >e</mi><mi
+ >a</mi><mi
+ >d</mi> <mo
+ class="MathClass-rel">=</mo>  <mfenced separators=""
+ open="{"  close="" ><mrow> <mtable  align="axis" style=""  
+ equalrows="false" columnlines="none" equalcolumns="false" class="array"><mtr><mtd
+ class="array"  columnalign="left"><mn>2</mn><mn>0</mn><mn>0</mn><mi
+ >M</mi><mi
+ >B</mi><mspace width="1em" class="quad"/></mtd><mtd
+ class="array"  columnalign="left"><mstyle
+ class="text"><mtext  >if </mtext><mstyle
+ class="math"><mi
+ >m</mi><mi
+ >a</mi><mi
+ >x</mi><mi
+ >m</mi><mi
+ >e</mi><mi
+ >m</mi> <mo
+ class="MathClass-rel">&#x003C;</mo><mo
+ class="MathClass-rel">=</mo> <mn>4</mn><mi
+ >G</mi><mi
+ >B</mi></mstyle><mtext  ></mtext></mstyle>           </mtd></mtr><mtr><mtd
+ class="array"  columnalign="left"> <mn>3</mn><mn>0</mn><mn>0</mn><mi
+ >M</mi><mi
+ >B</mi><mspace width="1em" class="quad"/></mtd> <mtd
+ class="array"  columnalign="left"><mstyle
+ class="text"><mtext  >if </mtext><mstyle
+ class="math"><mn>4</mn><mi
+ >G</mi><mi
+ >B</mi> <mo
+ class="MathClass-rel">&#x003C;</mo> <mi
+ >m</mi><mi
+ >a</mi><mi
+ >x</mi><mi
+ >m</mi><mi
+ >e</mi><mi
+ >m</mi> <mo
+ class="MathClass-rel">&#x003C;</mo><mo
+ class="MathClass-rel">=</mo> <mn>1</mn><mn>0</mn><mi
+ >G</mi><mi
+ >B</mi></mstyle><mtext  ></mtext></mstyle></mtd>
+ </mtr><mtr><mtd
+ class="array"  columnalign="left"> <mn>4</mn><mn>0</mn><mn>0</mn><mi
+ >M</mi><mi
+ >B</mi><mspace width="1em" class="quad"/></mtd><mtd
+ class="array"  columnalign="left"><mstyle
+ class="text"><mtext  >if </mtext><mstyle
+ class="math"><mn>1</mn><mn>0</mn><mi
+ >G</mi><mi
+ >B</mi> <mo
+ class="MathClass-rel">&#x003C;</mo> <mi
+ >m</mi><mi
+ >a</mi><mi
+ >x</mi><mi
+ >m</mi><mi
+ >e</mi><mi
+ >m</mi> <mo
+ class="MathClass-rel">&#x003C;</mo><mo
+ class="MathClass-rel">=</mo> <mn>1</mn><mn>8</mn><mi
+ >G</mi><mi
+ >B</mi></mstyle><mtext  ></mtext></mstyle></mtd></mtr><mtr><mtd
+ class="array"  columnalign="left"> <mn>5</mn><mn>0</mn><mn>0</mn><mi
+ >M</mi><mi
+ >B</mi><mspace width="1em" class="quad"/></mtd> <mtd
+ class="array"  columnalign="left"><mstyle
+ class="text"><mtext  >if </mtext><mstyle
+ class="math"><mi
+ >m</mi><mi
+ >a</mi><mi
+ >x</mi><mi
+ >m</mi><mi
+ >e</mi><mi
+ >m</mi> <mo
+ class="MathClass-rel">&#x003E;</mo> <mn>1</mn><mn>8</mn><mi
+ >G</mi><mi
+ >B</mi></mstyle><mtext  ></mtext></mstyle></mtd>
+ </mtr><mtr><mtd
+ class="array"  columnalign="left">         <mspace width="1em" class="quad"/></mtd></mtr><!--@{}l@{\quad }l@{}--></mtable>                                                                                   </mrow></mfenced>
+ </mrow></math></div>
+
+
+    <p>
+    <!--tex4ht:inline--></p>
+ <!--l. 101--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+                  <mi
+ >A</mi><mi
+ >l</mi><mi
+ >l</mi><mi
+ >o</mi><mi
+ >c</mi><mi
+ >a</mi><mi
+ >t</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >R</mi><mi
+ >S</mi><mi
+ >S</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >Q</mi><mi
+ >E</mi><mi
+ >M</mi><mi
+ >U</mi><mi
+ >O</mi><mi
+ >v</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >h</mi><mi
+ >e</mi><mi
+ >a</mi><mi
+ >d</mi>
+ </math>
+    <p>
+    </p>
+ </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">Load Memory:</span></strong> This is the amount of memory that is loaded i.e. is being
+    used by the processes of the guest and hence the current memory should not
+    go below this point.
+    <!--tex4ht:inline--><!--l. 103--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+                <mi
+ >L</mi><mi
+ >o</mi><mi
+ >a</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >C</mi><mi
+ >u</mi><mi
+ >r</mi><mi
+ >r</mi><mi
+ >e</mi><mi
+ >n</mi><mi
+ >t</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >A</mi><mi
+ >v</mi><mi
+ >a</mi><mi
+ >i</mi><mi
+ >l</mi><mi
+ >a</mi><mi
+ >b</mi><mi
+ >l</mi><mi
+ >e</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi>
+ </math>
+    <p>
+    </p>
+ </li>
+    <li class="itemize"><strong><span
+ class="cmbx-12">Idle Memory:</span></strong> Idle memory is the amount of memory that is allocated, but
+    is not being used by the guest, and hence, can be reclaimed. A lower bound on
+    the current memory of the guest has been kept to avoid ballooning so much
+    memory out of it that it is unable to function. This bound is called <em><span
+ class="cmti-12">guest</span>
+
+
+    <span
+ class="cmti-12">reserved</span></em>. So,
+    <!--tex4ht:inline--><!--l. 105--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+                  <mi
+ >L</mi><mi
+ >o</mi><mi
+ >w</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >B</mi><mi
+ >o</mi><mi
+ >u</mi><mi
+ >n</mi><mi
+ >d</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >m</mi><mi
+ >a</mi><mi
+ >x</mi><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >L</mi><mi
+ >o</mi><mi
+ >a</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi><mo
+ class="MathClass-punc">,</mo><mi
+ >G</mi><mi
+ >u</mi><mi
+ >e</mi><mi
+ >s</mi><mi
+ >t</mi><mi
+ >R</mi><mi
+ >e</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >v</mi><mi
+ >e</mi><mi
+ >d</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow>
+ </math>
+    <p>
+    <!--tex4ht:inline--></p>
+ <!--l. 106--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+              <mi
+ >I</mi><mi
+ >d</mi><mi
+ >l</mi><mi
+ >e</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >m</mi><mi
+ >a</mi><mi
+ >x</mi><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >A</mi><mi
+ >l</mi><mi
+ >l</mi><mi
+ >o</mi><mi
+ >c</mi><mi
+ >a</mi><mi
+ >t</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >L</mi><mi
+ >o</mi><mi
+ >w</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >B</mi><mi
+ >o</mi><mi
+ >u</mi><mi
+ >n</mi><mi
+ >d</mi><mo
+ class="MathClass-punc">,</mo> <mn>0</mn></mrow><mo
+ class="MathClass-close">)</mo></mrow>
+ </math>
+    <p> Based on how the idle memory is reclaimed, it can be divided into two types
+    - hard idle memory and soft idle memory. Their importance and the diﬀerence
+    between them have been explained in Section <a
+ href="#x9-490001">4.2.1<!--tex4ht:ref: sec:bal --></a>.</p>
+ </li></ul>
+ <a
+ id="x9-46003r49"></a>
+ <h4 class="subsectionHead"><span class="titlemark">4.1.3   </span> <a
+ href="mainli2.html#QQ2-9-52" id="x9-470003">Hotspot Detection and Key-Value Store Updation</a></h4>
+ <p>The hotspot detection algorithm should be robust enough not to generate false alarms. A
+ simple threshold based algorithm which takes absolute or average values into account can
+ raise many false alarms. Andreolini et al. [<a id="page.55"></a><a
+ href="mainli5.html#X0-andreolini2009dynamic" >24</a>] have shown the drawbacks of such
+ algorithms and proposed a more robust statistical model to detect changes in the
+
+
+ load proﬁle of a machine which is based on the CUSUM (Cumulative Sum)
+ algorithm [<a
+ href="mainli5.html#X0-page1957estimating" >25</a>]. We have used this algorithm for detecting hotspots and the time to
+ update the key-value store. The algorithm is described below for the sake of
+ completeness.
+ </p>
+ <p>   The hotspots due to memory overload are detected using the load memory
+ metric of the host. The values for load memory are recorded in ever monitor
+ interval to form a time series. Exponential average of the data is calculated
+ as
+ <!--tex4ht:inline--></p>
+ <!--l. 114--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+                       <msub><mrow
+ ><mi
+ >μ</mi></mrow><mrow
+ ><mi
+ >i</mi></mrow></msub
+ > <mo
+ class="MathClass-rel">=</mo> <mi
+ >α</mi> <mo
+ class="MathClass-bin">∗</mo> <mi
+ >l</mi><mi
+ >o</mi><mi
+ >a</mi><mi
+ >d</mi><mi
+ >m</mi><mi
+ >e</mi><msub><mrow
+ ><mi
+ >m</mi></mrow><mrow
+ ><mi
+ >i</mi></mrow></msub
+ > <mo
+ class="MathClass-bin">+</mo> <mrow ><mo
+ class="MathClass-open">(</mo><mrow><mn>1</mn> <mo
+ class="MathClass-bin">−</mo> <mi
+ >α</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow><msub><mrow
+ ><mi
+ >μ</mi></mrow><mrow
+ ><mi
+ >i</mi><mo
+ class="MathClass-bin">−</mo><mn>1</mn></mrow></msub
+ >
+ </math>
+ <p> The value of <!--l. 115--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >α</mi></math> has been
+ chosen to be <!--l. 115--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mn>0</mn><mo
+ class="MathClass-punc">.</mo><mn>1</mn></math>. The algorithm
+ detects abrupt increase in <!--l. 115--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><msub><mrow
+ ><mi
+ >μ</mi></mrow><mrow
+ ><mi
+ >i</mi></mrow></msub
+ ></math>
+ using <!--l. 115--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><msub><mrow
+ ><mi
+ >d</mi></mrow><mrow
+ ><mi
+ >i</mi></mrow></msub
+ ></math>.
+ <!--tex4ht:inline--></p>
+ <!--l. 116--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+                  <msub><mrow
+ ><mi
+ >d</mi></mrow><mrow
+ ><mn>0</mn></mrow></msub
+ > <mo
+ class="MathClass-rel">=</mo> <mn>0</mn><mo
+ class="MathClass-punc">;</mo> <mspace width="1em" class="nbsp" /><msub><mrow
+ ><mi
+ >d</mi></mrow><mrow
+ ><mi
+ >i</mi></mrow></msub
+ > <mo
+ class="MathClass-rel">=</mo> <msub><mrow
+ ><mi
+ >d</mi></mrow><mrow
+ ><mi
+ >i</mi><mo
+ class="MathClass-bin">−</mo><mn>1</mn></mrow></msub
+ > <mo
+ class="MathClass-bin">+</mo> <mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >l</mi><mi
+ >o</mi><mi
+ >a</mi><mi
+ >d</mi><mi
+ >m</mi><mi
+ >e</mi><msub><mrow
+ ><mi
+ >m</mi></mrow><mrow
+ ><mi
+ >i</mi></mrow></msub
+ > <mo
+ class="MathClass-bin">−</mo> <mrow ><mo
+ class="MathClass-open">(</mo><mrow><msub><mrow
+ ><mi
+ >μ</mi></mrow><mrow
+ ><mi
+ >i</mi></mrow></msub
+ > <mo
+ class="MathClass-bin">+</mo> <mi
+ >K</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow></mrow><mo
+ class="MathClass-close">)</mo></mrow>
+ </math>
+ <p> <!--l. 117--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><msub><mrow
+ ><mi
+ >d</mi></mrow><mrow
+ ><mi
+ >i</mi></mrow></msub
+ ></math> measures all the
+
+
+ deviations from <!--l. 117--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><msub><mrow
+ ><mi
+ >μ</mi></mrow><mrow
+ ><mi
+ >i</mi></mrow></msub
+ ></math> that
+ are greater than <!--l. 117--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >K</mi></math>.
+ <!--l. 117--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >K</mi> <mo
+ class="MathClass-rel">=</mo> <mfrac><mrow
+ ><mi
+ >Δ</mi></mrow>
+ <mrow
+ ><mn>2</mn></mrow></mfrac> </math> where
+ <!--l. 117--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >Δ</mi></math>
+ is the minimum shift to be detected. It has been set to
+ (<!--l. 118--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mn>0</mn><mo
+ class="MathClass-punc">.</mo><mn>0</mn><mn>0</mn><mn>5</mn> <mo
+ class="MathClass-bin">∗</mo> <mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi></math>) to detect minimum 1%
+ change in the value of <!--l. 118--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >l</mi><mi
+ >o</mi><mi
+ >a</mi><mi
+ >d</mi><mi
+ >m</mi><mi
+ >e</mi><mi
+ >m</mi></math>.
+ Change in the load proﬁle of the host is triggered when
+ <!--l. 118--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><msub><mrow
+ ><mi
+ >d</mi></mrow><mrow
+ ><mi
+ >i</mi></mrow></msub
+ > <mo
+ class="MathClass-rel">&#x003E;</mo> <mi
+ >H</mi></math> where
+ <!--l. 118--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >H</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >h</mi><mi
+ >σ</mi></math>,
+ <!--l. 118--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >h</mi></math> being a design
+ parameter and <!--l. 118--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >σ</mi></math>
+ being the standard deviation of the time series upto that point. We have set
+ <!--l. 118--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >h</mi> <mo
+ class="MathClass-rel">=</mo> <mn>7</mn></math>,
+ which means that the load proﬁle change is detected in an average of 14 samples
+ [<a id="page.56"></a><a
+ href="mainli5.html#X0-andreolini2009dynamic" >24</a>]. When the load-proﬁle changes, the key-value store is updated with
+ <!--l. 119--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >t</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >m</mi><mi
+ >e</mi><mi
+ >m</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >l</mi><mi
+ >o</mi><mi
+ >a</mi><mi
+ >d</mi><mi
+ >m</mi><mi
+ >e</mi><mi
+ >m</mi></math>. When the load
+ proﬁle changes and <!--l. 119--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mrow ><mo
+ class="MathClass-open">(</mo><mrow><msub><mrow
+ ><mi
+ >μ</mi></mrow><mrow
+ ><mi
+ >i</mi></mrow></msub
+ > <mo
+ class="MathClass-rel">&#x003E;</mo> <mn>0</mn><mo
+ class="MathClass-punc">.</mo><mn>8</mn> <mo
+ class="MathClass-bin">∗</mo> <mi
+ >t</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >m</mi><mi
+ >e</mi><mi
+ >m</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow></math>,
+ hotspot is triggered and the migration service becomes active.
+ </p>
+ <p>   The hotspots in the CPU usage are also calculated in a similar way. The
+ only diﬀerence is that the CUSUM algorithm runs on the steal time of all the
+ guests, and any guest can trigger hotspot when its load proﬁle changes and its
+ <!--l. 121--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >A</mi><mi
+ >v</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >a</mi><mi
+ >g</mi><mi
+ >e</mi><mi
+ >S</mi><mi
+ >t</mi><mi
+ >e</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi> <mo
+ class="MathClass-rel">&#x003E;</mo> <mn>1</mn><mn>0</mn><mi
+ >%</mi></math>.
+ Additionally, the CUSUM algorithm runs on the busy time of the host to trigger
+ the updation of the key-value store. The value stored in the key-value store is
+ <!--l. 121--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >N</mi><mi
+ >u</mi><mi
+ >m</mi><mi
+ >b</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >O</mi><mi
+ >f</mi><mi
+ >C</mi><mi
+ >P</mi><mi
+ >U</mi><mi
+ >s</mi> <mo
+ class="MathClass-bin">∗</mo> <mn>1</mn><mn>0</mn><mn>0</mn> <mo
+ class="MathClass-bin">−</mo> <mi
+ >B</mi><mi
+ >u</mi><mi
+ >s</mi><mi
+ >y</mi><mi
+ >T</mi><mi
+ >i</mi><mi
+ >m</mi><mi
+ >e</mi><mi
+ >P</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >c</mi><mi
+ >e</mi><mi
+ >n</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >g</mi><mi
+ >e</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow></math>
+ <a
+ id="x9-47001r45"></a>
+ </p>
+
+
+
+ <h3 class="sectionHead"><span class="titlemark">4.2   </span> <a
+ href="main.html#QQ2-9-53" id="x9-480002">Auto-Ballooning</a></h3>
+ <p>Ballooning is a technique for increasing or decreasing the current memory of a guest.
+ Auto-Ballooning is the process of automatically balancing memory amongst multiple
+ guests running on a system by taking some memory from the idle guests and giving it to
+ the needy guests. Auto-Ballooning is the most essential component for memory
+ overcommitment.
+ <a
+ id="x9-48001r52"></a>
+ </p>
+
+ <h4 class="subsectionHead"><span class="titlemark">4.2.1   </span> <a
+ href="mainli2.html#QQ2-9-54" id="x9-490001">Hard Ballooning and Soft Ballooning</a></h4>
+ <p>Depending upon the type of memory reclaimed ballooning can be classiﬁed into two types
+ - hard ballooning and soft ballooning. Soft ballooning is the process of reclaiming memory
+ which is free inside the guest while hard ballooning is the process of reclaiming memory
+ which is used inside the guest.
+ </p>
+ <p>
+ </p>
+ <!--tex4ht:inline--><!--l. 134--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" ><mtable
+ columnalign="left" class="align-star">
+     <mtr><mtd
+ columnalign="right" class="align-odd"></mtd>       <mtd
+ class="align-even"><mi
+ >S</mi><mi
+ >o</mi><mi
+ >f</mi><mi
+ >t</mi><mi
+ >L</mi><mi
+ >o</mi><mi
+ >w</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >B</mi><mi
+ >o</mi><mi
+ >u</mi><mi
+ >n</mi><mi
+ >d</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >m</mi><mi
+ >a</mi><mi
+ >x</mi><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >U</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi><mo
+ class="MathClass-punc">,</mo><mi
+ >G</mi><mi
+ >u</mi><mi
+ >e</mi><mi
+ >s</mi><mi
+ >t</mi><mi
+ >R</mi><mi
+ >e</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >v</mi><mi
+ >e</mi><mi
+ >d</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow><mspace width="2em"/></mtd>                 <mtd
+ columnalign="right" class="align-label"></mtd>       <mtd
+ class="align-label">
+     <mspace width="2em"/></mtd></mtr><mtr><mtd
+ columnalign="right" class="align-odd"></mtd>       <mtd
+ class="align-even"><mi
+ >S</mi><mi
+ >o</mi><mi
+ >f</mi><mi
+ >t</mi><mi
+ >I</mi><mi
+ >d</mi><mi
+ >l</mi><mi
+ >e</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >m</mi><mi
+ >a</mi><mi
+ >x</mi><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >A</mi><mi
+ >l</mi><mi
+ >l</mi><mi
+ >o</mi><mi
+ >c</mi><mi
+ >a</mi><mi
+ >t</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >S</mi><mi
+ >o</mi><mi
+ >f</mi><mi
+ >t</mi><mi
+ >L</mi><mi
+ >o</mi><mi
+ >w</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >B</mi><mi
+ >o</mi><mi
+ >u</mi><mi
+ >n</mi><mi
+ >d</mi><mo
+ class="MathClass-punc">,</mo> <mn>0</mn></mrow><mo
+ class="MathClass-close">)</mo></mrow><mspace width="2em"/></mtd>       <mtd
+ columnalign="right" class="align-label"></mtd>       <mtd
+ class="align-label">
+     <mspace width="2em"/></mtd></mtr><mtr><mtd
+ columnalign="right" class="align-odd"></mtd>       <mtd
+ class="align-even"><mi
+ >H</mi><mi
+ >a</mi><mi
+ >r</mi><mi
+ >d</mi><mi
+ >L</mi><mi
+ >o</mi><mi
+ >w</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >B</mi><mi
+ >o</mi><mi
+ >u</mi><mi
+ >n</mi><mi
+ >d</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >m</mi><mi
+ >a</mi><mi
+ >x</mi><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >L</mi><mi
+ >o</mi><mi
+ >a</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi><mo
+ class="MathClass-punc">,</mo><mi
+ >G</mi><mi
+ >u</mi><mi
+ >e</mi><mi
+ >s</mi><mi
+ >t</mi><mi
+ >R</mi><mi
+ >e</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >v</mi><mi
+ >e</mi><mi
+ >d</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow><mspace width="2em"/></mtd>                 <mtd
+ columnalign="right" class="align-label"></mtd>       <mtd
+ class="align-label">
+     <mspace width="2em"/></mtd></mtr><mtr><mtd
+ columnalign="right" class="align-odd"></mtd>       <mtd
+ class="align-even"><mi
+ >H</mi><mi
+ >a</mi><mi
+ >r</mi><mi
+ >d</mi><mi
+ >I</mi><mi
+ >d</mi><mi
+ >l</mi><mi
+ >e</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >m</mi><mi
+ >a</mi><mi
+ >x</mi><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >U</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >H</mi><mi
+ >a</mi><mi
+ >r</mi><mi
+ >d</mi><mi
+ >L</mi><mi
+ >o</mi><mi
+ >w</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >B</mi><mi
+ >o</mi><mi
+ >u</mi><mi
+ >n</mi><mi
+ >d</mi><mo
+ class="MathClass-punc">,</mo> <mn>0</mn></mrow><mo
+ class="MathClass-close">)</mo></mrow><mspace width="2em"/></mtd>          <mtd
+ columnalign="right" class="align-label"></mtd>       <mtd
+ class="align-label">
+ <mspace width="2em"/></mtd></mtr></mtable></math>
+
+
+ <p>   For soft ballooning, the guest is ballooned down to
+ <!--l. 136--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >C</mi><mi
+ >u</mi><mi
+ >r</mi><mi
+ >r</mi><mi
+ >e</mi><mi
+ >n</mi><mi
+ >t</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >S</mi><mi
+ >o</mi><mi
+ >f</mi><mi
+ >t</mi><mi
+ >I</mi><mi
+ >d</mi><mi
+ >l</mi><mi
+ >e</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow></math>, which
+ will reclaim the SoftIdleMemory. To reclaim HardIdleMemory, the guest has to be ballooned
+ down to <!--l. 136--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >U</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >H</mi><mi
+ >a</mi><mi
+ >r</mi><mi
+ >d</mi><mi
+ >I</mi><mi
+ >d</mi><mi
+ >l</mi><mi
+ >e</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow></math>.
+ Thus, ballooning down a guest from current memory to
+ <!--l. 136--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >C</mi><mi
+ >u</mi><mi
+ >r</mi><mi
+ >r</mi><mi
+ >e</mi><mi
+ >n</mi><mi
+ >t</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >S</mi><mi
+ >o</mi><mi
+ >f</mi><mi
+ >t</mi><mi
+ >I</mi><mi
+ >d</mi><mi
+ >l</mi><mi
+ >e</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow></math>
+ will reclaim SoftIdleMemory. After this, ballooning down from
+ <!--l. 136--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >C</mi><mi
+ >u</mi><mi
+ >r</mi><mi
+ >r</mi><mi
+ >e</mi><mi
+ >n</mi><mi
+ >t</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >S</mi><mi
+ >o</mi><mi
+ >f</mi><mi
+ >t</mi><mi
+ >I</mi><mi
+ >d</mi><mi
+ >l</mi><mi
+ >e</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow></math> to
+ <!--l. 136--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi
+ >U</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi></math>
+ will reclaim no memory. Then, ballooning down from used memory to
+ <!--l. 136--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >U</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >H</mi><mi
+ >a</mi><mi
+ >r</mi><mi
+ >d</mi><mi
+ >I</mi><mi
+ >d</mi><mi
+ >l</mi><mi
+ >e</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow></math>
+ will reclaim the HardIdleMemory. Figure <a
+ href="#x9-49001r2">4.2<!--tex4ht:ref: fig:mem2 --></a> shows the two diﬀerent types of
+ ballooning.
+ </p>
+ <hr class="figure" /><div class="figure"
+ >
+
+
+ <a
+ id="x9-49001r2"></a>
+
+
+
+ <p><img
+ src="http://www.ninjaducks.in/images/thesis/mem2.png" alt="PIC"  
+ />
+ <a
+ id="x9-49002"></a>
+ <br /> </p>
+ <div class="caption"
+ ><span class="id">Figure 4.2: </span><span  
+ class="content">Soft and hard ballooning</span></div><!--tex4ht:label?: x9-49001r4 -->
+
+
+ </div><hr class="endfigure" />
+ <a
+ id="x9-49003r54"></a>
+ <h4 class="subsectionHead"><span class="titlemark">4.2.2   </span> <a
+ href="mainli2.html#QQ2-9-55" id="x9-500002">Auto-Ballooning Algorithm</a></h4>
+ <p>The autoballooning algorithm ﬁrst identiﬁes the guests with idle memory and the guests
+ which need more memory. We have already described the method of calculating
+ the idle memory earlier. We identify needy guests as the ones whose average
+ load memory is greater than a certain threshold. We have kept the threshold to
+ <!--l. 146--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mn>9</mn><mn>0</mn><mi
+ >%</mi></math> of
+ the current memory of the guest. Needy guests are ballooned up in intervals of
+ <!--l. 146--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mn>1</mn><mn>0</mn><mi
+ >%</mi></math> of
+ their current memory. Total needed memory is the sum total of the memory needed
+ by all the needy guests(which is 10% of the current memory for each needy
+ guest).
+ </p>
+ <div class="math-display"><!--l. 147--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" ><mrow
+ >
+ <mi
+ >i</mi><mi
+ >s</mi><mi
+ >N</mi><mi
+ >e</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >y</mi><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >g</mi><mi
+ >u</mi><mi
+ >e</mi><mi
+ >s</mi><mi
+ >t</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow> <mo
+ class="MathClass-rel">=</mo>  <mfenced separators=""
+ open="{"  close="" ><mrow> <mtable  align="axis" style=""  
+ equalrows="false" columnlines="none" equalcolumns="false" class="array"><mtr><mtd
+ class="array"  columnalign="left"><mi
+ >T</mi><mi
+ >r</mi><mi
+ >u</mi><mi
+ >e</mi><mspace width="1em" class="quad"/></mtd><mtd
+ class="array"  columnalign="left"><mstyle
+ class="text"><mtext  ></mtext><mstyle
+ class="math"><mi
+ >L</mi><mi
+ >o</mi><mi
+ >a</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-rel">≥</mo> <mn>0</mn><mo
+ class="MathClass-punc">.</mo><mn>9</mn> <mo
+ class="MathClass-bin">∗</mo> <mi
+ >C</mi><mi
+ >u</mi><mi
+ >r</mi><mi
+ >r</mi><mi
+ >e</mi><mi
+ >n</mi><mi
+ >t</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi></mstyle><mtext  ></mtext></mstyle></mtd></mtr><mtr><mtd
+ class="array"  columnalign="left"><mi
+ >F</mi> <mi
+ >a</mi><mi
+ >l</mi><mi
+ >s</mi><mi
+ >e</mi><mspace width="1em" class="quad"/></mtd> <mtd
+ class="array"  columnalign="left"><mstyle
+ class="text"><mtext  >otherwise</mtext></mstyle></mtd></mtr><mtr><mtd
+ class="array"  columnalign="left"> <mspace width="1em" class="quad"/> </mtd></mtr> <!--@{}l@{\quad }l@{}--></mtable>                                                 </mrow></mfenced>
+ </mrow></math></div>
+ <p>
+
+
+ <!--tex4ht:inline--></p>
+ <!--l. 154--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+                  <mi
+ >N</mi><mi
+ >e</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-rel">=</mo> <mn>0</mn><mo
+ class="MathClass-punc">.</mo><mn>1</mn> <mo
+ class="MathClass-bin">∗</mo> <mi
+ >C</mi><mi
+ >u</mi><mi
+ >r</mi><mi
+ >r</mi><mi
+ >e</mi><mi
+ >n</mi><mi
+ >t</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi>
+ </math>
+ <p>
+ </p>
+ <p>   The <em><span
+ class="cmti-12">host unused memory</span></em> is the amount of memory on the host which is neither used
+ by/allocated to any guest nor is being used by the host, and hence, can be given
+ away to any host by ballooning it up. Ballooning up a guest reduces the host
+ unused memory, while ballooning a guest down decreases it. It is calculated as
+ follows.
+ </p>
+ <!--tex4ht:inline--><!--l. 161--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" ><mtable
+ columnalign="left" class="align-star">
+ <mtr><mtd
+ columnalign="right" class="align-odd"><mi
+ >H</mi><mi
+ >o</mi><mi
+ >s</mi><mi
+ >t</mi><mi
+ >U</mi><mi
+ >n</mi><mi
+ >u</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >A</mi><mi
+ >v</mi><mi
+ >a</mi><mi
+ >i</mi><mi
+ >l</mi><mi
+ >a</mi><mi
+ >b</mi><mi
+ >l</mi><mi
+ >e</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >H</mi><mi
+ >y</mi><mi
+ >p</mi><mi
+ >e</mi><mi
+ >r</mi><mi
+ >v</mi><mi
+ >i</mi><mi
+ >s</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >E</mi><mi
+ >x</mi><mi
+ >t</mi><mi
+ >r</mi><mi
+ >a</mi></mtd><mtd
+ class="align-even"><mspace width="2em"/></mtd>                                     <mtd
+ columnalign="right" class="align-label">
+ </mtd></mtr><mtr><mtd
+ columnalign="right" class="align-odd"></mtd>                                                               <mtd
+ class="align-even"><mi
+ >o</mi><mi
+ >r</mi><mspace width="2em"/></mtd>                                   <mtd
+ columnalign="right" class="align-label"></mtd><mtd
+ class="align-label">
+ <mspace width="2em"/></mtd></mtr><mtr><mtd
+ columnalign="right" class="align-odd"><mi
+ >H</mi><mi
+ >o</mi><mi
+ >s</mi><mi
+ >t</mi><mi
+ >U</mi><mi
+ >n</mi><mi
+ >u</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-rel">=</mo> <mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi></mtd>                        <mtd
+ class="align-even"> <mo
+ class="MathClass-bin">−</mo> <mi
+ >L</mi><mi
+ >o</mi><mi
+ >a</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-bin">−</mo> <mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >I</mi><mi
+ >d</mi><mi
+ >l</mi><mi
+ >e</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi><mspace width="2em"/></mtd><mtd
+ columnalign="right" class="align-label"></mtd><mtd
+ class="align-label">
+ <mspace width="2em"/></mtd></mtr></mtable></math>
+ <p>Auto-Ballooning can be triggered in two cases -
+ <!--l. 162--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >H</mi><mi
+ >o</mi><mi
+ >s</mi><mi
+ >t</mi><mi
+ >U</mi><mi
+ >n</mi><mi
+ >u</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-rel">&#x003C;</mo> <mn>0</mn><mo
+ class="MathClass-punc">.</mo><mn>1</mn> <mo
+ class="MathClass-bin">∗</mo> <mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow></math> or
+ <!--l. 162--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >N</mi><mi
+ >e</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-rel">&#x003E;</mo> <mn>0</mn></mrow><mo
+ class="MathClass-close">)</mo></mrow></math>. The ﬁrst
+ case is important to keep the amount of swapped memory on the host low. To handle the ﬁrst
+ case, ﬁrst the soft idle memory and then the hard idle memory form the guests is ballooned out
+ till the <!--l. 162--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mrow ><mo
+ class="MathClass-open">(</mo><mrow><mi
+ >H</mi><mi
+ >o</mi><mi
+ >s</mi><mi
+ >t</mi><mi
+ >U</mi><mi
+ >n</mi><mi
+ >u</mi><mi
+ >s</mi><mi
+ >e</mi><mi
+ >d</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi> <mo
+ class="MathClass-rel">&#x003C;</mo> <mn>0</mn><mo
+ class="MathClass-punc">.</mo><mn>2</mn> <mo
+ class="MathClass-bin">∗</mo> <mi
+ >T</mi><mi
+ >o</mi><mi
+ >t</mi><mi
+ >a</mi><mi
+ >l</mi><mi
+ >M</mi><mi
+ >e</mi><mi
+ >m</mi><mi
+ >o</mi><mi
+ >r</mi><mi
+ >y</mi></mrow><mo
+ class="MathClass-close">)</mo></mrow></math>. If
+
+
+ the idle memory is exhausted before this 20% memory becomes unused, swapping is
+ inevitable and the job of resolving it is left to the migration service.
+ </p>
+ <p>   In the second case, either there is a needy guest or memory needs to be reclaimed for a
+ guest which would be migrated to the machine. Both the situations are similar except
+ that when memory is reclaimed for an incoming guest, there is no needy guest to be
+ ballooned up. Depending on the needed memory and idle memory, three situations can
+ arise.
+    </p>
+ <dl class="enumerate"><dt class="enumerate">
+ 1. </dt><dd
+ class="enumerate"><!--l. 167--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi mathvariant="bold">TotalNeededMemory ≤ TotalSoftIdleMemory.</mi></math>
+    The requirements of each needy guest can be satisﬁed by just soft-ballooning.
+    So, the idle guests are ballooned down to reclaim the needed memory and
+    then, the needy guests are ballooned up.
+    </dd><dt class="enumerate">
+ 2. </dt><dd
+ class="enumerate"><!--l. 168--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi mathvariant="bold">TotalSoftIdleMemory &#x003C; TotalNeededMemory ≤ TotalHardIdleMemory.</mi></math>
+    First, all the soft idle memory is ballooned out. Then, the rest of the needed
+    memory is divided among the guests with hard idle memory in proportion of
+    their hard idle memory. So, memory reclaimed by hard ballooning for a guest
+    is given by
+    <!--tex4ht:inline--><!--l. 169--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+ <mi>NeedAfterSoftBallooning = TotalNeededMemory − TotalSoftIdleMemory</mi>
+ </math>
+    <p>
+
+
+    <!--tex4ht:inline--></p>
+ <!--l. 170--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+      <mi>HardReclaim =</mi> <mfrac><mrow
+ ><mi>GuestHardIdleMem ∗ NeedAfterSoftBallooning</mi></mrow>
+             <mrow
+ ><mi>TotalHardIdleMemory</mi></mrow></mfrac>
+ </math>
+    <p> Here, <!--l. 171--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi>GuestHardIdleMem</mi></math>
+    is the hard idle memory for that particular guest, while <!--l. 171--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi>TotalHardIdleMem</mi></math>
+    is the total hard idle memory. The reason hard ballooning is treated diﬀerently
+    from soft ballooning is because soft ballooning is not supposed to have any
+    aﬀect on the performance of the guest as it takes away only the free pages. On
+    the other hand, hard ballooning also reclaims some of the page caches, which
+    might have some eﬀect on the performance of the guest.
+    </p>
+ </dd><dt class="enumerate">
+ 3. </dt><dd
+ class="enumerate"><!--l. 172--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="inline" ><mi mathvariant="bold">TotalNeededMemory &#x003E; TotalHardIdleMemory.</mi></math>
+    This case implies that there is a hotspot on the host. Since the demands of
+    all the guests cannot be satisﬁed, the memory is given to them or reclaimed
+    from them based on their entitlement. The <em><span
+ class="cmti-12">entitled memory</span></em> of each guest is
+    calculated as
+    <!--tex4ht:inline--><!--l. 173--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+ <mi>EntitledMemory = GuestMaximumMemory ∗ MemoryOvercommitmentRatio</mi>
+ </math>
+    <p> After this, the idle memory and needed memory calculation is done again.
+
+
+    <!--tex4ht:inline--></p>
+ <!--l. 175--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" >
+            <mi>IdleMemory = max(CurrentMemory − EntitledMemory, 0)</mi>
+ </math>
+    <p>
+ </p>
+ <div class="math-display"><!--l. 176--><math
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+ display="block" ><mrow
+ >
+ <mi>NeededMemory =  </mi><mfenced separators=""
+ open="{"  close="" ><mrow> <mtable  align="axis" style=""  
+ equalrows="false" columnlines="none" equalcolumns="false" class="array"><mtr><mtd
+ class="array"  columnalign="left"><mi>0</mi><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mstyle
+ class="text"><mtext  >if </mtext><mstyle
+ class="math"><mi>!isNeedy(guest)</mi></mstyle><mtext  ></mtext></mstyle>                                     <mspace width="1em" class="quad"/></mtd>
+ </mtr><mtr><mtd
+ class="array"  columnalign="left"><mi>0</mi><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mi>CurrentMemory &#x003E; EntitledMemory          </mi><mspace width="1em" class="quad"/></mtd>
+ </mtr><mtr><mtd
+ class="array"  columnalign="left"><mi>min(0.1 ∗ CurrentMemory,                      </mi><mspace width="1em" class="quad"/></mtd>
+ </mtr><mtr><mtd
+ class="array"  columnalign="left"><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mi>CurrentMemory − EntitledMemory)</mi><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mspace width="1em" class="nbsp" /><mstyle
+ class="text"><mtext  >otherwise</mtext></mstyle><mspace width="1em" class="quad"/></mtd></mtr><mtr><mtd
+ class="array"  columnalign="left"><mspace width="1em" class="quad"/></mtd></mtr><!--@{}l@{\quad }l@{}--></mtable>                                              </mrow></mfenced>
+ </mrow></math></div>
+    <p> Then, the idle memory is ballooned out of the guests and the needed memory
+    is provided to the needy guests.
+ <a
+ id="Q1-9-56"></a>
+    </p>
+
+    <h4 class="likesubsectionHead"><a
+ href="#x9-510003" id="x9-510003">Summary</a></h4>
+    <p>In this chapter, we looked at the diﬀerent techniques we use to monitor various
+    metrics for hosts and guests. These metrics are used to trigger hotspot and
+    make  the  ballooning  service  active.  We  also  looked  at  the  CUSUM  based
+    algorithm used to ﬁlter out unecessary spikes in the resource usage proﬁles of
+    the host. In the end, we also discussed our technique of autoballooning.</p>
+ </dd></dl>
+
+
+ <!--l. 1--><div class="crosslinks"><p class="noindent">[<a
+ href="mainch5.html" >next</a>] [<a
+ href="mainch3.html" >prev</a>] [<a
+ href="mainch3.html#tailmainch3.html" >prev-tail</a>] [<a
+ href="mainch4.html" >front</a>] [<a
+ href="main.html#mainch4.html" >up</a>] </p></div>
+ <p>   <a
+ id="tailmainch4.html"></a>             </p>
+
+ 
+
+
+    <div id="social-bar">
+	<ul class="rrssb-buttons clearfix">
+      <li class="email">
+          <a href="mailto:?subject=Implementation%20of%20Monitoring%20and%20Auto-Ballooning&amp;body=http://www.ninjaducks.in/thesis/mainch4.html">
+              <span class="icon">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                      <path transform="scale(0.014,-0.014) translate(0,-1670)" d="M1792 826v-794q0 -66 -47 -113t-113 -47h-1472q-66 0 -113 47t-47 113v794q44 -49 101 -87q362 -246 497 -345q57 -42 92.5 -65.5t94.5 -48t110 -24.5h1h1q51 0 110 24.5t94.5 48t92.5 65.5q170 123 498 345q57 39 100 87zM1792 1120q0 -79 -49 -151t-122 -123 q-376 -261 -468 -325q-10 -7 -42.5 -30.5t-54 -38t-52 -32.5t-57.5 -27t-50 -9h-1h-1q-23 0 -50 9t-57.5 27t-52 32.5t-54 38t-42.5 30.5q-91 64 -262 182.5t-205 142.5q-62 42 -117 115.5t-55 136.5q0 78 41.5 130t118.5 52h1472q65 0 112.5 -47t47.5 -113z"/>
+                  </svg>
+              </span>
+              <span class="text">Email</span>
+          </a>
+      </li>
+      <li class="facebook">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.ninjaducks.in/thesis/mainch4.html" class="popup">
+              <span class="icon">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                      <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434 c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726 c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
+                  </svg>
+              </span>
+              <span class="text">Facebook</span>
+          </a>
+      </li>
+			<li class="twitter">
+          <a href="http://twitter.com/home?status=Implementation%20of%20Monitoring%20and%20Auto-Ballooning%20http://www.ninjaducks.in/thesis/mainch4.html" class="popup">
+              <span class="icon">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+		                  <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32 c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155 C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965 C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683 c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851 C26.275,7.229,25.39,8.196,24.253,8.756z"/>
+                  </svg>
+              </span>
+              <span class="text">Twitter</span>
+          </a>
+      </li>
+			<li class="linkedin">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.ninjaducks.in/thesis/mainch4.html&amp;title=Implementation%20of%20Monitoring%20and%20Auto-Ballooning&amp;summary=%5bnext%5d%20%5bprev%5d%20%5bprev-tail%5d%20%5btail%5d%20%5bup%5d%20%20Chapter%c2%a04%0aImplementation%20of%20Monitoring%20and%20Auto-Ballooning%20For%20the%20purpose%20of%20this%20thesis%2c%20we%20describe%20the%20implementation%20and%20experimentally%20evaluate%20only%20the%20monitoring%20and%20autoballooning%20parts%20of%20the%20DRS.%20The%20following%20sections%20describe%20the%20implementation%20details%20of%20these%20two%20components.%20%204.1%20%20Monitoring%20As%20we%20discussed%20in%20Chapter%203%2c%20the%20monitoring%20component%20runs%20on%20each%20host%20and%20monitors%20the%20host%20and%20the%20guests%20running%20on%20that%20host%20to%20detect%20hotspots...." class="popup">
+              <span class="icon">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                      <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803 c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048 h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501 c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546 C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"/>
+                  </svg>
+              </span>
+              <span class="text">LinkedIn</span>
+          </a>
+      </li>
+      <li class="tumblr">
+					<script>
+						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/www.ninjaducks.in\/thesis\/mainch4.html') + '&amp;t=Implementation of Monitoring and Auto-Ballooning" class="popup">');
+					</script>
+              <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+											<path d="M18.02 21.842c-2.029 0.052-2.422-1.396-2.439-2.446v-7.294h4.729V7.874h-4.71V1.592c0 0-3.653 0-3.714 0 s-0.167 0.053-0.182 0.186c-0.218 1.935-1.144 5.33-4.988 6.688v3.637h2.927v7.677c0 2.8 1.7 6.7 7.3 6.6 c1.863-0.03 3.934-0.795 4.392-1.453l-1.22-3.539C19.595 21.6 18.7 21.8 18 21.842z"/>
+									</svg>
+              </span>
+              <span class="text">Tumblr</span>
+          <script>document.write('</a>');</script>
+      </li>
+      <li class="reddit">
+          <a href="http://www.reddit.com/submit?url=http://www.ninjaducks.in/thesis/mainch4.html">
+              <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+											<g>
+													<path d="M11.794 15.316c0-1.029-0.835-1.895-1.866-1.895c-1.03 0-1.893 0.865-1.893 1.895s0.863 1.9 1.9 1.9 C10.958 17.2 11.8 16.3 11.8 15.316z"/>
+													<path d="M18.1 13.422c-1.029 0-1.895 0.864-1.895 1.895c0 1 0.9 1.9 1.9 1.865c1.031 0 1.869-0.836 1.869-1.865 C19.969 14.3 19.1 13.4 18.1 13.422z"/>
+													<path d="M17.527 19.791c-0.678 0.678-1.826 1.006-3.514 1.006c-0.004 0-0.009 0-0.014 0c-0.004 0-0.01 0-0.015 0 c-1.686 0-2.834-0.328-3.51-1.005c-0.264-0.265-0.693-0.265-0.958 0c-0.264 0.265-0.264 0.7 0 1 c0.943 0.9 2.4 1.4 4.5 1.402c0.005 0 0 0 0 0c0.005 0 0 0 0 0c2.066 0 3.527-0.459 4.47-1.402 c0.265-0.264 0.265-0.693 0.002-0.958C18.221 19.5 17.8 19.5 17.5 19.791z"/>
+													<path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237c-0.793 0-1.518 0.287-2.082 0.761c-2.039-1.295-4.646-2.069-7.438-2.219 l1.483-4.691l4.062 0.956c0.071 1.4 1.3 2.6 2.7 2.555c1.488 0 2.695-1.208 2.695-2.695C25.881 3.2 24.7 2 23.2 2 c-1.059 0-1.979 0.616-2.42 1.508l-4.633-1.091c-0.344-0.081-0.693 0.118-0.803 0.455l-1.793 5.7 C10.548 8.6 7.7 9.4 5.6 10.75C5.006 10.3 4.3 10 3.5 10.029c-1.785 0-3.237 1.452-3.237 3.2 c0 1.1 0.6 2.1 1.4 2.69c-0.04 0.272-0.061 0.551-0.061 0.831c0 2.3 1.3 4.4 3.7 5.9 c2.299 1.5 5.3 2.3 8.6 2.325c3.228 0 6.271-0.825 8.571-2.325c2.387-1.56 3.7-3.66 3.7-5.917 c0-0.26-0.016-0.514-0.051-0.768C27.088 15.5 27.7 14.4 27.7 13.267z M23.186 3.355c0.74 0 1.3 0.6 1.3 1.3 c0 0.738-0.6 1.34-1.34 1.34s-1.342-0.602-1.342-1.34C21.844 4 22.4 3.4 23.2 3.355z M1.648 13.3 c0-1.038 0.844-1.882 1.882-1.882c0.31 0 0.6 0.1 0.9 0.209c-1.049 0.868-1.813 1.861-2.26 2.9 C1.832 14.2 1.6 13.8 1.6 13.267z M21.773 21.57c-2.082 1.357-4.863 2.105-7.831 2.105c-2.967 0-5.747-0.748-7.828-2.105 c-1.991-1.301-3.088-3-3.088-4.782c0-1.784 1.097-3.484 3.088-4.784c2.081-1.358 4.861-2.106 7.828-2.106 c2.967 0 5.7 0.7 7.8 2.106c1.99 1.3 3.1 3 3.1 4.784C24.859 18.6 23.8 20.3 21.8 21.57z M25.787 14.6 c-0.432-1.084-1.191-2.095-2.244-2.977c0.273-0.156 0.59-0.245 0.928-0.245c1.035 0 1.9 0.8 1.9 1.9 C26.354 13.8 26.1 14.3 25.8 14.605z"/>
+											</g>
+									</svg>
+              </span>
+              <span class="text">Reddit</span>
+          </a>
+      </li>
+      <li class="googleplus">
+          <a href="https://plus.google.com/share?url=http://www.ninjaducks.in/thesis/mainch4.html" class="popup">
+              <span class="icon">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                      <g>
+                          <path d="M14.703,15.854l-1.219-0.948c-0.372-0.308-0.88-0.715-0.88-1.459c0-0.748,0.508-1.223,0.95-1.663 c1.42-1.119,2.839-2.309,2.839-4.817c0-2.58-1.621-3.937-2.399-4.581h2.097l2.202-1.383h-6.67c-1.83,0-4.467,0.433-6.398,2.027 C3.768,4.287,3.059,6.018,3.059,7.576c0,2.634,2.022,5.328,5.604,5.328c0.339,0,0.71-0.033,1.083-0.068 c-0.167,0.408-0.336,0.748-0.336,1.324c0,1.04,0.551,1.685,1.011,2.297c-1.524,0.104-4.37,0.273-6.467,1.562 c-1.998,1.188-2.605,2.916-2.605,4.137c0,2.512,2.358,4.84,7.289,4.84c5.822,0,8.904-3.223,8.904-6.41 c0.008-2.327-1.359-3.489-2.829-4.731H14.703z M10.269,11.951c-2.912,0-4.231-3.765-4.231-6.037c0-0.884,0.168-1.797,0.744-2.511 c0.543-0.679,1.489-1.12,2.372-1.12c2.807,0,4.256,3.798,4.256,6.242c0,0.612-0.067,1.694-0.845,2.478 c-0.537,0.55-1.438,0.948-2.295,0.951V11.951z M10.302,25.609c-3.621,0-5.957-1.732-5.957-4.142c0-2.408,2.165-3.223,2.911-3.492 c1.421-0.479,3.25-0.545,3.555-0.545c0.338,0,0.52,0,0.766,0.034c2.574,1.838,3.706,2.757,3.706,4.479 c-0.002,2.073-1.736,3.665-4.982,3.649L10.302,25.609z"/>
+                          <polygon points="23.254,11.89 23.254,8.521 21.569,8.521 21.569,11.89 18.202,11.89 18.202,13.604 21.569,13.604 21.569,17.004 23.254,17.004 23.254,13.604 26.653,13.604 26.653,11.89"/>
+                      </g>
+                  </svg>
+              </span>
+              <span class="text">Google+</span>
+          </a>
+      </li>
+      <li class="pinterest">
+          <script>
+						var imgurl = "http:\/\/www.ninjaducks.in\/logo.png";
+						var firstimg = document.getElementsByClassName("thesis")[0].getElementsByTagName("img")[0];
+						if (firstimg !== undefined) {
+							imgurl = firstimg.src;
+						}
+						document.write('<a href="http://pinterest.com/pin/create/button/?url=http:\/\/www.ninjaducks.in\/thesis\/mainch4.html&amp;media=' + imgurl + '&amp;description=Implementation of Monitoring and Auto-Ballooning" class="popup">');
+					</script>
+              <span class="icon">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+		                  <path d="M14.021,1.57C6.96,1.57,1.236,7.293,1.236,14.355c0,7.062,5.724,12.785,12.785,12.785c7.061,0,12.785-5.725,12.785-12.785 C26.807,7.294,21.082,1.57,14.021,1.57z M15.261,18.655c-1.161-0.09-1.649-0.666-2.559-1.219c-0.501,2.626-1.113,5.145-2.925,6.458 c-0.559-3.971,0.822-6.951,1.462-10.116c-1.093-1.84,0.132-5.545,2.438-4.632c2.837,1.123-2.458,6.842,1.099,7.557 c3.711,0.744,5.227-6.439,2.925-8.775c-3.325-3.374-9.678-0.077-8.897,4.754c0.19,1.178,1.408,1.538,0.489,3.168 C7.165,15.378,6.53,13.7,6.611,11.462c0.131-3.662,3.291-6.227,6.46-6.582c4.007-0.448,7.771,1.474,8.29,5.239 c0.579,4.255-1.816,8.865-6.102,8.533L15.261,18.655z"/>
+                  </svg>
+              </span>
+              <span class="text">Pinterest</span>
+          <script>document.write('</a>');</script>
+      </li>
+      <li class="pocket">
+          <a href="https://getpocket.com/save?url=http://www.ninjaducks.in/thesis/mainch4.html"  class="popup">
+              <span class="icon">
+                  <svg width="32px" height="28px" viewBox="0 0 32 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                      <path d="M28.7817528,0.00172488695 C30.8117487,0.00431221738 31.9749312,1.12074529 31.9644402,3.10781507 C31.942147,6.67703739 32.1336065,10.2669583 31.8057648,13.8090137 C30.7147076,25.5813672 17.2181194,31.8996281 7.20714461,25.3808491 C2.71833574,22.4571656 0.196577202,18.3122624 0.0549495772,12.9357897 C-0.0342233715,9.5774348 0.00642900214,6.21519891 0.0300336062,2.85555035 C0.0405245414,1.1129833 1.21157517,0.0146615391 3.01995012,0.00819321302 C7.34746087,-0.00603710433 11.6775944,0.00431221738 16.0064164,0.00172488695 C20.2644248,0.00172488695 24.5237444,-0.00215610869 28.7817528,0.00172488695 L28.7817528,0.00172488695 Z M8.64885184,7.85611511 C7.38773662,7.99113854 6.66148108,8.42606978 6.29310958,9.33228474 C5.90114134,10.2969233 6.17774769,11.1421181 6.89875951,11.8276216 C9.35282156,14.161969 11.8108164,16.4924215 14.2976518,18.7943114 C15.3844131,19.7966007 16.5354102,19.7836177 17.6116843,18.7813283 C20.0185529,16.5495467 22.4070683,14.2982907 24.7824746,12.0327533 C25.9845979,10.8850542 26.1012707,9.56468083 25.1469132,8.60653379 C24.1361858,7.59255976 22.8449191,7.6743528 21.5890476,8.85191291 C19.9936451,10.3488554 18.3680912,11.8172352 16.8395462,13.3777945 C16.1342655,14.093159 15.7200114,14.0048744 15.0566806,13.3440386 C13.4599671,11.7484252 11.8081945,10.2060421 10.1262706,8.70001155 C9.65564653,8.27936164 9.00411403,8.05345704 8.64885184,7.85611511 L8.64885184,7.85611511 L8.64885184,7.85611511 Z"></path>
+                  </svg>
+              </span>
+              <span class="text">Pocket</span>
+          </a>
+      </li>
+  </ul>
+</div>
+
+    <div id="related">
+  <section>
+    <h5></h5>
+    
+    
+  </section>
+</div>
+
+    
+    <div id="comments">
+    
+    
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'shivanshuag';
+      var disqus_identifier = 'http:\/\/www.ninjaducks.in\/thesis\/mainch4.html';
+      var disqus_title = 'Implementation of Monitoring and Auto-Ballooning';
+      var disqus_url = 'http:\/\/www.ninjaducks.in\/thesis\/mainch4.html';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+</div>
+
+</article>
+
+</main>
+		<footer id="footer">
+			<section id="footer-message">&copy; ninjaduck. All rights reserved. Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>.</section>
+		</footer>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      var WebFontConfig={google:{families:["Open Sans:300italic,700italic,300,700","Bree+Serif"]}};
+      asyncLoader([
+        "//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css",
+        "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/webfont/1.5.16/webfontloader.js",
+        "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"
+      ],{
+        callback:function(){
+          asyncLoader([
+            "http:\/\/www.ninjaducks.in\/css/rrssb.css",
+            "http:\/\/www.ninjaducks.in\/js/gist.min.js", 
+            "http:\/\/www.ninjaducks.in\/js/rrssb.min.js",
+            "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"
+          ], { callback:function() {
+              hljs.initHighlighting();
+          }});
+        }
+      });
+    </script>
+	
+    <script>
+    	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-47255777-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
+  
+	</body>
+</html>

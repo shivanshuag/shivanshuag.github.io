@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drupal 8 on ninjaduck</title>
+    <link>http://www.ninjaducks.in/tags/drupal-8/</link>
+    <description>Recent content in Drupal 8 on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Jul 2015 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/tags/drupal-8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Writing Tests for Drush Commands</title>
+      <link>http://www.ninjaducks.in/hacking/writing-tests-for-drush-commands/</link>
+      <pubDate>Tue, 07 Jul 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/writing-tests-for-drush-commands/</guid>
+      <description>As a part of my GSoC project, I have been recently writing functional tests for site_audit &amp;ndash; a Drush extension that provides drush commands for static analysis of a Drupal site. The process seemed painful at first due to lack of good documentation and gaps in my knowledge of Drush and PHPUnit. But, after a few hiccups intially, I was successfully able to write tests for Site Audit.
+Background Drush uses PHPUnit testing framework for testing its core commands.</description>
+    </item>
+    
+    <item>
+      <title>Setting Up PHP_CodeSniffer for Drupal 7 and 8</title>
+      <link>http://www.ninjaducks.in/hacking/setting-up-php-codesniffer/</link>
+      <pubDate>Thu, 25 Jun 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/setting-up-php-codesniffer/</guid>
+      <description>PHP CodeSniffer is a library which tokenises PHP, Javascript and CSS. Coder is a Drupal project that provides sniffs for PHP CodeSniffer which tell whether a piece of code follows Drupal coding standards.
+My GSoC project requires me to work on both - Drupal 7 and 8 version of site_audit. So, I had to set up PHP_CodeSniffer such that it can work with both the versions of Drupal. The Coder standards are different for Drupal 7 and Drupal 8.</description>
+    </item>
+    
+    <item>
+      <title>Caching In Drupal 8</title>
+      <link>http://www.ninjaducks.in/hacking/caching-in-drupal-8/</link>
+      <pubDate>Wed, 24 Jun 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/caching-in-drupal-8/</guid>
+      <description>First week of my GSoC 2015 project required me to port the caching report of Site Audit to Drupal 8. To generate caching report, some checks are performed on the drupal website&amp;rsquo;s various cache settings. There have been some major changes in Drupal 8 caching architecture from Drupal 7. Most of them are fairly new with little documentation. This post contains a list of articles that helped me understand how caching works in Drupal 8.</description>
+    </item>
+    
+    <item>
+      <title>GSoC 2015 Extending Site Audit - Setting Up Dev Environment</title>
+      <link>http://www.ninjaducks.in/hacking/drupal-dev-environment/</link>
+      <pubDate>Wed, 24 Jun 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/drupal-dev-environment/</guid>
+      <description>I was selected for Google Summer Of Code 2015 program under Drupal. My project is to extend Site Audit under the mentorship of Jon Peck and my proposal for the project can be found here.
+Weeks before the coding period started, the first challenge was to set up a developemnt environment such that both me and my mentor can test the work I do in a consistent way. Following are some of the things I did and learned in the process.</description>
+    </item>
+    
+    <item>
+      <title>Porting a module to Drupal 8</title>
+      <link>http://www.ninjaducks.in/hacking/porting-a-module-to-drupal8/</link>
+      <pubDate>Mon, 02 Jun 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/porting-a-module-to-drupal8/</guid>
+      <description>I am porting a drupal 7 module named securesite to drupal 8 under of Google Summer Of Code&#39;14. It has been two weeks into the coding period and I am thoroughly enjoying it. This is my first port in a series of posts that I plan to write during this period.
+One look at a drupal 8 module is enough to make you realize that there have been some major changes in its architecture.</description>
+    </item>
+    
+  </channel>
+</rss>

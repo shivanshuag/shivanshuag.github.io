@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ninjaduck</title>
+    <link>http://www.ninjaducks.in/</link>
+    <description>Recent content on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Dec 2016 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>La La Land - The Ending</title>
+      <link>http://www.ninjaducks.in/movies/la-la-land/</link>
+      <pubDate>Mon, 26 Dec 2016 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/movies/la-la-land/</guid>
+      <description>La La Land is a remarkable movie in many ways. Even its name is a pun upon the city of L.A., the home of Hollywood, where the movie is set. It is a musical love story of Mia - a struggling actress and Sebastian - a jazz pianist, talented but unsuccessful.
+ I feel that its the ending of the movie that gives it its true character. When both of them have achieved their creative ambitions- Mia is a successful actress and is married with a kid, Sebastian owns a jazz bar of his own, they meet again when Mia happens to go to Sebastian&amp;rsquo;s jazz club with her husband.</description>
+    </item>
+    
+    <item>
+      <title>Book Review - The Name of the Rose</title>
+      <link>http://www.ninjaducks.in/books/review-name-of-the-rose/</link>
+      <pubDate>Sun, 25 Dec 2016 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/books/review-name-of-the-rose/</guid>
+      <description>This book is supposed to be an murder mystery. But it is not gripping enough and you never get that atmosphere of suspense, you never feel that tension in the air mostly because the book wanders off from the main plot many times.
+Nevertheless, a murder mystery set in medieval Europe was something new for me. The attention to detail on the life and politics of the medieval Europe is stunning and expected given that the author is a researcher in medieval philosophy and literature.</description>
+    </item>
+    
+    <item>
+      <title>Movie Review – Akira(1988)</title>
+      <link>http://www.ninjaducks.in/movies/akira-review/</link>
+      <pubDate>Sat, 05 Nov 2016 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/movies/akira-review/</guid>
+      <description>Akira is a quintessential cyberpunk movie. What is cyberpunk? It is this cool subgenre of Science Fiction which is characterized by a post-apocalyptic dystopian society and advanced technology. Common cyberpunk themes often deal with the role of advanced technology like artificial intelligence in human lives, the moral and philosophical issues they raise. It often raises the question – “What does it mean to be human?”. Many films adopt a film-noir style and have a dark, skeptical tone.</description>
+    </item>
+    
+    <item>
+      <title>Movie Review – J.S.A.: Joint Security Area</title>
+      <link>http://www.ninjaducks.in/movies/jsa-review/</link>
+      <pubDate>Sun, 16 Oct 2016 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/movies/jsa-review/</guid>
+      <description>J.S.A.: Joint Security Area is a South Korean movie directed by the amazing Park Chan Wook. JSA was his first successful movie both critically and commercially. Based on the novel &amp;ldquo;DMZ&amp;rdquo; by Park Sang-yeon, J.S.A tells the story of an incident that happened on the DMZ (Demilitarized Zone) between North and South Korea which involved death of two North Korean soldiers, presumably by a South Korean soldier.
+A bit of history to explain the hostility between North and South Korea – At the end of World War two, after the surrender of Japanese forces, Korea was divided into two states, with the North under Soviet occupation and the South under U.</description>
+    </item>
+    
+    <item>
+      <title>Anime Binge Watch - Erased</title>
+      <link>http://www.ninjaducks.in/movies/erased-review/</link>
+      <pubDate>Fri, 03 Jun 2016 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/movies/erased-review/</guid>
+      <description>After finishing my M.Tech thesis, I had some free time on my hands. It was an ideal situation to satiate my gluttonous appetite for some movies/tv. This time I chose to watch some long outstanding anime. Despite animes having some excellent stroylines and amazing characters, I had been withholding the urge to watch them for a long time due their addictive/bingeworthy nature.
+ The first anime I binge-watched was Boku dake ga Inai Machi (The Town Where Only I am Missing) also known as Erased in English.</description>
+    </item>
+    
+    <item>
+      <title>Production and Development set-up for Angular 2 with TypeScript using Webpack and Gulp</title>
+      <link>http://www.ninjaducks.in/hacking/angular-setup/</link>
+      <pubDate>Tue, 22 Dec 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/angular-setup/</guid>
+      <description>Building modular, better structured web applications is now easier with Angular 2, but this comes with a new set of challenges on developing, packaging and deploying these applications. When developing in typescript, it has to be transpiled to javascript in a way such that its modules can be loaded by the browser. For debugging, source maps need to be enabled and for production, javascript needs to be minified. Along with this, the HTML and CSS of each individual component in the application should be present at the right place.</description>
+    </item>
+    
+    <item>
+      <title>A World Undone: The Story of The Great War</title>
+      <link>http://www.ninjaducks.in/books/world-undone/</link>
+      <pubDate>Fri, 23 Oct 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/books/world-undone/</guid>
+      <description>I started with this book to satiate my curiosity about the World Wars, which was ignited after reading The Guns Of August. And I was not disappointed. This single volume history of the World War I provides detailed account of the great war along with all the relevant background details which are perfect for someone totally unfamiliar with the subject and reading about it for the first time. Even though this is a non-fiction, the experience of reading this is similar to reading an fiction because of highly dramatic events of the war, described in detail, unfolding one after the other.</description>
+    </item>
+    
+    <item>
+      <title>Codelab - HTML5 Canvas and Game development</title>
+      <link>http://www.ninjaducks.in/hacking/codelab/</link>
+      <pubDate>Wed, 07 Oct 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/codelab/</guid>
+      <description>Objective This codelab will demonstrate how to build a game using HTML5 canvas. As an example, we will build a simple snake game.
+We will walk you through the process of building the in a series of incremental steps. After each step you should have a working (not necessarily useful) version of the game. Each step is described in the form of a tag in the git repository.
+Requirements The requirements for this codelab are:</description>
+    </item>
+    
+    <item>
+      <title>Multi-Factor Authentication In OpenVPN</title>
+      <link>http://www.ninjaducks.in/openvpn-mfa/</link>
+      <pubDate>Fri, 10 Jul 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/openvpn-mfa/</guid>
+      <description>This project was done as a part of Mozilla Winter of Security 2014 programme. The objective of this project is to implement native Multifactor Authentication Support for OpenVPN. The existing support for Multifactor Authentication in OpenVPN is through deferred C plugins and pythons scripts which has lots of limitations due to the nature they are implemented.
+Need to Native MFA support The plugins are present on the server side where they are called at appropriate places in the authentication process of OpenVPN with credentials.</description>
+    </item>
+    
+    <item>
+      <title>Writing Tests for Drush Commands</title>
+      <link>http://www.ninjaducks.in/hacking/writing-tests-for-drush-commands/</link>
+      <pubDate>Tue, 07 Jul 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/writing-tests-for-drush-commands/</guid>
+      <description>As a part of my GSoC project, I have been recently writing functional tests for site_audit &amp;ndash; a Drush extension that provides drush commands for static analysis of a Drupal site. The process seemed painful at first due to lack of good documentation and gaps in my knowledge of Drush and PHPUnit. But, after a few hiccups intially, I was successfully able to write tests for Site Audit.
+Background Drush uses PHPUnit testing framework for testing its core commands.</description>
+    </item>
+    
+    <item>
+      <title>Setting Up PHP_CodeSniffer for Drupal 7 and 8</title>
+      <link>http://www.ninjaducks.in/hacking/setting-up-php-codesniffer/</link>
+      <pubDate>Thu, 25 Jun 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/setting-up-php-codesniffer/</guid>
+      <description>PHP CodeSniffer is a library which tokenises PHP, Javascript and CSS. Coder is a Drupal project that provides sniffs for PHP CodeSniffer which tell whether a piece of code follows Drupal coding standards.
+My GSoC project requires me to work on both - Drupal 7 and 8 version of site_audit. So, I had to set up PHP_CodeSniffer such that it can work with both the versions of Drupal. The Coder standards are different for Drupal 7 and Drupal 8.</description>
+    </item>
+    
+    <item>
+      <title>Caching In Drupal 8</title>
+      <link>http://www.ninjaducks.in/hacking/caching-in-drupal-8/</link>
+      <pubDate>Wed, 24 Jun 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/caching-in-drupal-8/</guid>
+      <description>First week of my GSoC 2015 project required me to port the caching report of Site Audit to Drupal 8. To generate caching report, some checks are performed on the drupal website&amp;rsquo;s various cache settings. There have been some major changes in Drupal 8 caching architecture from Drupal 7. Most of them are fairly new with little documentation. This post contains a list of articles that helped me understand how caching works in Drupal 8.</description>
+    </item>
+    
+    <item>
+      <title>GSoC 2015 Extending Site Audit - Setting Up Dev Environment</title>
+      <link>http://www.ninjaducks.in/hacking/drupal-dev-environment/</link>
+      <pubDate>Wed, 24 Jun 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/drupal-dev-environment/</guid>
+      <description>I was selected for Google Summer Of Code 2015 program under Drupal. My project is to extend Site Audit under the mentorship of Jon Peck and my proposal for the project can be found here.
+Weeks before the coding period started, the first challenge was to set up a developemnt environment such that both me and my mentor can test the work I do in a consistent way. Following are some of the things I did and learned in the process.</description>
+    </item>
+    
+    <item>
+      <title>Learning English with Cowsay</title>
+      <link>http://www.ninjaducks.in/hacking/learning-english-with-cowsay/</link>
+      <pubDate>Wed, 24 Dec 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/learning-english-with-cowsay/</guid>
+      <description>Linux has some absurd tools like fortune and cowsay. Fortune is a simple utility which displays random fortune cookies every time the user opens the terminal. Cowsay puts the message you give to it as an argument in a speech bubble with an ASCII image of a cow. You can combine cowsay and fortune to display a fortune cookie in the speech bubble of a cow. Nothing useful if you take them at face-value.</description>
+    </item>
+    
+    <item>
+      <title>Sunglasses</title>
+      <link>http://www.ninjaducks.in/shorts/sunglasses/</link>
+      <pubDate>Fri, 03 Oct 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/shorts/sunglasses/</guid>
+      <description>&amp;ldquo;Ghantagahr, Ghantagahr, Ghantagahr &amp;hellip;. &amp;quot; cried an auto-rickshaw driver amidst the usual din of a busy crossroad at GT Road in Kanpur. I had been standing there in scorching may afternoon heat for about half an hour. A diverse group of people stood at the side of the road with me waiting anxiously. The unusual scarcity of autos going towards Ghantaghar at the time had made the crowd restive. I ran towards the auto with my bag dangling from one hand and the other signaling for it to stop.</description>
+    </item>
+    
+    <item>
+      <title>Why I read Fiction</title>
+      <link>http://www.ninjaducks.in/books/why-i-read-fiction/</link>
+      <pubDate>Thu, 12 Jun 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/books/why-i-read-fiction/</guid>
+      <description>I have been reading fiction since I was 10. By the age of 12, I was hooked so much into it that I read nothing but fiction. Now, reading has turned into a habit. I always read for about half and hour almost ever night before going to sleep, more if I have time and mostly it is fiction. Over the time, my parents have relentlessly nagged at me for reading fiction.</description>
+    </item>
+    
+    <item>
+      <title>Porting a module to Drupal 8</title>
+      <link>http://www.ninjaducks.in/hacking/porting-a-module-to-drupal8/</link>
+      <pubDate>Mon, 02 Jun 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/porting-a-module-to-drupal8/</guid>
+      <description>I am porting a drupal 7 module named securesite to drupal 8 under of Google Summer Of Code&#39;14. It has been two weeks into the coding period and I am thoroughly enjoying it. This is my first port in a series of posts that I plan to write during this period.
+One look at a drupal 8 module is enough to make you realize that there have been some major changes in its architecture.</description>
+    </item>
+    
+    <item>
+      <title>A summer for Drupal</title>
+      <link>http://www.ninjaducks.in/hacking/a-summer-for-drupal/</link>
+      <pubDate>Tue, 22 Apr 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/a-summer-for-drupal/</guid>
+      <description>Today has been great for me in many ways. I reached the 1000 friends mark on fb, scored good in an exam. But the best thing that happened to me today is getting accepted into Google Summer Of Code&#39;14.
+This is the first time I applied in this program and getting selected has been nothing less than pure bliss. I am exaggerating a little here but there is that feeling that lasts just for a few seconds.</description>
+    </item>
+    
+    <item>
+      <title>My way of Celebrating Holi</title>
+      <link>http://www.ninjaducks.in/my-way-of-celebrating-holi/</link>
+      <pubDate>Sun, 16 Mar 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/my-way-of-celebrating-holi/</guid>
+      <description>Conversing to a friend about how he celebrated holi, I realized how different our ways are to celebrate this auspicious festival. Here is my way of celebrating Holi.
+Holi is among the few times of the year when most of my family comes together(all my brothers/cousins come home). It starts on the evening of &amp;lsquo;Holika Dehan&amp;rsquo; with the smell of delicious &amp;lsquo;Poori Halwa&amp;rsquo; cooking in the kitchen. Then after the traditional pooja and dinner, we wait for Holika to be lit up which is announced by fire crackers and drums.</description>
+    </item>
+    
+    <item>
+      <title>Why I like &#39;The Book Thief&#39;</title>
+      <link>http://www.ninjaducks.in/books/why-i-like-the-book-thief/</link>
+      <pubDate>Mon, 03 Feb 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/books/why-i-like-the-book-thief/</guid>
+      <description>I had read The Book Thief book in November and have been trying to write a review ever since but I could never finds words enough to describe it. It was the greatest reading experience I have ever had. Set in the Nazi Germany and narrated by Death(the Grim Reaper), it is the story of the life of a young girl Liesel Meminger - the book thief. The book deftly highlights the themes of destruction and loss of life in war, the viciousness of the Nazi propaganda and the power of words.</description>
+    </item>
+    
+    <item>
+      <title>Gnome 3 to i3</title>
+      <link>http://www.ninjaducks.in/hacking/gnome-3-to-i-3/</link>
+      <pubDate>Mon, 27 Jan 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/gnome-3-to-i-3/</guid>
+      <description>I have been a linux user for more than two years now and the search for a perfect desktop environment is still on. I have tried many of the popular ones - Unity, Gnome 2 and 3, KDE, Cinnamon and MATE. Each of them have a different philosophy which is suitable for some type of users but all of them are either very heavy-weight or have a some very frustrating bugs.</description>
+    </item>
+    
+    <item>
+      <title>Movie Review - Captain Phillips</title>
+      <link>http://www.ninjaducks.in/movies/movie-review-captain-philips/</link>
+      <pubDate>Sat, 11 Jan 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/movies/movie-review-captain-philips/</guid>
+      <description>If you are gonna shoot somebody, you shoot me. I&amp;rsquo;m the captain, not them.
+  In the direst of situations when one of the pirates has a gun cocked to a crew-member&amp;rsquo;s head threatening to kill him if the captain did not reveal where the other crew members were hiding, he had the guts to say this.
+The story is based on the hijacking of an american ship - MV Maersk Alabama by Somali pirate in 2009.</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>http://www.ninjaducks.in/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/about/</guid>
+      <description>I am Shivanshu, a 5th year B.Tech M.Tech Dual Degree student at IIT Kanpur studying Computer Science and Engineering. I will graduate in summer 2016 and will be joining Goldman Sachs, Banglore office later this year.
+I am the type of being that conforms to The Hacker Attitude and try to utilize my time in solving some fascinating problem through technology but I am yet to complete my 10000 hours to master the craft.</description>
+    </item>
+    
+    <item>
+      <title>Acknowledgements</title>
+      <link>http://www.ninjaducks.in/thesis/mainli1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainli1.html</guid>
+      <description>[next] [tail] [up]  Acknowledgements I would like to extend my sincere gratitude towards my thesis supervisors, Prof. Mainak Chaudhuri and Prof. Sumit Ganguly for their guidance, constant support and encouragement. This thesis would not have been possible without them. I thank the Department of Computer Science and Engineering, IIT Kanpur for providing the necessary infrastructure and congenial environment facilitating this research work.  I also thank Tejas Gandhi for providing invaluable help in setting up Openstack, Adarsh Jagannath for various useful discussions we had which proved instrumental in the progress of this thesis, Abhimanyu Arora for working on a part of this thesis together with me, and all my fellow batchmates for the delightful time we spent together and making my stay at IITK memorable.</description>
+    </item>
+    
+    <item>
+      <title>Architecture and Design of DRS</title>
+      <link>http://www.ninjaducks.in/thesis/mainch3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainch3.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Chapter 3
+Architecture and Design of DRS  3.1  Functions of DRS Distributed resource scheduler is responsible for handling the dynamic resource allocation requirements of VMs on the cloud. The job of a DRS can be divided into three categories: 1. Monitoring. Monitoring is essential for detecting the resource requirements of individual guest machines running on the cloud and detecting hotspots on physical hosts which make up the cluster.</description>
+    </item>
+    
+    <item>
+      <title>Conclusions</title>
+      <link>http://www.ninjaducks.in/thesis/mainch6.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainch6.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Chapter 6
+Conclusions  6.1  Summary Resource overcommitment is an essential technique for eﬃcient use of resources in a cloud infrastructure. There are several hurdles in overcommitment which have not been addressed completely yet. Most of the studies in this ﬁeld focus on just a part of the problem, but do not solve it as a whole. The subproblems that have attracted most attention is the optimal placement of virtual machines depending on their demands.</description>
+    </item>
+    
+    <item>
+      <title>Contents</title>
+      <link>http://www.ninjaducks.in/thesis/mainli2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainli2.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Contents 1 Introduction: Virtualization and Resource Management in Cloud 1.1 Virtualization 1.1.1 Memory Overcommitment and Ballooning 1.1.2 CPU Overcommitment 1.2 Virtual Machine Live Migration 1.3 Resource Management in Cloud 1.4 Organization of this Thesis  2 Related Work 2.1 Auto-Ballooning in Xen 2.1.1 Transcendent Memory (tmem) 2.1.2 Auto-Balloon Mechanism 2.2 Memory Management in VMware ESX 2.2.1 Memory Reclamation Techniques 2.2.2 Memory Reclamation Policies 2.</description>
+    </item>
+    
+    <item>
+      <title>Distributed Memory and CPU Management in Cloud Computing Environments</title>
+      <link>http://www.ninjaducks.in/thesis/main.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/main.html</guid>
+      <description>Distributed Memory and CPU Management in Cloud Computing Environments
+A thesissubmitted
+in Partial Fulﬁllment of the Requirements
+for the Degree of
+Master of Technology
+by
+Shivanshu Agrawal
+to the
+DEPARTMENT OF COMPUTER SCIENCE &amp;#x0026; ENGINEERING
+INDIAN INSTITUTE OF TECHNOLOGY KANPUR
+May, 2016   ABSTRACT
+ To eﬃciently utilize the resources in a virtualized environment, they need to be overcommited. Overcommitment is the process of allocating more resources to a virtual machine, or a group of virtual machines than are physically present on the host.</description>
+    </item>
+    
+    <item>
+      <title>Experimental Evaluation</title>
+      <link>http://www.ninjaducks.in/thesis/mainch5.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainch5.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Chapter 5
+Experimental Evaluation We have built our DRS for the QEMU-KVM hypervisor. It uses the libvirt APIs for managing the virtual machines and Openstack [26] mainly for cloud management and software deﬁned networking along with live-migration support. For the distributed key-value store, we use etcd [27]. We have conducted several experiments to determine the eﬀectiveness of our DRS. The experiments relating to monitoring and auto-ballooning aspect of the DRS have been described below.</description>
+    </item>
+    
+    <item>
+      <title>Implementation of Monitoring and Auto-Ballooning</title>
+      <link>http://www.ninjaducks.in/thesis/mainch4.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainch4.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Chapter 4
+Implementation of Monitoring and Auto-Ballooning For the purpose of this thesis, we describe the implementation and experimentally evaluate only the monitoring and autoballooning parts of the DRS. The following sections describe the implementation details of these two components.  4.1  Monitoring As we discussed in Chapter 3, the monitoring component runs on each host and monitors the host and the guests running on that host to detect hotspots.</description>
+    </item>
+    
+    <item>
+      <title>Introduction: Virtualization and Resource Management in Cloud</title>
+      <link>http://www.ninjaducks.in/thesis/mainch1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainch1.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Chapter 1
+Introduction: Virtualization and Resource Management in Cloud With the advent of large scale cloud computing, the users can get compute resources on demand with ﬂexible pricing models. Cloud vendors pool their massive hardware resources and provide virtual machines on top of it to the users. To best utilize the resources of a virtualized cloud infrastructure, resource overcommitment is used. Allocating more virtual resources to a machine or a group of machines than are physically present is called resource overcommitment.</description>
+    </item>
+    
+    <item>
+      <title>References</title>
+      <link>http://www.ninjaducks.in/thesis/mainli5.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainli5.html</guid>
+      <description>[prev] [prev-tail] [tail] [up]  References [1] Chris Horne. “Understanding full virtualization, paravirtualization and hardware assist”. In: White paper, VMware Inc (2007). [2] Gerald J. Popek and Robert P. Goldberg. “Formal Requirements for Virtualizable Third Generation Architectures”. In: Commun. ACM 17.7 (July 1974), pp. 412–421. issn: 0001-0782. doi: 10.1145/361011.361073. url: http://doi.acm.org/10.1145/361011.361073. [3] Ravi Bhargava, Benjamin Serebrin, Francesco Spadini, and Srilatha Manne. “Accelerating two-dimensional page walks for virtualized systems”. In: ACM SIGOPS Operating Systems Review 42.</description>
+    </item>
+    
+    <item>
+      <title>Related Work</title>
+      <link>http://www.ninjaducks.in/thesis/mainch2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainch2.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Chapter 2
+Related Work  2.1  Auto-Ballooning in Xen Xen is a popular open-source, bare-metal hypervisor which was developed by University of Cambridge Computer Laboratory in 2003 and was the ﬁrst hypervisor to support paravirtualization. Support for full vritualization was later added to it. Xen has autoballooning feature which works via the autoballoon driver that exists in the Linux kernel. Autoballooning implementation in our work has some key diﬀerences to autoballooning in Xen, which have been discussed later.</description>
+    </item>
+    
+  </channel>
+</rss>

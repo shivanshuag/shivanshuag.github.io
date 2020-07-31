@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHPUnit on ninjaduck</title>
+    <link>http://www.ninjaducks.in/tags/phpunit/</link>
+    <description>Recent content in PHPUnit on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Jul 2015 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/tags/phpunit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Writing Tests for Drush Commands</title>
+      <link>http://www.ninjaducks.in/hacking/writing-tests-for-drush-commands/</link>
+      <pubDate>Tue, 07 Jul 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/writing-tests-for-drush-commands/</guid>
+      <description>As a part of my GSoC project, I have been recently writing functional tests for site_audit &amp;ndash; a Drush extension that provides drush commands for static analysis of a Drupal site. The process seemed painful at first due to lack of good documentation and gaps in my knowledge of Drush and PHPUnit. But, after a few hiccups intially, I was successfully able to write tests for Site Audit.
+Background Drush uses PHPUnit testing framework for testing its core commands.</description>
+    </item>
+    
+  </channel>
+</rss>

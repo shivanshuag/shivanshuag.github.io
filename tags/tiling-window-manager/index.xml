@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tiling window manager on ninjaduck</title>
+    <link>http://www.ninjaducks.in/tags/tiling-window-manager/</link>
+    <description>Recent content in tiling window manager on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jan 2014 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/tags/tiling-window-manager/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gnome 3 to i3</title>
+      <link>http://www.ninjaducks.in/hacking/gnome-3-to-i-3/</link>
+      <pubDate>Mon, 27 Jan 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/gnome-3-to-i-3/</guid>
+      <description>I have been a linux user for more than two years now and the search for a perfect desktop environment is still on. I have tried many of the popular ones - Unity, Gnome 2 and 3, KDE, Cinnamon and MATE. Each of them have a different philosophy which is suitable for some type of users but all of them are either very heavy-weight or have a some very frustrating bugs.</description>
+    </item>
+    
+  </channel>
+</rss>

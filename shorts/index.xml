@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shorts on ninjaduck</title>
+    <link>http://www.ninjaducks.in/shorts/</link>
+    <description>Recent content in Shorts on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Oct 2014 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/shorts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sunglasses</title>
+      <link>http://www.ninjaducks.in/shorts/sunglasses/</link>
+      <pubDate>Fri, 03 Oct 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/shorts/sunglasses/</guid>
+      <description>&amp;ldquo;Ghantagahr, Ghantagahr, Ghantagahr &amp;hellip;. &amp;quot; cried an auto-rickshaw driver amidst the usual din of a busy crossroad at GT Road in Kanpur. I had been standing there in scorching may afternoon heat for about half an hour. A diverse group of people stood at the side of the road with me waiting anxiously. The unusual scarcity of autos going towards Ghantaghar at the time had made the crowd restive. I ran towards the auto with my bag dangling from one hand and the other signaling for it to stop.</description>
+    </item>
+    
+  </channel>
+</rss>

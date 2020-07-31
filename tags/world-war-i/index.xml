@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>World War I on ninjaduck</title>
+    <link>http://www.ninjaducks.in/tags/world-war-i/</link>
+    <description>Recent content in World War I on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Oct 2015 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/tags/world-war-i/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A World Undone: The Story of The Great War</title>
+      <link>http://www.ninjaducks.in/books/world-undone/</link>
+      <pubDate>Fri, 23 Oct 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/books/world-undone/</guid>
+      <description>I started with this book to satiate my curiosity about the World Wars, which was ignited after reading The Guns Of August. And I was not disappointed. This single volume history of the World War I provides detailed account of the great war along with all the relevant background details which are perfect for someone totally unfamiliar with the subject and reading about it for the first time. Even though this is a non-fiction, the experience of reading this is similar to reading an fiction because of highly dramatic events of the war, described in detail, unfolding one after the other.</description>
+    </item>
+    
+  </channel>
+</rss>

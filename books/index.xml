@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Books on ninjaduck</title>
+    <link>http://www.ninjaducks.in/books/</link>
+    <description>Recent content in Books on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Dec 2016 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/books/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Book Review - The Name of the Rose</title>
+      <link>http://www.ninjaducks.in/books/review-name-of-the-rose/</link>
+      <pubDate>Sun, 25 Dec 2016 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/books/review-name-of-the-rose/</guid>
+      <description>This book is supposed to be an murder mystery. But it is not gripping enough and you never get that atmosphere of suspense, you never feel that tension in the air mostly because the book wanders off from the main plot many times.
+Nevertheless, a murder mystery set in medieval Europe was something new for me. The attention to detail on the life and politics of the medieval Europe is stunning and expected given that the author is a researcher in medieval philosophy and literature.</description>
+    </item>
+    
+    <item>
+      <title>A World Undone: The Story of The Great War</title>
+      <link>http://www.ninjaducks.in/books/world-undone/</link>
+      <pubDate>Fri, 23 Oct 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/books/world-undone/</guid>
+      <description>I started with this book to satiate my curiosity about the World Wars, which was ignited after reading The Guns Of August. And I was not disappointed. This single volume history of the World War I provides detailed account of the great war along with all the relevant background details which are perfect for someone totally unfamiliar with the subject and reading about it for the first time. Even though this is a non-fiction, the experience of reading this is similar to reading an fiction because of highly dramatic events of the war, described in detail, unfolding one after the other.</description>
+    </item>
+    
+    <item>
+      <title>Why I read Fiction</title>
+      <link>http://www.ninjaducks.in/books/why-i-read-fiction/</link>
+      <pubDate>Thu, 12 Jun 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/books/why-i-read-fiction/</guid>
+      <description>I have been reading fiction since I was 10. By the age of 12, I was hooked so much into it that I read nothing but fiction. Now, reading has turned into a habit. I always read for about half and hour almost ever night before going to sleep, more if I have time and mostly it is fiction. Over the time, my parents have relentlessly nagged at me for reading fiction.</description>
+    </item>
+    
+    <item>
+      <title>Why I like &#39;The Book Thief&#39;</title>
+      <link>http://www.ninjaducks.in/books/why-i-like-the-book-thief/</link>
+      <pubDate>Mon, 03 Feb 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/books/why-i-like-the-book-thief/</guid>
+      <description>I had read The Book Thief book in November and have been trying to write a review ever since but I could never finds words enough to describe it. It was the greatest reading experience I have ever had. Set in the Nazi Germany and narrated by Death(the Grim Reaper), it is the story of the life of a young girl Liesel Meminger - the book thief. The book deftly highlights the themes of destruction and loss of life in war, the viciousness of the Nazi propaganda and the power of words.</description>
+    </item>
+    
+  </channel>
+</rss>

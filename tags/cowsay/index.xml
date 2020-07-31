@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cowsay on ninjaduck</title>
+    <link>http://www.ninjaducks.in/tags/cowsay/</link>
+    <description>Recent content in cowsay on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Dec 2014 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/tags/cowsay/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Learning English with Cowsay</title>
+      <link>http://www.ninjaducks.in/hacking/learning-english-with-cowsay/</link>
+      <pubDate>Wed, 24 Dec 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/learning-english-with-cowsay/</guid>
+      <description>Linux has some absurd tools like fortune and cowsay. Fortune is a simple utility which displays random fortune cookies every time the user opens the terminal. Cowsay puts the message you give to it as an argument in a speech bubble with an ASCII image of a cow. You can combine cowsay and fortune to display a fortune cookie in the speech bubble of a cow. Nothing useful if you take them at face-value.</description>
+    </item>
+    
+  </channel>
+</rss>

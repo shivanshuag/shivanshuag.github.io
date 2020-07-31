@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Captain Philips on ninjaduck</title>
+    <link>http://www.ninjaducks.in/tags/captain-philips/</link>
+    <description>Recent content in Captain Philips on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Jan 2014 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/tags/captain-philips/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Movie Review - Captain Phillips</title>
+      <link>http://www.ninjaducks.in/movies/movie-review-captain-philips/</link>
+      <pubDate>Sat, 11 Jan 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/movies/movie-review-captain-philips/</guid>
+      <description>If you are gonna shoot somebody, you shoot me. I&amp;rsquo;m the captain, not them.
+  In the direst of situations when one of the pirates has a gun cocked to a crew-member&amp;rsquo;s head threatening to kill him if the captain did not reveal where the other crew members were hiding, he had the guts to say this.
+The story is based on the hijacking of an american ship - MV Maersk Alabama by Somali pirate in 2009.</description>
+    </item>
+    
+  </channel>
+</rss>

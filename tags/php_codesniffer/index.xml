@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP_CodeSniffer on ninjaduck</title>
+    <link>http://www.ninjaducks.in/tags/php_codesniffer/</link>
+    <description>Recent content in PHP_CodeSniffer on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Jun 2015 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/tags/php_codesniffer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting Up PHP_CodeSniffer for Drupal 7 and 8</title>
+      <link>http://www.ninjaducks.in/hacking/setting-up-php-codesniffer/</link>
+      <pubDate>Thu, 25 Jun 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/setting-up-php-codesniffer/</guid>
+      <description>PHP CodeSniffer is a library which tokenises PHP, Javascript and CSS. Coder is a Drupal project that provides sniffs for PHP CodeSniffer which tell whether a piece of code follows Drupal coding standards.
+My GSoC project requires me to work on both - Drupal 7 and 8 version of site_audit. So, I had to set up PHP_CodeSniffer such that it can work with both the versions of Drupal. The Coder standards are different for Drupal 7 and Drupal 8.</description>
+    </item>
+    
+  </channel>
+</rss>

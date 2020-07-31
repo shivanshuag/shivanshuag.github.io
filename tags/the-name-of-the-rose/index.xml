@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Name of the Rose on ninjaduck</title>
+    <link>http://www.ninjaducks.in/tags/the-name-of-the-rose/</link>
+    <description>Recent content in The Name of the Rose on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Dec 2016 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/tags/the-name-of-the-rose/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Book Review - The Name of the Rose</title>
+      <link>http://www.ninjaducks.in/books/review-name-of-the-rose/</link>
+      <pubDate>Sun, 25 Dec 2016 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/books/review-name-of-the-rose/</guid>
+      <description>This book is supposed to be an murder mystery. But it is not gripping enough and you never get that atmosphere of suspense, you never feel that tension in the air mostly because the book wanders off from the main plot many times.
+Nevertheless, a murder mystery set in medieval Europe was something new for me. The attention to detail on the life and politics of the medieval Europe is stunning and expected given that the author is a researcher in medieval philosophy and literature.</description>
+    </item>
+    
+  </channel>
+</rss>

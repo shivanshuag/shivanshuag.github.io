@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Site Audit on ninjaduck</title>
+    <link>http://www.ninjaducks.in/tags/site-audit/</link>
+    <description>Recent content in Site Audit on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Jun 2015 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/tags/site-audit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSoC 2015 Extending Site Audit - Setting Up Dev Environment</title>
+      <link>http://www.ninjaducks.in/hacking/drupal-dev-environment/</link>
+      <pubDate>Wed, 24 Jun 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/drupal-dev-environment/</guid>
+      <description>I was selected for Google Summer Of Code 2015 program under Drupal. My project is to extend Site Audit under the mentorship of Jon Peck and my proposal for the project can be found here.
+Weeks before the coding period started, the first challenge was to set up a developemnt environment such that both me and my mentor can test the work I do in a consistent way. Following are some of the things I did and learned in the process.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Theses on ninjaduck</title>
+    <link>http://www.ninjaducks.in/thesis/</link>
+    <description>Recent content in Theses on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://www.ninjaducks.in/thesis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Acknowledgements</title>
+      <link>http://www.ninjaducks.in/thesis/mainli1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainli1.html</guid>
+      <description>[next] [tail] [up]  Acknowledgements I would like to extend my sincere gratitude towards my thesis supervisors, Prof. Mainak Chaudhuri and Prof. Sumit Ganguly for their guidance, constant support and encouragement. This thesis would not have been possible without them. I thank the Department of Computer Science and Engineering, IIT Kanpur for providing the necessary infrastructure and congenial environment facilitating this research work.  I also thank Tejas Gandhi for providing invaluable help in setting up Openstack, Adarsh Jagannath for various useful discussions we had which proved instrumental in the progress of this thesis, Abhimanyu Arora for working on a part of this thesis together with me, and all my fellow batchmates for the delightful time we spent together and making my stay at IITK memorable.</description>
+    </item>
+    
+    <item>
+      <title>Architecture and Design of DRS</title>
+      <link>http://www.ninjaducks.in/thesis/mainch3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainch3.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Chapter 3
+Architecture and Design of DRS  3.1  Functions of DRS Distributed resource scheduler is responsible for handling the dynamic resource allocation requirements of VMs on the cloud. The job of a DRS can be divided into three categories: 1. Monitoring. Monitoring is essential for detecting the resource requirements of individual guest machines running on the cloud and detecting hotspots on physical hosts which make up the cluster.</description>
+    </item>
+    
+    <item>
+      <title>Conclusions</title>
+      <link>http://www.ninjaducks.in/thesis/mainch6.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainch6.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Chapter 6
+Conclusions  6.1  Summary Resource overcommitment is an essential technique for eﬃcient use of resources in a cloud infrastructure. There are several hurdles in overcommitment which have not been addressed completely yet. Most of the studies in this ﬁeld focus on just a part of the problem, but do not solve it as a whole. The subproblems that have attracted most attention is the optimal placement of virtual machines depending on their demands.</description>
+    </item>
+    
+    <item>
+      <title>Contents</title>
+      <link>http://www.ninjaducks.in/thesis/mainli2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainli2.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Contents 1 Introduction: Virtualization and Resource Management in Cloud 1.1 Virtualization 1.1.1 Memory Overcommitment and Ballooning 1.1.2 CPU Overcommitment 1.2 Virtual Machine Live Migration 1.3 Resource Management in Cloud 1.4 Organization of this Thesis  2 Related Work 2.1 Auto-Ballooning in Xen 2.1.1 Transcendent Memory (tmem) 2.1.2 Auto-Balloon Mechanism 2.2 Memory Management in VMware ESX 2.2.1 Memory Reclamation Techniques 2.2.2 Memory Reclamation Policies 2.</description>
+    </item>
+    
+    <item>
+      <title>Distributed Memory and CPU Management in Cloud Computing Environments</title>
+      <link>http://www.ninjaducks.in/thesis/main.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/main.html</guid>
+      <description>Distributed Memory and CPU Management in Cloud Computing Environments
+A thesissubmitted
+in Partial Fulﬁllment of the Requirements
+for the Degree of
+Master of Technology
+by
+Shivanshu Agrawal
+to the
+DEPARTMENT OF COMPUTER SCIENCE &amp;#x0026; ENGINEERING
+INDIAN INSTITUTE OF TECHNOLOGY KANPUR
+May, 2016   ABSTRACT
+ To eﬃciently utilize the resources in a virtualized environment, they need to be overcommited. Overcommitment is the process of allocating more resources to a virtual machine, or a group of virtual machines than are physically present on the host.</description>
+    </item>
+    
+    <item>
+      <title>Experimental Evaluation</title>
+      <link>http://www.ninjaducks.in/thesis/mainch5.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainch5.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Chapter 5
+Experimental Evaluation We have built our DRS for the QEMU-KVM hypervisor. It uses the libvirt APIs for managing the virtual machines and Openstack [26] mainly for cloud management and software deﬁned networking along with live-migration support. For the distributed key-value store, we use etcd [27]. We have conducted several experiments to determine the eﬀectiveness of our DRS. The experiments relating to monitoring and auto-ballooning aspect of the DRS have been described below.</description>
+    </item>
+    
+    <item>
+      <title>Implementation of Monitoring and Auto-Ballooning</title>
+      <link>http://www.ninjaducks.in/thesis/mainch4.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainch4.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Chapter 4
+Implementation of Monitoring and Auto-Ballooning For the purpose of this thesis, we describe the implementation and experimentally evaluate only the monitoring and autoballooning parts of the DRS. The following sections describe the implementation details of these two components.  4.1  Monitoring As we discussed in Chapter 3, the monitoring component runs on each host and monitors the host and the guests running on that host to detect hotspots.</description>
+    </item>
+    
+    <item>
+      <title>Introduction: Virtualization and Resource Management in Cloud</title>
+      <link>http://www.ninjaducks.in/thesis/mainch1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainch1.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Chapter 1
+Introduction: Virtualization and Resource Management in Cloud With the advent of large scale cloud computing, the users can get compute resources on demand with ﬂexible pricing models. Cloud vendors pool their massive hardware resources and provide virtual machines on top of it to the users. To best utilize the resources of a virtualized cloud infrastructure, resource overcommitment is used. Allocating more virtual resources to a machine or a group of machines than are physically present is called resource overcommitment.</description>
+    </item>
+    
+    <item>
+      <title>References</title>
+      <link>http://www.ninjaducks.in/thesis/mainli5.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainli5.html</guid>
+      <description>[prev] [prev-tail] [tail] [up]  References [1] Chris Horne. “Understanding full virtualization, paravirtualization and hardware assist”. In: White paper, VMware Inc (2007). [2] Gerald J. Popek and Robert P. Goldberg. “Formal Requirements for Virtualizable Third Generation Architectures”. In: Commun. ACM 17.7 (July 1974), pp. 412–421. issn: 0001-0782. doi: 10.1145/361011.361073. url: http://doi.acm.org/10.1145/361011.361073. [3] Ravi Bhargava, Benjamin Serebrin, Francesco Spadini, and Srilatha Manne. “Accelerating two-dimensional page walks for virtualized systems”. In: ACM SIGOPS Operating Systems Review 42.</description>
+    </item>
+    
+    <item>
+      <title>Related Work</title>
+      <link>http://www.ninjaducks.in/thesis/mainch2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ninjaducks.in/thesis/mainch2.html</guid>
+      <description>[next] [prev] [prev-tail] [tail] [up]  Chapter 2
+Related Work  2.1  Auto-Ballooning in Xen Xen is a popular open-source, bare-metal hypervisor which was developed by University of Cambridge Computer Laboratory in 2003 and was the ﬁrst hypervisor to support paravirtualization. Support for full vritualization was later added to it. Xen has autoballooning feature which works via the autoballoon driver that exists in the Linux kernel. Autoballooning implementation in our work has some key diﬀerences to autoballooning in Xen, which have been discussed later.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anime on ninjaduck</title>
+    <link>http://www.ninjaducks.in/tags/anime/</link>
+    <description>Recent content in Anime on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Jun 2016 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/tags/anime/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Anime Binge Watch - Erased</title>
+      <link>http://www.ninjaducks.in/movies/erased-review/</link>
+      <pubDate>Fri, 03 Jun 2016 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/movies/erased-review/</guid>
+      <description>After finishing my M.Tech thesis, I had some free time on my hands. It was an ideal situation to satiate my gluttonous appetite for some movies/tv. This time I chose to watch some long outstanding anime. Despite animes having some excellent stroylines and amazing characters, I had been withholding the urge to watch them for a long time due their addictive/bingeworthy nature.
+ The first anime I binge-watched was Boku dake ga Inai Machi (The Town Where Only I am Missing) also known as Erased in English.</description>
+    </item>
+    
+  </channel>
+</rss>

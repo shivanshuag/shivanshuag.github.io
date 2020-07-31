@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webpack on ninjaduck</title>
+    <link>http://www.ninjaducks.in/tags/webpack/</link>
+    <description>Recent content in Webpack on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Dec 2015 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Production and Development set-up for Angular 2 with TypeScript using Webpack and Gulp</title>
+      <link>http://www.ninjaducks.in/hacking/angular-setup/</link>
+      <pubDate>Tue, 22 Dec 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/angular-setup/</guid>
+      <description>Building modular, better structured web applications is now easier with Angular 2, but this comes with a new set of challenges on developing, packaging and deploying these applications. When developing in typescript, it has to be transpiled to javascript in a way such that its modules can be loaded by the browser. For debugging, source maps need to be enabled and for production, javascript needs to be minified. Along with this, the HTML and CSS of each individual component in the application should be present at the right place.</description>
+    </item>
+    
+  </channel>
+</rss>

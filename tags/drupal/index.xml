@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drupal on ninjaduck</title>
+    <link>http://www.ninjaducks.in/tags/drupal/</link>
+    <description>Recent content in Drupal on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Apr 2014 13:35:54 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.ninjaducks.in/tags/drupal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A summer for Drupal</title>
+      <link>http://www.ninjaducks.in/hacking/a-summer-for-drupal/</link>
+      <pubDate>Tue, 22 Apr 2014 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/a-summer-for-drupal/</guid>
+      <description>Today has been great for me in many ways. I reached the 1000 friends mark on fb, scored good in an exam. But the best thing that happened to me today is getting accepted into Google Summer Of Code&#39;14.
+This is the first time I applied in this program and getting selected has been nothing less than pure bliss. I am exaggerating a little here but there is that feeling that lasts just for a few seconds.</description>
+    </item>
+    
+  </channel>
+</rss>
