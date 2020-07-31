@@ -9,7 +9,7 @@
           </span>
           <img src="/images/line.png" class="line-separator"/>
 
-{{ $paginator := .Paginate (where .Data.Pages "Type" "!=" "thesis") 10}}
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "!=" "thesis") 10}}
 
     {{ range $index, $page := .Paginator.Pages }}
         {{ .Render "li" }}

@@ -1,12 +1,15 @@
 <div id="related">
   <section>
     <h5></h5>
+    {{ $related := .Site.RegularPages.Related . | first 5 }}
+    {{ with $related }}
     <ul>
-      {{ range first 5 .RelatedPages }}
+      {{ range . }}
       <li>
         <a href="{{ .Permalink }}">{{ .Title }} - {{ .ReadingTime }} Minutes</a>
       </li>
       {{ end }}
     </ul>
+    {{ end }}
   </section>
 </div>
